@@ -74,9 +74,9 @@ def emit_json(name, value):
         path.write_text(json.dumps(value, indent=2) + '\n')
 
 
-def load_audit(suite):
-    rows = [json.loads(line) for line in (ROOT / f'data/measurements/{suite}.jsonl').read_text().splitlines()]
-    tasks = json.loads((ROOT / f'protocol/{suite}-tasks.json').read_text())
+def load_audit():
+    rows = [json.loads(line) for line in (ROOT / 'data/measurements/serial.jsonl').read_text().splitlines()]
+    tasks = json.loads((ROOT / 'protocol/serial-tasks.json').read_text())
     task_map = {(t['group'], t['id']): t for t in tasks}
     assert len(rows) == len(task_map) == len({(r['group'], r['id']) for r in rows})
     outputs, signatures = {}, {}
@@ -105,14 +105,11 @@ def load_audit(suite):
         assert r['total_ns'] == r['context_ns'] + r['init_ns'] + r['kernel_ns']
         assert r['kernel_ns'] > 0 and r['steps'] > 0
         assert r['instrumented'] == (r['group'] == 'counts')
-        if suite == 'parallel' and r['binary'] == 'coam':
-            assert r['observed_team'] == r['threads']
-            assert sorted(r['worker_cpus']) == list(range(128, 128 + r['threads']))
         workload = ('A' if r['group'] == 'counts' else r['group'], *key(r, 'case metric profile loops'))
         signature = key(r, 'steps initial_value final_value candidate_digest final_box_hash accepted output_sha256')
         assert signatures.setdefault(workload, signature) == signature, workload
     for values in group(rows, 'group case metric profile method binary threads').values():
-        repeats = 1 if values[0]['group'] == 'counts' else 3 if suite == 'parallel' and values[0]['group'] == 'A' else 5
+        repeats = 1 if values[0]['group'] == 'counts' else 5
         assert sorted(v['repeat'] for v in values) == list(range(repeats))
     return rows
 
@@ -226,48 +223,6 @@ def serial_tables(rows):
     emit_json('serial/optimized/practical-initial-metrics.json', initial)
 
 
-def parallel_tables(rows):
-    names = 'group case metric profile method binary threads'
-    groups = group(rows, names)
-    per_repeat = {(*key(r, names), r['repeat']): r for r in rows}
-    summary, hardware, comparisons, anchors = [], [], [], []
-    for k, values in sorted(groups.items()):
-        first = values[0]
-        times = [v['kernel_ns'] / v['steps'] / 1000 for v in values]
-        one = [per_repeat[(*k[:-1], 1, v['repeat'])] for v in values]
-        ratios = [s['kernel_ns'] / v['kernel_ns'] for s, v in zip(one, values)]
-        totals = [s['total_ns'] / v['total_ns'] for s, v in zip(one, values)]
-        record = {f: first[f] for f in names.split() + ['n', 'steps']}
-        record.update(repeats=len(values), kernel_us_per_step=median(times), kernel_us_q1=quantile(times, .25),
-                      kernel_us_q3=quantile(times, .75), paired_hardware_speedup=median(ratios),
-                      parallel_efficiency=median(ratios) / first['threads'],
-                      process_seconds=median(v['process_seconds'] for v in values))
-        record.update({f + '_ms': median(v[f + '_ns'] / 1e6 for v in values) for f in ['init', 'context', 'kernel', 'total']})
-        summary.append(record)
-        hardware.append({**{f: first[f] for f in names.split()},
-            'core_speedup': median(ratios), 'core_q1': quantile(ratios, .25), 'core_q3': quantile(ratios, .75),
-            'total_speedup': median(totals), 'total_q1': quantile(totals, .25), 'total_q3': quantile(totals, .75)})
-        if first['binary'] == 'coam' and first['method'] not in ['proposed', 'reference-proposed']:
-            own = 'reference-proposed' if first['group'] == 'A' else 'proposed'
-            p = [per_repeat[(*k[:4], own, 'coam', k[-1], v['repeat'])] for v in values]
-            comparisons.append({**{f: first[f] for f in ['group', 'case', 'metric', 'profile', 'threads']},
-                'baseline': first['method'], 'proposed': own,
-                'paired_algorithm_speedup': median(v['kernel_ns'] / a['kernel_ns'] for v, a in zip(values, p)),
-                'paired_batch_total_speedup': median(v['total_ns'] / a['total_ns'] for v, a in zip(values, p))})
-        if first['binary'] == 'coam-serial-source':
-            p = [per_repeat[(*k[:5], 'coam', 1, v['repeat'])] for v in values]
-            anchors.append({**{f: first[f] for f in ['group', 'case', 'metric', 'method']},
-                'original_over_new_serial_kernel': median(v['kernel_ns'] / a['kernel_ns'] for v, a in zip(values, p)),
-                'original_over_new_serial_total': median(v['total_ns'] / a['total_ns'] for v, a in zip(values, p))})
-    emit('parallel/timings-and-scaling.csv', summary, names)
-    emit('parallel/algorithm-comparison.csv', comparisons, 'group case metric profile baseline threads')
-    emit('parallel/serial-anchors.csv', anchors, 'group case metric method')
-    # This table adds paired total-time uncertainty for the publication figures.
-    path = ROOT / 'results/parallel/hardware-scaling.csv'
-    if not CHECK or path.exists():
-        emit('parallel/hardware-scaling.csv', hardware, names)
-
-
 def main():
     global CHECK
     parser = argparse.ArgumentParser(description=__doc__)
@@ -278,12 +233,11 @@ def main():
     for entry in manifest['inputs']:
         assert sha(ROOT / entry['input']) == entry['input_sha256']
         assert sha(ROOT / entry['swaps']) == entry['swaps_sha256']
-    serial, parallel = load_audit('serial'), load_audit('parallel')
-    assert len(serial) == 13560 and len(parallel) == 5070
+    serial = load_audit()
+    assert len(serial) == 13560
     serial_tables(serial)
-    parallel_tables(parallel)
-    audit = dict(status='pass', timing_records=17170, separate_count_records=1460, input_cases=147,
-                 archived_record_sha256={s: sha(ROOT / f'data/measurements/{s}.jsonl') for s in ['serial', 'parallel']},
+    audit = dict(status='pass', timing_records=12100, separate_count_records=1460, input_cases=147,
+                 archived_record_sha256={'serial': sha(ROOT / 'data/measurements/serial.jsonl')},
                  result_tables=TABLES, same_workload_outputs_equal=True, complete_repeat_sets=True)
     if not CHECK:
         (ROOT / 'results/audit.json').write_text(json.dumps(audit, indent=2) + '\n')

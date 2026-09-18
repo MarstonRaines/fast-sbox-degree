@@ -4,20 +4,13 @@
     "serial/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
     "serial/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
     "serial/bench.cpp": "60733c352ea2130de455dcf079dc84b2022d47be41c26fbf8f5148cbcd3c09ca",
-    "serial/peigen_adapter.cpp": "9cde67d6a47993514abfab3d28c1b7b1eaa9b2cca054edd4567b4361570c4655",
-    "parallel/degree.hpp": "7c7aee67ec49b0da3dfe2bee10feb3c3aa92a023ab50e3dea03aecdb85e77ff4",
-    "parallel/reference.hpp": "b25f907888e5e624cdb52de7471acc2ae4613bf40c0f6d2f8644c79a02c25399",
-    "parallel/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
-    "parallel/bench.cpp": "ef7137a42bbed2a965179713f3d9575cd00c3ecce5392bd7c0c45abd436f3201",
-    "parallel/parallel.hpp": "8f5a21c33248c7fee6942974f09cdba53e4d1affe09bc4e9674bacabddf18c2e",
-    "parallel/peigen_adapter.cpp": "9cde67d6a47993514abfab3d28c1b7b1eaa9b2cca054edd4567b4361570c4655"
+    "serial/peigen_adapter.cpp": "9cde67d6a47993514abfab3d28c1b7b1eaa9b2cca054edd4567b4361570c4655"
   },
   "source_measurement_archive_sha256": {
     "serial/formal-A": "3205bd4eaf02f025d5ddae0b4f08d5bc0f02b7d53c925df644e617f68d6a7336",
     "serial/formal-B": "13fb1c82763de6e9a7c89f983399dff24cc9c268178b91d53fd8de5dfb434107",
     "serial/search-B": "917a249caa4af47c72362bf4808f9e0e851d45741fde59553c3719fba697859c",
-    "serial/counts-A": "0286fdc2a486b8bdff037136b1dc1c57127ef1f76190d8c6913cb537dbb0176f",
-    "parallel/formal": "0147cc4c57f77fd6fc983b1745a83d4422784aae6138ad2d2bd1b41c01cf98cf"
+    "serial/counts-A": "0286fdc2a486b8bdff037136b1dc1c57127ef1f76190d8c6913cb537dbb0176f"
   },
   "published_record_counts": {
     "serial": {
@@ -25,14 +18,8 @@
       "B": 4380,
       "counts": 1460,
       "search": 420
-    },
-    "parallel": {
-      "A": 630,
-      "B": 2970,
-      "search": 1470
     }
   },
   "serial_measured_binary_sha256": "f536e0214d8ac51818c10d204941cd9ea321de175b21c2c1cba54be5d43c040e",
-  "parallel_measured_binary_sha256": "ad97124c834b7d59252d9a4114b8fac15521c6fdeccd2fe87c22dba2e79c9aaf",
   "source_relation": "Publication packaging revision. Retained numerical kernels are unchanged; validation and reporting are repackaged. Archived timings were not regenerated from the packaged sources."
 }

@@ -19,7 +19,8 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=['serial', 'parallel'], required=True)
+    parser.add_argument('--suite', choices=['serial'], default='serial',
+                        help='Retained for command compatibility; this release contains the serial suite')
     parser.add_argument('--group', choices=['A', 'B', 'search', 'counts'])
     parser.add_argument('--case', help='Exact input ID, for example random_n08_00')
     parser.add_argument('--metric', choices=['min', 'max', 'spectrum'])
@@ -33,7 +34,7 @@ def main():
     args = parser.parse_args()
     if args.numa_node is not None and args.cpu_start is None:
         parser.error('--numa-node requires --cpu-start')
-    manifest = ROOT / f'protocol/{args.suite}-tasks.json'
+    manifest = ROOT / 'protocol/serial-tasks.json'
     tasks = json.loads(manifest.read_text())
     for key in ['group', 'case', 'metric', 'method', 'threads']:
         value = getattr(args, key)
@@ -54,8 +55,7 @@ def main():
     (output / 'traces').mkdir(parents=True, exist_ok=True)
     binaries = {}
     for task in tasks:
-        name = ('counts' if task['group'] == 'counts' else
-                'serial' if args.suite == 'serial' or task['binary'] == 'coam-serial-source' else 'parallel')
+        name = 'counts' if task['group'] == 'counts' else 'serial'
         binary = ROOT / 'build' / name
         if not binary.is_file():
             parser.error(f'Missing {binary.name}; run make all')
@@ -68,12 +68,11 @@ def main():
     (output / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
     (output / 'tasks.json').write_text(json.dumps(tasks, indent=2) + '\n')
     archived = {(r['group'], r['id']): r for line in
-                (ROOT / f'data/measurements/{args.suite}.jsonl').read_text().splitlines()
+                (ROOT / 'data/measurements/serial.jsonl').read_text().splitlines()
                 if (r := json.loads(line))}
     for index, task in enumerate(tasks, 1):
         threads = task['threads']
-        name = ('counts' if task['group'] == 'counts' else
-                'serial' if args.suite == 'serial' or task['binary'] == 'coam-serial-source' else 'parallel')
+        name = 'counts' if task['group'] == 'counts' else 'serial'
         env = {**os.environ, 'OMP_NUM_THREADS': str(threads), 'OMP_DYNAMIC': 'false',
                'OMP_PROC_BIND': 'close', 'OMP_WAIT_POLICY': 'PASSIVE',
                'COAM_OMP_MIN_WORK': '32768', 'OMP_PLACES': 'cores'}

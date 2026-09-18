@@ -12,8 +12,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.lines import Line2D
-from matplotlib.ticker import MaxNLocator, ScalarFormatter
+from matplotlib.ticker import MaxNLocator
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'figures'
@@ -21,7 +20,7 @@ BLUE, RED, GRAY = '#1565B5', '#B74D48', '#646D78'
 METRICS = ['min', 'max', 'spectrum']
 TITLES = {'min': 'Minimum algebraic degree', 'max': 'Maximum algebraic degree update',
           'spectrum': 'Complete algebraic degree spectrum update'}
-DATE = datetime(2026, 9, 18, tzinfo=timezone.utc)
+DATE = datetime(2026, 9, 19, tzinfo=timezone.utc)
 SOURCES = {}
 
 plt.rcParams.update({
@@ -69,14 +68,6 @@ def width_axis(ax, boundary=False):
         ax.axvline(8.5, color='#A6ADB5', linewidth=.75, linestyle=':')
 
 
-def thread_axis(ax):
-    ax.set_xscale('log', base=2)
-    ax.set_xlim(.87, 83)
-    ax.set_xticks([1, 2, 4, 8, 16, 32, 64])
-    ax.xaxis.set_major_formatter(ScalarFormatter())
-    ax.set_xlabel('Number of threads (upper limit)')
-
-
 def ratio_axis(ax, label='Speedup of our method (×)'):
     ax.axhline(1, color=GRAY, linewidth=.85, linestyle=':')
     ax.set_ylabel(label)
@@ -111,7 +102,7 @@ def save(fig, name):
         if extension == 'pdf':
             metadata.update(CreationDate=DATE, ModDate=DATE)
         elif extension == 'svg':
-            metadata['Date'] = '2026-09-18'
+            metadata['Date'] = '2026-09-19'
         fig.savefig(OUT / f'{name}.{extension}', dpi=300, metadata=metadata)
     plt.close(fig)
 
@@ -185,90 +176,6 @@ def search():
     return fig
 
 
-def parallel(metric):
-    timing = read('parallel/timings-and-scaling.csv')
-    ratios = read('parallel/algorithm-comparison.csv')
-    title = {'min': 'Minimum degree', 'max': 'Maximum degree update', 'spectrum': 'Degree spectrum update'}[metric]
-    fig, (time, speed) = pair(title + ': 16-bit parallel performance',
-        'Two fixed inputs: solid = 00, dashed = 01. 5 repeats; identical thread limits for both methods.')
-    final = {'core': [], 'total': []}
-    for sample, style in [('00', '-'), ('01', '--')]:
-        case = 'random_n16_' + sample
-        for method, color, marker in [('proposed', BLUE, 'o'), ('bitwise', RED, '^')]:
-            rows = sorted([r for r in timing if r['group'] == 'B' and r['binary'] == 'coam'
-                           and r['case'] == case and r['metric'] == metric and r['method'] == method],
-                          key=lambda r: int(r['threads']))
-            assert len(rows) == 7
-            band(time, rows, vector(rows, 'threads'), 'kernel_us_per_step', color,
-                 ('Our method' if method == 'proposed' else 'Bitwise baseline') if sample == '00' else None,
-                 marker, style)
-            time.fill_between(vector(rows, 'threads'), vector(rows, 'kernel_us_q1'), vector(rows, 'kernel_us_q3'),
-                              color=color, alpha=.08, linewidth=0)
-        rows = sorted([r for r in ratios if r['group'] == 'B' and r['case'] == case
-                       and r['baseline'] == 'bitwise' and r['metric'] == metric], key=lambda r: int(r['threads']))
-        assert len(rows) == 7
-        for field, color, marker, key, label in [
-            ('paired_algorithm_speedup', BLUE, 'o', 'core', 'Core computation'),
-            ('paired_batch_total_speedup', GRAY, 's', 'total', 'Including initialization')]:
-            speed.plot(vector(rows, 'threads'), vector(rows, field), color=color, marker=marker,
-                       linestyle=style, label=label if sample == '00' else None,
-                       linewidth=2.1 if color == BLUE else 1.65)
-            final[key].append(float(rows[-1][field]))
-    time.set_yscale('log')
-    time.set_ylabel('Core time per ' + ('evaluation' if metric == 'min' else 'update') + ' (µs)')
-    time.legend(loc='best', fontsize=7.7)
-    panel(time, 0, 'Computation time ↓')
-    panel(speed, 1, 'Speedup at equal thread counts ↑')
-    ratio_axis(speed)
-    high = max(np.max(line.get_ydata()) for line in speed.lines if len(line.get_ydata()) > 2)
-    speed.set_ylim(0, high * 1.36)
-    speed.legend(loc='upper left', fontsize=7.5)
-    for ax in (time, speed):
-        thread_axis(ax)
-    for key, color, offset in [('core', BLUE, (-2, 10)), ('total', GRAY, (-2, -16))]:
-        lo, hi = min(final[key]), max(final[key])
-        speed.annotate(f'{lo:.2f}–{hi:.2f}×', (64, hi if key == 'core' else lo),
-                       xytext=offset, textcoords='offset points', ha='right',
-                       va='bottom' if key == 'core' else 'top', color=color,
-                       fontweight='bold' if key == 'core' else 'normal', fontsize=8.5,
-                       bbox=dict(facecolor='white', edgecolor='none', alpha=.88, pad=.7))
-    return fig
-
-
-def reference():
-    data = read('serial/reference-scaling.csv')
-    fig, axes = plt.subplots(1, 3, figsize=(7.4, 3.3))
-    fig.subplots_adjust(left=.085, right=.975, bottom=.22, top=.74, wspace=.34)
-    fig.suptitle('Algorithmic speedup over the scalar reference', y=.97, fontsize=12, fontweight='bold')
-    for j, metric in enumerate(METRICS):
-        ax = axes[j]
-        for profile, color, label, marker in [('static' if metric == 'min' else 'natural', BLUE, 'Static / random swaps', 'o'),
-                                              ('high', GRAY, 'High-update swaps', 's')]:
-            rows = sorted([r for r in data if r['metric'] == metric and r['profile'] == profile], key=lambda r: int(r['n']))
-            if not rows:
-                continue
-            band(ax, rows, vector(rows, 'n'), 'paired_speedup', color, label, marker)
-            label_point(ax, 16, float(rows[-1]['paired_speedup']), color, (-1, 7), 'right', color == BLUE)
-        x = np.arange(3, 17)
-        factor = 2. ** x / x if metric == 'min' else x if metric == 'max' else 2 * x
-        ax.plot(x, factor, color=RED, linestyle=':', linewidth=1.4)
-        ax.set_yscale('log')
-        ax.set_ylim(top=ax.get_ylim()[1] * 2)
-        panel(ax, j, ['Minimum degree', 'Maximum degree update', 'Spectrum update'][j])
-        width_axis(ax)
-        ax.set_xticks([3, 6, 9, 12, 16])
-        label = r'$2^n/n$' if metric == 'min' else r'$n$' if metric == 'max' else r'$2n$'
-        ax.text(.04, .91, 'Growth factor: ' + label, transform=ax.transAxes, fontsize=7.5, color=RED)
-    axes[0].set_ylabel('Core-time speedup (×)')
-    handles = [Line2D([], [], color=BLUE, marker='o', label='Static / random swaps'),
-               Line2D([], [], color=GRAY, marker='s', label='High-update swaps'),
-               Line2D([], [], color=RED, linestyle=':', label='Complexity growth factor')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.52, .89), ncol=3, fontsize=7.8)
-    fig.text(.5, .04, '10 inputs × 5 repeats. Scalar reference comparison; distinct from PEIGEN / bitwise results.',
-             ha='center', fontsize=7.5, color='#404750')
-    return fig
-
-
 def practical():
     data = read('serial/optimized/practical-results.csv')
     cases = [('PRESENT', 'PRESENT', '4', 'PEIGEN'), ('AES', 'AES', '8', 'PEIGEN'),
@@ -314,10 +221,6 @@ BUILDERS = {
     '02_maximum_degree_update': lambda: ordinary('max'),
     '03_degree_spectrum_update': lambda: ordinary('spectrum'),
     '04_search_time': search,
-    '05_parallel_spectrum': lambda: parallel('spectrum'),
-    '06_parallel_minimum': lambda: parallel('min'),
-    '07_parallel_maximum': lambda: parallel('max'),
-    '08_scalar_reference': reference,
     'table01_practical_instances': practical,
 }
 
@@ -334,8 +237,7 @@ def main():
             save(build(), name)
             print('Rendered', name)
     path = OUT / 'manifest.json'
-    old_sources = json.loads(path.read_text()).get('data_sha256', {}) if path.exists() else {}
-    manifest = {'data_sha256': {**old_sources, **SOURCES},
+    manifest = {'data_sha256': SOURCES,
                 'plot_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 'matplotlib': matplotlib.__version__,
                 'numpy': np.__version__, 'font': 'DejaVu Serif', 'width_inches': 7.4,

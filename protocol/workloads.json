@@ -272,27 +272,5 @@
     }
   },
   "B_swap_pairs_per_cycle": 128,
-  "parallel_A_batch": {
-    "8": 16,
-    "12": 2,
-    "16": 1
-  },
-  "parallel_thread_caps": [
-    1,
-    2,
-    4,
-    8,
-    16,
-    32,
-    64
-  ],
-  "parallel_search_thread_caps": [
-    1,
-    8,
-    32
-  ],
-  "parallel_threshold": 32768,
-  "serial_repeats": 5,
-  "parallel_A_repeats": 3,
-  "parallel_B_search_repeats": 5
+  "serial_repeats": 5
 }

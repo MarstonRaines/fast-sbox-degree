@@ -43,38 +43,27 @@ void check_full(const Engine& e) {
 int main(int argc,char** argv) {
     try {
         if (argc!=3) throw std::runtime_error("requires two saved 16-bit LUTs");
-        omp_set_dynamic(0);
         unsigned states=0;
         for (int input=1; input<argc; ++input) {
             unsigned n,m;
             Box initial=read_box(argv[input],n,m);
             Context context(n,m);
-            for (int threads:{1,4,64}) {
-                omp_set_num_threads(threads);
-                Engine engine(context,Method::Proposed,Metric::Spectrum,initial);
-                omp_set_num_threads(1);
+            Engine engine(context,Method::Proposed,Metric::Spectrum,initial);
+            check_full(engine); ++states;
+            for (auto [p,q]:{std::pair{0U,1U},std::pair{37U,179U}}) {
+                Box before=engine.box;
+                Hist histogram=engine.hist;
+                engine.apply(p,q,true);
                 check_full(engine); ++states;
-                for (auto [p,q]:{std::pair{0U,1U},std::pair{37U,179U}}) {
-                    Box before=engine.box;
-                    Hist histogram=engine.hist;
-                    omp_set_num_threads(threads);
-                    engine.apply(p,q,true);
-                    omp_set_num_threads(1);
-                    check_full(engine); ++states;
-                    omp_set_num_threads(threads);
-                    engine.undo(p,q);
-                    if (engine.box!=before || engine.hist!=histogram)
-                        throw std::runtime_error("rollback mismatch");
-                    omp_set_num_threads(1);
-                    check_full(engine); ++states;
-                    omp_set_num_threads(threads);
-                    engine.apply(p,q,false);
-                }
-                omp_set_num_threads(1);
+                engine.undo(p,q);
+                if (engine.box!=before || engine.hist!=histogram)
+                    throw std::runtime_error("rollback mismatch");
                 check_full(engine); ++states;
+                engine.apply(p,q,false);
             }
+            check_full(engine); ++states;
         }
-        std::cout << "{\"status\":\"pass\",\"threads\":[1,4,64],\"inputs\":2,\"full_states\":"
+        std::cout << "{\"status\":\"pass\",\"inputs\":2,\"full_states\":"
                   << states << ",\"coefficients_per_state\":4294901760,\"includes_update_and_rollback\":true}\n";
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';

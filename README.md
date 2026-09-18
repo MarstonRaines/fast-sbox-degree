@@ -33,7 +33,7 @@ The 16-bit spectrum state needs substantial memory: about 512 MiB with packed co
 | `results/serial/` | Reference, optimized, practical-instance and search tables |
 | `results/parallel/` | Thread scaling, equal-thread algorithm comparisons and serial anchors |
 | `scripts/` | Dependency download, workload replay, table reconstruction and plotting |
-| `figures/` | Six publication figures in PDF, SVG and 300 dpi PNG |
+| `figures/` | Eight publication figures and one numerical table in PDF, SVG and 300 dpi PNG |
 | `docs/` | Protocol, results, measured-build provenance and release validation |
 
 See [the experimental protocol](docs/protocol.md) for the distinction between single-evaluation, fixed-update and full-search workloads, and [the results guide](docs/results.md) for the interpretation of speedups.
@@ -64,11 +64,15 @@ python3 -m pip install -r requirements.txt
 python3 scripts/plot_results.py
 ```
 
-The [figure guide](docs/figures.md) contains previews, source-table links, statistical definitions and complete captions. All curves read the saved result tables directly.
+The [figure guide](docs/figures.md) contains the current previews, source-table links, statistical definitions and complete captions. Each metric has a time/speedup pair with direct numerical labels. Parallel figures compare the methods at equal thread limits; within-method scaling is tabulated separately. All plots read the saved result tables directly.
 
-![Optimized single-thread scaling](figures/01_optimized_scaling.png)
+![Minimum-degree time and speedup](figures/01_minimum_degree.png)
+
+![Complete search time](figures/04_search_time.png)
 
 ## Version and license
+
+Release **v1.0.1** updates figure presentation: separate time/speedup pairs, direct numerical labels, search-time bars, equal-thread parallel comparisons and a practical-instance table. The implementation, protocols and archived measurements are unchanged from v1.0.0.
 
 This is a publication packaging revision: the retained numerical kernels match the measured source versions, while validation and reporting have been repackaged. [Provenance](docs/provenance.json) records the measured source and binary digests; [release validation](docs/release-validation.json) records checks of the packaged build. The archived timings were not regenerated using the packaged build.
 

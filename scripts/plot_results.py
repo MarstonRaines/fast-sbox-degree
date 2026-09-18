@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render publication figures directly from the audited result tables."""
+"""Plot measured time and directly labelled speedups from the audited CSV tables."""
 import argparse
 import csv
 import hashlib
@@ -13,24 +13,25 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
-from matplotlib.ticker import ScalarFormatter, NullFormatter, MaxNLocator
+from matplotlib.ticker import MaxNLocator, ScalarFormatter
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'figures'
-BLUE, RED, TEAL, GOLD, GRAY = '#0F4D92', '#B64342', '#42949E', '#A36A16', '#767676'
+BLUE, RED, GRAY = '#1565B5', '#B74D48', '#646D78'
 METRICS = ['min', 'max', 'spectrum']
-TITLES = ['Minimum degree', 'Maximum degree update', 'Spectrum update']
+TITLES = {'min': 'Minimum algebraic degree', 'max': 'Maximum algebraic degree update',
+          'spectrum': 'Complete algebraic degree spectrum update'}
 DATE = datetime(2026, 9, 18, tzinfo=timezone.utc)
 SOURCES = {}
 
 plt.rcParams.update({
-    'font.family': 'DejaVu Sans', 'font.size': 8, 'axes.titlesize': 9,
-    'axes.labelsize': 8, 'xtick.labelsize': 7, 'ytick.labelsize': 7,
-    'legend.fontsize': 7.5, 'legend.frameon': False,
-    'axes.spines.top': False, 'axes.spines.right': False, 'axes.linewidth': .7,
-    'lines.linewidth': 1.4, 'lines.markersize': 3.4, 'grid.linewidth': .4,
+    'font.family': 'DejaVu Serif', 'mathtext.fontset': 'stix', 'font.size': 9,
+    'axes.titlesize': 10, 'axes.labelsize': 9.5, 'xtick.labelsize': 8,
+    'ytick.labelsize': 8, 'legend.fontsize': 8, 'legend.frameon': False,
+    'axes.spines.top': False, 'axes.spines.right': False, 'axes.linewidth': .8,
+    'lines.linewidth': 1.9, 'lines.markersize': 4, 'grid.linewidth': .45,
     'pdf.fonttype': 42, 'ps.fonttype': 42, 'svg.fonttype': 'none',
-    'svg.hashsalt': 'fast-sbox-degree-v1', 'figure.facecolor': 'white',
+    'svg.hashsalt': 'fast-sbox-degree', 'figure.facecolor': 'white',
     'savefig.facecolor': 'white', 'axes.axisbelow': True,
 })
 
@@ -46,37 +47,60 @@ def vector(rows, field):
     return np.array([float(r[field]) for r in rows])
 
 
-def band(ax, rows, x, field, color, label=None, marker='o', style='-', suffix=('_q1', '_q3')):
+def band(ax, rows, x, field, color, label, marker='o', style='-', suffix=('_q1', '_q3')):
     y = vector(rows, field)
-    ax.plot(x, y, color=color, marker=marker, linestyle=style, label=label)
+    ax.plot(x, y, color=color, marker=marker, linestyle=style, label=label,
+            linewidth=2.1 if color == BLUE else 1.65, zorder=3 if color == BLUE else 2)
     if field + suffix[0] in rows[0]:
         ax.fill_between(x, vector(rows, field + suffix[0]), vector(rows, field + suffix[1]),
-                        color=color, alpha=.12, linewidth=0)
+                        color=color, alpha=.10, linewidth=0)
 
 
 def panel(ax, index, title):
-    ax.set_title(f'({chr(97 + index)}) {title}', loc='left', pad=8)
-    ax.grid(axis='y', alpha=.25)
+    ax.set_title(f'({chr(97 + index)}) {title}', loc='left', pad=9)
+    ax.grid(axis='y', alpha=.30)
 
 
 def width_axis(ax, boundary=False):
-    ax.set_xlim(2.7, 16.3)
-    ax.set_xticks([3, 6, 8, 10, 13, 16])
-    ax.set_xlabel('S-box width n (bits)')
+    ax.set_xlim(2.7, 16.5)
+    ax.set_xticks(range(3, 17))
+    ax.set_xlabel(r'S-box size $n$ ($n\times n$)')
     if boundary:
-        ax.axvline(8.5, color='#BEBEBE', linewidth=.7, linestyle=':')
+        ax.axvline(8.5, color='#A6ADB5', linewidth=.75, linestyle=':')
 
 
 def thread_axis(ax):
     ax.set_xscale('log', base=2)
-    ax.set_xlim(.9, 71)
+    ax.set_xlim(.87, 83)
     ax.set_xticks([1, 2, 4, 8, 16, 32, 64])
     ax.xaxis.set_major_formatter(ScalarFormatter())
-    ax.set_xlabel('Physical-thread cap')
+    ax.set_xlabel('Number of threads (upper limit)')
+
+
+def ratio_axis(ax, label='Speedup of our method (×)'):
+    ax.axhline(1, color=GRAY, linewidth=.85, linestyle=':')
+    ax.set_ylabel(label)
+    ax.set_ylim(bottom=0)
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=6, min_n_ticks=4))
+
+
+def pair(title, note):
+    fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.7))
+    fig.subplots_adjust(left=.092, right=.976, bottom=.205, top=.795, wspace=.32)
+    fig.suptitle(title, y=.97, fontsize=12, fontweight='bold')
+    fig.text(.5, .045, note, ha='center', fontsize=7.5, color='#404750')
+    return fig, axes
+
+
+def label_point(ax, x, y, color=BLUE, offset=(0, 9), ha='center', bold=False):
+    ax.annotate(f'{y:.2f}×', (x, y), xytext=offset, textcoords='offset points',
+                ha=ha, va='bottom' if offset[1] >= 0 else 'top', color=color,
+                fontsize=9 if bold else 7.5, fontweight='bold' if bold else 'normal',
+                bbox=dict(facecolor='white', edgecolor='none', alpha=.88, pad=.7), zorder=5)
 
 
 def save(fig, name):
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     for ax in fig.axes:
@@ -92,189 +116,232 @@ def save(fig, name):
     plt.close(fig)
 
 
-def optimized_scaling():
-    data = read('serial/optimized/scaling-results.csv')
-    fig, axes = plt.subplots(2, 3, figsize=(7.4, 4.8))
-    fig.subplots_adjust(left=.085, right=.985, bottom=.11, top=.88, hspace=.48, wspace=.36)
-    for j, metric in enumerate(METRICS):
-        rows = sorted([r for r in data if r['metric'] == metric], key=lambda r: int(r['n']))
-        x = vector(rows, 'n')
-        ax = axes[0, j]
-        band(ax, rows, x, 'proposed_us', BLUE, 'Proposed', 'o')
-        for baseline, color, marker, label in [('peigen', GOLD, 's', 'PEIGEN'), ('bitwise', RED, '^', 'Packed traditional')]:
-            subset = [r for r in rows if r['baseline'] == baseline]
-            band(ax, subset, vector(subset, 'n'), 'baseline_us', color, label, marker)
-        ax.set_yscale('log')
-        panel(ax, j, TITLES[j])
-        width_axis(ax, True)
-        ax = axes[1, j]
-        band(ax, rows, x, 'paired_speedup', BLUE, 'Core', 'o')
-        band(ax, rows, x, 'total_speedup', TEAL, 'Batch total', 's', '--')
-        ax.axhline(1, color=GRAY, linewidth=.8, linestyle=':')
-        ax.set_yscale('log')
-        if metric == 'spectrum':
-            ax.set_yticks([.5, 1, 2, 4])
-            ax.yaxis.set_major_formatter(ScalarFormatter())
-            ax.yaxis.set_minor_formatter(NullFormatter())
-        panel(ax, j + 3, 'Baseline / proposed')
-        width_axis(ax, True)
-    axes[0, 0].set_ylabel('Core time per step (µs)')
-    axes[1, 0].set_ylabel('Time ratio (×)')
-    handles, labels = axes[0, 0].get_legend_handles_labels()
-    h, l = axes[1, 0].get_legend_handles_labels()
-    fig.legend(handles + h, labels + l, loc='upper center', bbox_to_anchor=(.52, .985), ncol=5, columnspacing=1.4)
-    save(fig, '01_optimized_scaling')
-
-
-def reference_scaling():
-    data = read('serial/reference-scaling.csv')
-    fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.8))
-    fig.subplots_adjust(left=.085, right=.985, bottom=.19, top=.78, wspace=.38)
-    for j, metric in enumerate(METRICS):
-        ax = axes[j]
-        for profile, color, label in [('static' if metric == 'min' else 'natural', BLUE, 'Static / natural swaps'),
-                                      ('high', TEAL, 'High-update swaps')]:
-            rows = sorted([r for r in data if r['metric'] == metric and r['profile'] == profile], key=lambda r: int(r['n']))
-            if not rows:
-                continue
-            band(ax, rows, vector(rows, 'n'), 'paired_speedup', color, label,
-                 marker='o' if color == BLUE else 's')
-        x = np.arange(3, 17)
-        factor = 2. ** x / x if metric == 'min' else x if metric == 'max' else 2 * x
-        ax.plot(x, factor, color=GRAY, linestyle='--', linewidth=1.1, label='Reference growth factor')
-        ax.set_yscale('log')
-        panel(ax, j, TITLES[j])
-        width_axis(ax)
-        label = r'$2^n/n$' if metric == 'min' else r'$n$' if metric == 'max' else r'$2n$'
-        ax.text(.04, .94, 'Growth factor: ' + label, transform=ax.transAxes, fontsize=7, va='top')
-    axes[0].set_ylabel('Scalar reference / proposed (×)')
-    handles, labels = axes[1].get_legend_handles_labels()
-    fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(.52, .995), ncol=3)
-    save(fig, '02_reference_scaling')
-
-
-def practical():
-    data = read('serial/optimized/practical-results.csv')
-    cases = ['PRESENT', 'AES', 'CLEFIA_S0', 'CLEFIA_S1', 'MISTY1_S9', 'MISTY1_FI_key0000']
-    labels = ['PRESENT (4)', 'AES (8)', 'CLEFIA S0 (8)', 'CLEFIA S1 (8)', 'MISTY1 S9 (9)', 'MISTY1 FI (16)']
-    fig, axes = plt.subplots(1, 3, sharey=True, figsize=(7.4, 3.0))
-    fig.subplots_adjust(left=.17, right=.985, bottom=.20, top=.80, wspace=.32)
-    for j, metric in enumerate(METRICS):
-        rows = [next(r for r in data if r['case'] == case and r['metric'] == metric) for case in cases]
-        ax = axes[j]
-        for field, color, marker, shift, label in [('paired_speedup', BLUE, 'o', -.11, 'Core'),
-                                                  ('total_speedup', TEAL, 's', .11, 'Batch total')]:
-            ax.scatter(vector(rows, field), np.arange(6) + shift, color=color, marker=marker, s=23, label=label)
-        ax.axvline(1, color=GRAY, linewidth=.8, linestyle=':')
-        ax.set_xscale('log')
-        if metric == 'spectrum':
-            ax.set_xticks([1, 2, 4])
-            ax.xaxis.set_major_formatter(ScalarFormatter())
-            ax.xaxis.set_minor_formatter(NullFormatter())
-        ax.set_ylim(5.5, -.5)
-        ax.set_yticks(np.arange(6), labels)
-        ax.grid(axis='x', alpha=.25)
-        panel(ax, j, TITLES[j])
-        ax.set_xlabel('Baseline / proposed (×)')
-    fig.legend(*axes[0].get_legend_handles_labels(), loc='upper center', bbox_to_anchor=(.56, .98), ncol=2)
-    save(fig, '03_practical_instances')
+def ordinary(metric):
+    rows = sorted([r for r in read('serial/optimized/scaling-results.csv') if r['metric'] == metric],
+                  key=lambda r: int(r['n']))
+    assert [int(r['n']) for r in rows] == list(range(3, 17))
+    x = vector(rows, 'n')
+    fig, (time, speed) = pair(TITLES[metric],
+        '10 random inputs per size; 5 repeats per input. Bands: middle 50% across inputs.')
+    band(time, rows, x, 'proposed_us', BLUE, 'Our method')
+    for base, label, marker in [('peigen', 'PEIGEN (3–8 bits)', 's'),
+                                 ('bitwise', 'Bitwise baseline (9–16 bits)', '^')]:
+        subset = [r for r in rows if r['baseline'] == base]
+        band(time, subset, vector(subset, 'n'), 'baseline_us', RED, label, marker, '--')
+    time.set_yscale('log')
+    time.set_ylabel('Core time per ' + ('evaluation' if metric == 'min' else 'update') + ' (µs)')
+    time.legend(loc='upper left', fontsize=7.5)
+    panel(time, 0, 'Computation time ↓')
+    width_axis(time, True)
+    band(speed, rows, x, 'paired_speedup', BLUE, 'Core computation')
+    band(speed, rows, x, 'total_speedup', GRAY, 'Including initialization', 's', '--')
+    ratio_axis(speed)
+    speed.set_ylim(0, max(vector(rows, 'paired_speedup_q3')) * 1.29)
+    speed.legend(loc='upper left', fontsize=7.5)
+    panel(speed, 1, 'Speedup over the baseline ↑')
+    width_axis(speed, True)
+    for r in rows:
+        n = int(r['n'])
+        if n in [3, 6, 8, 12, 16] or (metric == 'spectrum' and n in [4, 14]):
+            offset = (-3, 10) if n == 16 else (0, 8)
+            if metric == 'spectrum' and n in [3, 6, 14]:
+                offset = (0, -17)
+            label_point(speed, n, float(r['paired_speedup']), offset=offset,
+                        ha='right' if n == 16 else 'center', bold=n == 16)
+    label_point(speed, 16, float(rows[-1]['total_speedup']), GRAY, (-3, -15), 'right')
+    return fig
 
 
 def search():
     data = read('serial/optimized/search-results.csv')
-    fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.9))
-    fig.subplots_adjust(left=.085, right=.985, bottom=.18, top=.84, wspace=.34)
+    fig, ax = plt.subplots(figsize=(7.4, 3.75))
+    fig.subplots_adjust(left=.105, right=.975, bottom=.19, top=.77)
+    fig.suptitle('Faster completion of the same 8-bit search', y=.965, fontsize=12, fontweight='bold')
     for j, metric in enumerate(METRICS):
-        rows = [r for r in data if r['metric'] == metric and r['group'] == 'random']
+        rows = sorted([r for r in data if r['metric'] == metric and r['group'] == 'random'], key=lambda r: r['case'])
         assert len(rows) == 10
-        ax = axes[j]
-        base, own = vector(rows, 'baseline_total_ms'), vector(rows, 'proposed_total_ms')
-        for a, b in zip(base, own):
-            ax.plot([0, 1], [a, b], color='#ABB4C0', alpha=.65, linewidth=.8)
-        ax.scatter(np.zeros(10), base, color=RED, s=15, zorder=3)
-        ax.scatter(np.ones(10), own, color=BLUE, s=15, zorder=3)
-        ax.set_ylim(0, max(base) * 1.10)
-        ax.set_xlim(-.23, 1.23)
-        ax.set_xticks([0, 1], ['PEIGEN', 'Proposed'])
-        panel(ax, j, ['Minimum degree', 'Maximum degree', 'Spectrum sum'][j])
+        for field, shift, color, label in [('baseline_total_ms', -.19, RED, 'PEIGEN'),
+                                           ('proposed_total_ms', .19, BLUE, 'Our method')]:
+            values = vector(rows, field)
+            y = median(values)
+            q1, q3 = np.quantile(values, [.25, .75])
+            ax.bar(j + shift, y, width=.32, color=color, alpha=.90, label=label if j == 0 else None)
+            ax.errorbar(j + shift, y, yerr=[[y - q1], [q3 - y]], color='#313840', fmt='none', capsize=3, linewidth=.9)
+            ax.scatter(j + shift + np.linspace(-.075, .075, 10), values, s=9,
+                       color='white', edgecolor=color, linewidth=.6, zorder=3)
+            ax.text(j + shift, max(values) + 3.2, f'{y:.2f} ms', ha='center', fontsize=8.5,
+                    color=color, fontweight='bold' if color == BLUE else 'normal')
         ratio = median(vector(rows, 'total_speedup'))
-        ax.text(.5, 1.015, f'{ratio:.2f}× median paired speedup', ha='center', transform=ax.transAxes, fontsize=7)
-        ax.yaxis.set_major_locator(MaxNLocator(nbins=4, min_n_ticks=3))
-    axes[0].set_ylabel('Complete search total time (ms)')
-    save(fig, '04_complete_search')
+        ax.text(j, 137, f'{ratio:.2f}× faster', ha='center', color=BLUE, fontsize=12, fontweight='bold')
+    ax.set_ylim(0, 153)
+    ax.set_xticks(np.arange(3), ['Minimum degree', 'Maximum degree', 'Spectrum sum'])
+    ax.set_ylabel('Total search time (ms)')
+    ax.grid(axis='y', alpha=.3)
+    ax.legend(loc='upper center', bbox_to_anchor=(.5, 1.23), ncol=2)
+    fig.text(.5, .078, 'Time includes initialization. Same candidates, accepted swaps and final result.',
+             ha='center', fontsize=7.5, color='#404750')
+    fig.text(.5, .025, '10 starts × 5 repeats; bars: median; whiskers: middle 50%; dots: per-start medians.',
+             ha='center', fontsize=7.5, color='#404750')
+    return fig
 
 
-def parallel_scaling():
-    data = read('parallel/hardware-scaling.csv')
-    fig, axes = plt.subplots(2, 3, figsize=(7.4, 4.8))
-    fig.subplots_adjust(left=.085, right=.985, bottom=.11, top=.88, hspace=.50, wspace=.36)
-    for j, metric in enumerate(METRICS):
-        for i, field in enumerate(['core', 'total']):
-            ax = axes[i, j]
-            for sample, style in [('00', '-'), ('01', '--')]:
-                for method, color, marker in [('proposed', BLUE, 'o'), ('bitwise', RED, '^')]:
-                    rows = sorted([r for r in data if r['group'] == 'B' and r['binary'] == 'coam'
-                                   and r['case'] == 'random_n16_' + sample and r['method'] == method
-                                   and r['metric'] == metric], key=lambda r: int(r['threads']))
-                    assert len(rows) == 7
-                    x = vector(rows, 'threads')
-                    ax.plot(x, vector(rows, field + '_speedup'), color=color, linestyle=style, marker=marker)
-                    ax.fill_between(x, vector(rows, field + '_q1'), vector(rows, field + '_q3'), color=color, alpha=.07, linewidth=0)
-            ax.axhline(1, color=GRAY, linewidth=.7, linestyle=':')
-            ax.set_ylim(bottom=0)
-            thread_axis(ax)
-            panel(ax, i * 3 + j, TITLES[j])
-    axes[0, 0].set_ylabel('Core hardware speedup (×)')
-    axes[1, 0].set_ylabel('Batch-total hardware speedup (×)')
-    handles = [Line2D([], [], color=BLUE, marker='o', label='Proposed'),
-               Line2D([], [], color=RED, marker='^', label='Packed traditional'),
-               Line2D([], [], color=GRAY, label='Input 00'),
-               Line2D([], [], color=GRAY, linestyle='--', label='Input 01')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.52, .985), ncol=4)
-    save(fig, '05_parallel_scaling')
+def parallel(metric):
+    timing = read('parallel/timings-and-scaling.csv')
+    ratios = read('parallel/algorithm-comparison.csv')
+    title = {'min': 'Minimum degree', 'max': 'Maximum degree update', 'spectrum': 'Degree spectrum update'}[metric]
+    fig, (time, speed) = pair(title + ': 16-bit parallel performance',
+        'Two fixed inputs: solid = 00, dashed = 01. 5 repeats; identical thread limits for both methods.')
+    final = {'core': [], 'total': []}
+    for sample, style in [('00', '-'), ('01', '--')]:
+        case = 'random_n16_' + sample
+        for method, color, marker in [('proposed', BLUE, 'o'), ('bitwise', RED, '^')]:
+            rows = sorted([r for r in timing if r['group'] == 'B' and r['binary'] == 'coam'
+                           and r['case'] == case and r['metric'] == metric and r['method'] == method],
+                          key=lambda r: int(r['threads']))
+            assert len(rows) == 7
+            band(time, rows, vector(rows, 'threads'), 'kernel_us_per_step', color,
+                 ('Our method' if method == 'proposed' else 'Bitwise baseline') if sample == '00' else None,
+                 marker, style)
+            time.fill_between(vector(rows, 'threads'), vector(rows, 'kernel_us_q1'), vector(rows, 'kernel_us_q3'),
+                              color=color, alpha=.08, linewidth=0)
+        rows = sorted([r for r in ratios if r['group'] == 'B' and r['case'] == case
+                       and r['baseline'] == 'bitwise' and r['metric'] == metric], key=lambda r: int(r['threads']))
+        assert len(rows) == 7
+        for field, color, marker, key, label in [
+            ('paired_algorithm_speedup', BLUE, 'o', 'core', 'Core computation'),
+            ('paired_batch_total_speedup', GRAY, 's', 'total', 'Including initialization')]:
+            speed.plot(vector(rows, 'threads'), vector(rows, field), color=color, marker=marker,
+                       linestyle=style, label=label if sample == '00' else None,
+                       linewidth=2.1 if color == BLUE else 1.65)
+            final[key].append(float(rows[-1][field]))
+    time.set_yscale('log')
+    time.set_ylabel('Core time per ' + ('evaluation' if metric == 'min' else 'update') + ' (µs)')
+    time.legend(loc='best', fontsize=7.7)
+    panel(time, 0, 'Computation time ↓')
+    panel(speed, 1, 'Speedup at equal thread counts ↑')
+    ratio_axis(speed)
+    high = max(np.max(line.get_ydata()) for line in speed.lines if len(line.get_ydata()) > 2)
+    speed.set_ylim(0, high * 1.36)
+    speed.legend(loc='upper left', fontsize=7.5)
+    for ax in (time, speed):
+        thread_axis(ax)
+    for key, color, offset in [('core', BLUE, (-2, 10)), ('total', GRAY, (-2, -16))]:
+        lo, hi = min(final[key]), max(final[key])
+        speed.annotate(f'{lo:.2f}–{hi:.2f}×', (64, hi if key == 'core' else lo),
+                       xytext=offset, textcoords='offset points', ha='right',
+                       va='bottom' if key == 'core' else 'top', color=color,
+                       fontweight='bold' if key == 'core' else 'normal', fontsize=8.5,
+                       bbox=dict(facecolor='white', edgecolor='none', alpha=.88, pad=.7))
+    return fig
 
 
-def parallel_comparison():
-    data = read('parallel/algorithm-comparison.csv')
-    fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.9))
-    fig.subplots_adjust(left=.085, right=.985, bottom=.19, top=.79, wspace=.34)
+def reference():
+    data = read('serial/reference-scaling.csv')
+    fig, axes = plt.subplots(1, 3, figsize=(7.4, 3.3))
+    fig.subplots_adjust(left=.085, right=.975, bottom=.22, top=.74, wspace=.34)
+    fig.suptitle('Algorithmic speedup over the scalar reference', y=.97, fontsize=12, fontweight='bold')
     for j, metric in enumerate(METRICS):
         ax = axes[j]
-        for sample, style in [('00', '-'), ('01', '--')]:
-            rows = sorted([r for r in data if r['group'] == 'B' and r['case'] == 'random_n16_' + sample
-                           and r['baseline'] == 'bitwise' and r['metric'] == metric], key=lambda r: int(r['threads']))
-            assert len(rows) == 7
-            for field, color, marker in [('paired_algorithm_speedup', BLUE, 'o'), ('paired_batch_total_speedup', TEAL, 's')]:
-                ax.plot(vector(rows, 'threads'), vector(rows, field), color=color, marker=marker, linestyle=style)
-        ax.axhline(1, color=GRAY, linewidth=.8, linestyle=':')
+        for profile, color, label, marker in [('static' if metric == 'min' else 'natural', BLUE, 'Static / random swaps', 'o'),
+                                              ('high', GRAY, 'High-update swaps', 's')]:
+            rows = sorted([r for r in data if r['metric'] == metric and r['profile'] == profile], key=lambda r: int(r['n']))
+            if not rows:
+                continue
+            band(ax, rows, vector(rows, 'n'), 'paired_speedup', color, label, marker)
+            label_point(ax, 16, float(rows[-1]['paired_speedup']), color, (-1, 7), 'right', color == BLUE)
+        x = np.arange(3, 17)
+        factor = 2. ** x / x if metric == 'min' else x if metric == 'max' else 2 * x
+        ax.plot(x, factor, color=RED, linestyle=':', linewidth=1.4)
         ax.set_yscale('log')
-        panel(ax, j, TITLES[j])
-        thread_axis(ax)
-    axes[0].set_ylabel('Packed traditional / proposed (×)')
-    handles = [Line2D([], [], color=BLUE, marker='o', label='Core'),
-               Line2D([], [], color=TEAL, marker='s', label='Batch total'),
-               Line2D([], [], color=GRAY, label='Input 00'),
-               Line2D([], [], color=GRAY, linestyle='--', label='Input 01')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.52, .995), ncol=4)
-    save(fig, '06_equal_thread_comparison')
+        ax.set_ylim(top=ax.get_ylim()[1] * 2)
+        panel(ax, j, ['Minimum degree', 'Maximum degree update', 'Spectrum update'][j])
+        width_axis(ax)
+        ax.set_xticks([3, 6, 9, 12, 16])
+        label = r'$2^n/n$' if metric == 'min' else r'$n$' if metric == 'max' else r'$2n$'
+        ax.text(.04, .91, 'Growth factor: ' + label, transform=ax.transAxes, fontsize=7.5, color=RED)
+    axes[0].set_ylabel('Core-time speedup (×)')
+    handles = [Line2D([], [], color=BLUE, marker='o', label='Static / random swaps'),
+               Line2D([], [], color=GRAY, marker='s', label='High-update swaps'),
+               Line2D([], [], color=RED, linestyle=':', label='Complexity growth factor')]
+    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.52, .89), ncol=3, fontsize=7.8)
+    fig.text(.5, .04, '10 inputs × 5 repeats. Scalar reference comparison; distinct from PEIGEN / bitwise results.',
+             ha='center', fontsize=7.5, color='#404750')
+    return fig
+
+
+def practical():
+    data = read('serial/optimized/practical-results.csv')
+    cases = [('PRESENT', 'PRESENT', '4', 'PEIGEN'), ('AES', 'AES', '8', 'PEIGEN'),
+             ('CLEFIA_S0', 'CLEFIA S0', '8', 'PEIGEN'), ('CLEFIA_S1', 'CLEFIA S1', '8', 'PEIGEN'),
+             ('MISTY1_S9', 'MISTY1 S9', '9', 'Bitwise'), ('MISTY1_FI_key0000', 'MISTY1 FI', '16', 'Bitwise')]
+    cells = []
+    for case, label, n, baseline in cases:
+        row = [label, n, baseline]
+        for metric in METRICS:
+            r = next(r for r in data if r['case'] == case and r['metric'] == metric)
+            row.append(f"{float(r['paired_speedup']):.2f}× ({float(r['total_speedup']):.2f}×)")
+        cells.append(row)
+    fig, ax = plt.subplots(figsize=(7.4, 2.8))
+    fig.subplots_adjust(left=.025, right=.975, bottom=.20, top=.79)
+    ax.axis('off')
+    fig.suptitle('Practical instances: speedup over the optimized baseline', y=.965, fontsize=11, fontweight='bold')
+    fig.text(.5, .825, 'Core speedup (speedup including initialization)', ha='center', fontsize=8.5, color=GRAY)
+    table = ax.table(cellText=cells, colLabels=['Instance', 'Bits', 'Baseline', 'Minimum degree',
+                     'Maximum update', 'Spectrum update'], colWidths=[.17, .055, .105, .24, .215, .215],
+                     cellLoc='center', loc='center', bbox=[0, 0, 1, 1])
+    table.auto_set_font_size(False)
+    table.set_fontsize(8)
+    for (i, j), cell in table.get_celld().items():
+        cell.set_edgecolor('#D5DCE4')
+        cell.set_linewidth(.45)
+        if i == 0:
+            cell.set_facecolor('#EAF1F8')
+            cell.get_text().set_fontweight('bold')
+        else:
+            cell.set_facecolor('#F6F8FB' if i % 2 == 0 else 'white')
+            if j >= 3:
+                cell.get_text().set_color(BLUE)
+                cell.get_text().set_fontweight('bold')
+    fig.text(.5, .075, 'Five repeats per instance. Ratios below 1 favor the baseline. FI uses fixed subkey 0.',
+             ha='center', fontsize=7.5, color='#404750')
+    fig.text(.5, .025, 'Update measurements follow fixed transpositions starting from each named instance.',
+             ha='center', fontsize=7.5, color='#404750')
+    return fig
+
+
+BUILDERS = {
+    '01_minimum_degree': lambda: ordinary('min'),
+    '02_maximum_degree_update': lambda: ordinary('max'),
+    '03_degree_spectrum_update': lambda: ordinary('spectrum'),
+    '04_search_time': search,
+    '05_parallel_spectrum': lambda: parallel('spectrum'),
+    '06_parallel_minimum': lambda: parallel('min'),
+    '07_parallel_maximum': lambda: parallel('max'),
+    '08_scalar_reference': reference,
+    'table01_practical_instances': practical,
+}
 
 
 def main():
-    functions = {f.__name__: f for f in [optimized_scaling, reference_scaling, practical, search, parallel_scaling, parallel_comparison]}
+    global OUT
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--only', choices=list(functions), help='Regenerate one figure after a local layout change')
+    parser.add_argument('--only', choices=list(BUILDERS), help='Regenerate one plot after a layout edit')
+    parser.add_argument('--output', type=Path, default=OUT, help='Output directory; default: figures/')
     args = parser.parse_args()
-    for name, function in functions.items():
+    OUT = args.output
+    for name, build in BUILDERS.items():
         if args.only is None or name == args.only:
-            function()
+            save(build(), name)
             print('Rendered', name)
     path = OUT / 'manifest.json'
     old_sources = json.loads(path.read_text()).get('data_sha256', {}) if path.exists() else {}
-    manifest = {'data_sha256': {**old_sources, **SOURCES}, 'matplotlib': matplotlib.__version__,
-                'numpy': np.__version__, 'font': 'DejaVu Sans', 'width_inches': 7.4,
+    manifest = {'data_sha256': {**old_sources, **SOURCES},
+                'plot_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                'matplotlib': matplotlib.__version__,
+                'numpy': np.__version__, 'font': 'DejaVu Serif', 'width_inches': 7.4,
                 'png_dpi': 300, 'vector_text': 'PDF embedded TrueType; SVG live text',
                 'exports_sha256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-                                   for p in sorted(OUT.iterdir()) if p.suffix in {'.png', '.svg', '.pdf'}}}
+                                   for p in sorted(OUT.iterdir()) if p.stem in BUILDERS and p.suffix in {'.png', '.svg', '.pdf'}}}
     path.write_text(json.dumps(manifest, indent=2) + '\n')
 
 

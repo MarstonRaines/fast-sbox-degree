@@ -1,0 +1,80 @@
+{
+  "status": "pass",
+  "date": "2026-09-18",
+  "platform": "Linux x86_64",
+  "compiler": "13.3.0",
+  "build_flags": "-std=c++20 -O3 -march=native -fopenmp -Wall -Wextra",
+  "sanitizer_flags": "-O1 -g -march=native -fopenmp -fsanitize=address,undefined -fno-omit-frame-pointer",
+  "forced_parallel_check": {
+    "threads": 4,
+    "COAM_OMP_MIN_WORK": 0
+  },
+  "checks": {
+    "serial": {
+      "status": "pass",
+      "static_cases": 346,
+      "swap_cases_per_implementation_group": 2616,
+      "exhaustive_2x2_maps": 256
+    },
+    "counts": {
+      "status": "pass",
+      "static_cases": 346,
+      "swap_cases_per_implementation_group": 2616,
+      "exhaustive_2x2_maps": 256
+    },
+    "parallel": {
+      "status": "pass",
+      "static_cases": 346,
+      "swap_cases_per_implementation_group": 2616,
+      "exhaustive_2x2_maps": 256
+    },
+    "sanitize": {
+      "status": "pass",
+      "static_cases": 346,
+      "swap_cases_per_implementation_group": 2616,
+      "exhaustive_2x2_maps": 256
+    },
+    "full": {
+      "status": "pass",
+      "threads": [
+        1,
+        4,
+        64
+      ],
+      "inputs": 2,
+      "full_states": 36,
+      "coefficients_per_state": 4294901760,
+      "includes_update_and_rollback": true
+    },
+    "serial-replay": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "parallel-replay": {
+      "status": "pass",
+      "tasks": 2
+    }
+  },
+  "validated_cpp_sha256": {
+    "src/parallel/bench.cpp": "9902cb8db0a4bb8e82179e8f30e75443666ea35a92b666f47d341bc9022f3067",
+    "src/parallel/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/parallel/degree.hpp": "e695cb444b651589812e0062f1f45cc1700bfd15b968b0f4f1643ddb11ebb8ed",
+    "src/parallel/parallel.hpp": "8f5a21c33248c7fee6942974f09cdba53e4d1affe09bc4e9674bacabddf18c2e",
+    "src/parallel/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
+    "src/parallel/reference.hpp": "b25f907888e5e624cdb52de7471acc2ae4613bf40c0f6d2f8644c79a02c25399",
+    "src/serial/bench.cpp": "b39f92d0902d5b616bdcfbdc412adbcea4314cdc6d625054c98617dd64d2fdaf",
+    "src/serial/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/serial/degree.hpp": "0b4918e38d1ecf166bd4e61cfd27c222d11a34dab1925cccae071b6ee328ebb3",
+    "src/serial/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
+    "src/serial/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
+    "src/verify_full_state.cpp": "a111797592ba84c9eb88dff1631f9dae04e43498a61a4799f96702c8fbef9d8e"
+  },
+  "release_binary_sha256": {
+    "counts": "17904b4d963f791d1d90e7222e2916482f7ba9d3b6f9d19dc893fb18255700ec",
+    "parallel": "1721329664ade20804e544825c2ceaaef2ca8aad6790b3392512d50d51a42817",
+    "sanitize": "e4dcd897f9a5db40775002db5eb961e97d91e7b3b59b825ce0da2293dd44cada",
+    "serial": "06be4db3faae153e4c587c8f61b4817a200539755701c8597ba9892f1173424f",
+    "verify-full": "47f7cf17a0ae3a2d046210bce50a6027a06c62756abe83d2730525f0ac70d830"
+  },
+  "notes": "Correctness and replay checks only. These runs do not replace the archived timing measurements."
+}

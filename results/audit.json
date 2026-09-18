@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "timing_records": 17170,
+  "separate_count_records": 1460,
+  "input_cases": 147,
+  "archived_record_sha256": {
+    "serial": "d9406ce1681f236f5d6650e534da0aa8fd46df5e36b95d5a9d2c212608f30f88",
+    "parallel": "3c291820338815ecba8eab5107f24b9b9b23e05b2f1afdf3d767bc801ea3889e"
+  },
+  "result_tables": {
+    "serial/reference-per-input.csv": 1460,
+    "serial/reference-paired.csv": 730,
+    "serial/reference-practical.csv": 30,
+    "serial/reference-scaling.csv": 70,
+    "serial/operation-counts.csv": 1460,
+    "serial/mechanism-per-input.csv": 730,
+    "serial/optimized/per-input-results.csv": 876,
+    "serial/optimized/search-per-method.csv": 84,
+    "serial/optimized/search-results.csv": 42,
+    "serial/optimized/practical-results.csv": 18,
+    "serial/optimized/scaling-results.csv": 42,
+    "parallel/timings-and-scaling.csv": 1098,
+    "parallel/algorithm-comparison.csv": 543,
+    "parallel/serial-anchors.csv": 72,
+    "parallel/hardware-scaling.csv": 1098
+  },
+  "same_workload_outputs_equal": true,
+  "complete_repeat_sets": true
+}

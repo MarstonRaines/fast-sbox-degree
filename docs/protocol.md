@@ -1,0 +1,41 @@
+# Experimental protocol
+
+## Outputs and inputs
+
+For an n-by-m mapping, the minimum and maximum degrees are taken over all nonzero component masks. The complete degree histogram is `H[d] = number of nonzero masks whose component has degree d`. Spectrum evaluation returns this complete histogram; the local-search score is its degree sum, `sum(d * H[d])`. All implementations use degree zero for the zero Boolean function. The optional enumeration of masks attaining the minimum is checked for correctness but is outside the scalar minimum timing.
+
+The saved corpus contains ten random permutations at each width 3 through 16, six practical instances, and one 8-bit identity search control. Each LUT begins with `n m`, followed by decimal output values in ascending input order. Swap files contain decimal input-index pairs. The explicit files, rather than a language-dependent random generator, define the workload. Seeds, file digests and source URLs are in [the input manifest](../data/input-manifest.json).
+
+The practical instances are PRESENT (4 bits), AES and CLEFIA S0/S1 (8 bits), MISTY1 S9 (9 bits), and MISTY1 FI with subkey 0 (16 bits). FI is a fixed-key nonlinear component. Initial standard-instance properties are tabulated separately; transposition measurements follow the resulting variants. AES was checked against the fixed PEIGEN LUT; the MISTY1 implementation was checked against both RFC 2994 block test vectors.
+
+## Single-thread suite
+
+Every ordinary timing configuration has five repetitions. Random scaling uses ten independently generated inputs at each width. Repetitions restart from the same saved input in separate processes.
+
+**A: algorithm reference comparison.** Both sides use contiguous `int32_t` ANF coefficients, cached monomial weights, reusable buffers and the same compiler options. `reference` transforms coordinate truth tables and independently constructs components as needed. `reference-proposed` implements the proposed elimination or symmetric-difference update. Minimum timing is repeated static evaluation; maximum/spectrum timing commits every saved transposition. A natural swap profile and a high-update profile are both retained. The latter uses pairs affecting at least half the ANF index set. Calibrated batch sizes were frozen before formal timing and are recorded in `protocol/workloads.json` and the task list. A separate instrumented build replays the same workloads for logical-operation counts; its clocks never enter performance results.
+
+**B: optimized implementation comparison.** Widths 3–8 call the actual PEIGEN numerical kernels through a small adapter. Widths 9–16 use the project's packed traditional implementation (`bitwise`), with 64-bit truth tables, a bitwise Möbius transform and Gray-order component reuse. The proposed implementation uses packed storage, reused buffers, sparse symmetric differences, a highest-degree affected-term check and in-place updates/rollback. Dynamic baselines keep prepared coordinate truth tables and recompute the requested property after each swap. Static timing includes the LUT-to-packed-input conversion at each call. Each update cycle contains 128 fixed transpositions. All cycles are committed in order; the state continues between cycles. The number of cycles depends on width and metric, and is identical across compared methods. For example, the 16-bit B workloads have 1 minimum evaluation, 512 maximum updates or 128 spectrum updates per timed batch.
+
+**Complete local search.** Fourteen 8-bit starting permutations are used: ten random inputs, AES, CLEFIA S0/S1 and identity. Three separate searches maximize minimum degree, maximum degree or spectrum sum. Candidates are unordered index pairs scanned in lexicographic order. The first strict improvement is accepted and scanning restarts; rejected swaps are undone. Search ends after a complete neighborhood scan with no improvement. Thus a zero-acceptance search still examines 32,640 candidates. The evaluator changes between methods; the start, candidate order, acceptance and stopping rules remain fixed. Saved candidate digests, accepted swaps, final LUTs and complete histograms agree. This is a local-search workload, not an enumeration of every possible S-box.
+
+## Parallel suite
+
+Parallelism occurs inside the numerical kernels of one benchmark process. Independent benchmark jobs and candidate searches are not run concurrently by the suite. Coordinate transforms, independent elimination row operations, component blocks and update/rollback blocks use OpenMP. Gray sequences use contiguous segments with correctly seeded starting combinations. Spectrum initialization respects its component dependencies; updates accumulate local histogram changes before reduction. The estimated-work threshold is 32,768, so small tasks stay serial. The requested thread count is a cap; coordinate work has at most m independent rows.
+
+The A subset uses widths 8, 12 and 16, one fixed random input per width, three repeats and caps 1/2/4/8/16/32/64. Batch sizes are respectively 16/2/1. The B subset uses two fixed random inputs per width plus all six practical instances, five repeats and the same caps. The full-search subset uses the same fourteen starts, five repeats and caps 1/8/32. PEIGEN stays unmodified and single-threaded; the packed traditional baseline is also measured at equal thread caps. The original serial binary was rerun on the same socket as an anchor (`binary = coam-serial-source`); other parallel-suite records use `binary = coam`.
+
+Hardware speedup is the paired `T=1 / T=N` time ratio within the same implementation. Algorithm speedup compares baseline and proposed implementation at the same thread cap. These ratios answer different questions and are not multiplied together.
+
+## Timing and statistics
+
+`context_ns` measures dimension-dependent setup. `init_ns` measures evaluator-state construction, including its first property evaluation. `kernel_ns` measures subsequent static evaluations, committed updates or the complete local search. `total_ns` is exactly their sum. File reading, correctness checks and result writing are outside these intervals. The parallel team is warmed before internal timing. `process_seconds` also includes process overhead, validation and output.
+
+Per-step cost is `kernel_ns / steps`. Batch-total cost includes setup and initialization; it is not a single cold-call latency. In A, LUT conversion and state construction are also recorded separately. Large spectrum initialization can materially reduce total-time speedup.
+
+For single-thread results, take the median of five times for each input, form baseline/proposed ratios within that input, then report the median and interquartile range across ten inputs. For parallel scaling and equal-thread comparisons, form paired ratios at each repeat index, then report their median. Quartiles use linear interpolation over ordered observations. All repetitions and slow configurations are retained. The published scripts recompute all tables and verify saved outputs and work sizes.
+
+## Measurement environment
+
+Measurements used Ubuntu Linux 6.8.0-134-generic, GCC 13.3.0, two AMD EPYC 9754 sockets (256 physical cores / 512 logical CPUs), and approximately 1 TiB of RAM. Build flags were `-std=c++20 -O3 -march=native -fopenmp -Wall -Wextra`. Serial runs bound CPU 0 and NUMA node 0. Parallel runs bound CPUs 128–191, one hardware thread per physical core on the second socket, and memory node 1. OpenMP used static scheduling, close binding, dynamic teams disabled and passive waiting.
+
+The machine was shared. The two suites overlapped on separate sockets/nodes between 13:47:32 and 14:31:02 UTC on 17 September 2026; 824 serial A commands overlapped that interval. Serial B, search and counting batches did not. Those samples remain included. The parallel study covers up to 64 physical cores on one socket; it does not measure SMT or cross-socket scaling.

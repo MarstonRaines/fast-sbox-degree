@@ -1,0 +1,5 @@
+figures/*.svg -whitespace linguist-generated
+figures/*.pdf binary
+figures/*.png binary
+data/outputs/*.json linguist-generated
+data/measurements/*.jsonl linguist-generated

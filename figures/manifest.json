@@ -1,0 +1,36 @@
+{
+  "data_sha256": {
+    "results/serial/optimized/scaling-results.csv": "5bd52c6920e467d37fe932dcb7614d67e770fe655ff1f0f4e6b1dd3c6872d58b",
+    "results/serial/reference-scaling.csv": "23417bcc387f63181ac56861c610be8f66c9c8bef1416b43db86a32de37c2b32",
+    "results/serial/optimized/practical-results.csv": "dafb708bd9d12da64d2d1ba7e770466e9bfd815770e7b7af402d28b9a3cc2bbe",
+    "results/serial/optimized/search-results.csv": "6bfd9d8e0b47d76d4456721257126245981d18ec46c2fd25f4d09d108955e5c0",
+    "results/parallel/hardware-scaling.csv": "322d5a770da06ed20898a11d726040e3ae9241c791b9e941bcb26046468b1539",
+    "results/parallel/algorithm-comparison.csv": "806c6df26c89351fa5822b4fb2c65cf0fee25ae0f12274fe5e6b70a6fc378c4f"
+  },
+  "matplotlib": "3.10.6",
+  "numpy": "2.3.3",
+  "font": "DejaVu Sans",
+  "width_inches": 7.4,
+  "png_dpi": 300,
+  "vector_text": "PDF embedded TrueType; SVG live text",
+  "exports_sha256": {
+    "01_optimized_scaling.pdf": "25445d34812e783804d7646f2d86f9d614f7e0431554833bfaf9539c53b8d76d",
+    "01_optimized_scaling.png": "bc8743a916a37d506dcb43b99798d345504456e0dc74f7291074c381d2f65cae",
+    "01_optimized_scaling.svg": "bcc49ca588e49cea97acf66944b372c15615985c7005989d02eb6a13b80de8b9",
+    "02_reference_scaling.pdf": "c43bad9676eaebc813115bcc3a3911d313882b30d701a520eb7ba864f3410df0",
+    "02_reference_scaling.png": "089c7668c2ca87380d47b16add85583c69f69d1e524f24b2127d02ac11ab0392",
+    "02_reference_scaling.svg": "42a9a97f0f54e006b3487c2edbea6afa0be5de06f1d0ccbb4c4b835e161ad1af",
+    "03_practical_instances.pdf": "31bbcb7b22e88c79aaff25f8008f38c26513c0c26295c6261c6eaafdf3aaa7f6",
+    "03_practical_instances.png": "4ffec2070972ef3d69d31e5ddf2798eadc28e555ae5ac06a1414fe31e0acdacc",
+    "03_practical_instances.svg": "a22f53d89cf3a8a71c23dfb70d8ef87a7434973c6517d95a685af0273e9c17c2",
+    "04_complete_search.pdf": "8be1d2917645abbb757afe6e6fc6385af5a89110a0dc46529f11c991969a29a6",
+    "04_complete_search.png": "faa4cb473acf5826fd24ae5773984ec4b657acea38ef196ce3a19e9a443f7c0f",
+    "04_complete_search.svg": "d0c1c018fccb981d88a5babbf9fdf5f8ad84d6907f55027423fb890962fb890e",
+    "05_parallel_scaling.pdf": "54e00d09cb1015ea4203908f99497aa5b1f3881d6aac2302a6f199d3af0ee982",
+    "05_parallel_scaling.png": "253dca1d70729916120a9bab5bb511abd7ce3dfd188ded676edb291b9d335683",
+    "05_parallel_scaling.svg": "e946c688dc28a27a17cd62cb9af19b57d8949b79b34130a3479379db99129025",
+    "06_equal_thread_comparison.pdf": "f6723f93f3fc9619f3b8cf11e0d54582361895a02c459c445a9fe3ed4e35b7b8",
+    "06_equal_thread_comparison.png": "1a616d02a3eff99e636e1b4848b8322d943344e1886c65b6df9fd448917e4942",
+    "06_equal_thread_comparison.svg": "ff76157f18b140439a9613054bd635ca58012a0588d7577b4373b029dda670f0"
+  }
+}

@@ -32,7 +32,8 @@ The 16-bit spectrum state needs substantial memory: about 512 MiB with packed co
 | `protocol/` | Exact ordered tasks, repetitions, thread caps and frozen workload sizes |
 | `results/serial/` | Reference, optimized, practical-instance and search tables |
 | `results/parallel/` | Thread scaling, equal-thread algorithm comparisons and serial anchors |
-| `scripts/` | Dependency download, workload replay and independent table reconstruction |
+| `scripts/` | Dependency download, workload replay, table reconstruction and plotting |
+| `figures/` | Six publication figures in PDF, SVG and 300 dpi PNG |
 | `docs/` | Protocol, results, measured-build provenance and release validation |
 
 See [the experimental protocol](docs/protocol.md) for the distinction between single-evaluation, fixed-update and full-search workloads, and [the results guide](docs/results.md) for the interpretation of speedups.
@@ -55,6 +56,17 @@ python3 scripts/analyze.py
 ```
 
 These tables are derived from the archived measurements in `data/measurements/`. New timings are written only to the chosen `runs/` directory and do not replace the archived measurements.
+
+## Figures
+
+```sh
+python3 -m pip install -r requirements.txt
+python3 scripts/plot_results.py
+```
+
+The [figure guide](docs/figures.md) contains previews, source-table links, statistical definitions and complete captions. All curves read the saved result tables directly.
+
+![Optimized single-thread scaling](figures/01_optimized_scaling.png)
 
 ## Version and license
 

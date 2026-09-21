@@ -1,6 +1,6 @@
 # Results guide
 
-All speedups are baseline time divided by proposed-method time, unless explicitly labeled hardware scaling. Values below summarize the corresponding complete CSV tables; they do not replace the per-input records.
+Speedup is traditional-method execution time divided by proposed-method execution time. The tables below summarize the complete CSV records.
 
 ## Optimized single-thread comparison
 
@@ -10,7 +10,7 @@ All speedups are baseline time divided by proposed-method time, unless explicitl
 | 9 / packed traditional | 1.35x | 5.37x | 2.48x |
 | 16 / packed traditional | 25.91x | 37.14x | 2.52x |
 
-These are median per-input core-time ratios across ten random permutations, with five repeats per input. At 16 bits, the corresponding batch-total ratios are 18.64x, 15.50x and 2.05x. Work sizes are 1 static evaluation, 512 maximum updates and 128 spectrum updates. Some small-input cases favor PEIGEN; they remain in [the full scaling table](../results/serial/optimized/scaling-results.csv). [Practical-instance results](../results/serial/optimized/practical-results.csv) keep the six named cases separate from random-input summaries.
+These speedups exclude initialization. For each input, the execution time is the median of five repetitions; the displayed value is the median speedup across ten random inputs. The [full scaling table](../results/serial/optimized/scaling-results.csv) also reports total execution time, including initialization. The 16-bit workloads contain 1 minimum-degree calculation, 512 maximum-degree updates or 128 spectrum updates. [Practical-instance results](../results/serial/optimized/practical-results.csv) report the six named inputs separately.
 
 ## Reference audit tables
 

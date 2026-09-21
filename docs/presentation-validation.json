@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-21",
+  "release": "v1.0.3",
+  "scope": "Documentation and figure presentation only",
+  "numerical_sources_unchanged_from": "v1.0.2",
+  "archived_data_tasks_and_result_tables_unchanged": true,
+  "archived_data_audit": {
+    "status": "pass",
+    "timing_records": 12100,
+    "separate_count_records": 1460,
+    "input_cases": 147,
+    "csv_tables": 11,
+    "same_workload_outputs_equal": true,
+    "complete_repeat_sets": true
+  },
+  "figure_changes": "Execution-time terminology; removal of the additional initialization-inclusive comparison from Figures 1–3 and the practical-instance image. Complete-search total execution times are unchanged.",
+  "plot_regeneration": "pass",
+  "plot_layout_and_visual_check": "pass",
+  "new_cpp_or_performance_runs": false,
+  "prior_cpp_validation": "release-validation.json"
+}

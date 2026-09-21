@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-19</dc:date>
+    <dc:date>2026-09-21</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -201,7 +201,7 @@ L 519.48 75.405882
      </g>
     </g>
     <g id="text_12">
-     <text style="font-size: 9.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="27.698297" y="140.4" transform="rotate(-90 27.698297 140.4)">Total search time (ms)</text>
+     <text style="font-size: 9.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="27.698297" y="140.4" transform="rotate(-90 27.698297 140.4)">Total execution time (ms)</text>
     </g>
    </g>
    <g id="patch_3">
@@ -520,10 +520,10 @@ z
    </g>
   </g>
   <g id="text_24">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Serif'; text-anchor: middle" x="266.4" y="18.568125" transform="rotate(-0 266.4 18.568125)">Faster completion of the same 8-bit search</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Serif'; text-anchor: middle" x="266.4" y="18.568125" transform="rotate(-0 266.4 18.568125)">Execution time of 8-bit searches</text>
   </g>
   <g id="text_25">
-   <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="248.94" transform="rotate(-0 266.4 248.94)">Time includes initialization. Same candidates, accepted swaps and final result.</text>
+   <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="248.94" transform="rotate(-0 266.4 248.94)">Execution time includes initialization and the complete search.</text>
   </g>
   <g id="text_26">
    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="263.25" transform="rotate(-0 266.4 263.25)">10 starts × 5 repeats; bars: median; whiskers: middle 50%; dots: per-start medians.</text>

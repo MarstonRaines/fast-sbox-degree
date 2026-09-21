@@ -2,7 +2,7 @@
 
 Code and experimental data for **A Series of Faster Approaches for Computing the Algebraic Degree Properties of S-boxes**, by Renjie Zhou, Zhen Li and Yan Tong.
 
-The implementations compute the minimum algebraic degree and update the maximum algebraic degree or the complete component-degree spectrum after an output transposition. The artifact includes reproducible single-thread experiments and complete 8-bit local searches.
+The implementations compute the minimum algebraic degree and update the maximum algebraic degree or the algebraic degree spectrum after an output transposition. The artifact includes reproducible single-thread experiments and complete 8-bit local searches.
 
 ## Start here
 
@@ -18,7 +18,7 @@ python3 scripts/analyze.py --check
 
 The build downloads 21 unchanged PEIGEN headers from a fixed upstream commit and checks every file against a saved SHA-256 digest. `make check` runs independent small-input checks, update/rollback checks, exhaustive 2-by-2 mappings and component-enumeration checks. `make check-full` additionally checks every stored component-ANF coefficient in 12 states of two 16-bit inputs.
 
-The 16-bit spectrum state needs substantial memory: about 512 MiB with packed coefficients, versus about 16 GiB for the scalar reference representation, before auxiliary buffers. Full reference timing sweeps take hours. Reading the existing results and recomputing their tables needs no C++ build.
+The 16-bit spectrum state uses about 512 MiB with packed coefficients, or about 16 GiB with scalar coefficients, before auxiliary buffers. Reading the existing results and recomputing their tables needs no C++ build.
 
 ## Contents
 
@@ -69,8 +69,8 @@ The [figure guide](docs/figures.md) contains the current previews, source-table 
 
 ## Version and license
 
-Release **v1.0.2** focuses the publication artifact on the experiments used by the manuscript: optimized single-thread comparisons over 3--16 bits, practical instances, complete searches, and the retained scalar-reference audit tables. The supplementary parallel extension and scalar-reference promotional figure from v1.0.1 are not part of this release; v1.0.1 remains available in Git history for provenance.
+Release **v1.0.3** contains the experiments used by the manuscript: optimized single-thread comparisons over 3–16 bits, practical instances, complete searches, and the operation-count and reference tables. This release simplifies the terminology and figure presentation; the numerical implementations and archived measurements are unchanged from v1.0.2.
 
 This is a publication packaging revision: the retained numerical kernels match the measured source versions, while validation and reporting have been repackaged. [Provenance](docs/provenance.json) records the measured source and binary digests; [release validation](docs/release-validation.json) records checks of the packaged build. The archived timings were not regenerated using the packaged build.
 
-The project is licensed under **GPL-3.0-only**; see [LICENSE](LICENSE). PEIGEN is an external dependency with its own retained [GPL-3.0 license](third_party/PEIGEN-LICENSE), authorship and header notices. Its exact revision is recorded in [third_party/peigen.json](third_party/peigen.json). Please also cite Bao, Guo, Ling and Sasaki's [PEIGEN paper](https://eprint.iacr.org/2019/209) when using that baseline.
+The project is licensed under **GPL-3.0-only**; see [LICENSE](LICENSE). PEIGEN is an external dependency with its own retained [GPL-3.0 license](third_party/PEIGEN-LICENSE), authorship and header notices. Its exact revision is recorded in [third_party/peigen.json](third_party/peigen.json). Please also cite Bao, Guo, Ling and Sasaki's [PEIGEN paper](https://doi.org/10.13154/tosc.v2019.i1.330-394) when using that baseline.

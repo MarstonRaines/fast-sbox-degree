@@ -19,8 +19,8 @@ OUT = ROOT / 'figures'
 BLUE, RED, GRAY = '#1565B5', '#B74D48', '#646D78'
 METRICS = ['min', 'max', 'spectrum']
 TITLES = {'min': 'Minimum algebraic degree', 'max': 'Maximum algebraic degree update',
-          'spectrum': 'Complete algebraic degree spectrum update'}
-DATE = datetime(2026, 9, 19, tzinfo=timezone.utc)
+          'spectrum': 'Algebraic degree spectrum update'}
+DATE = datetime(2026, 9, 21, tzinfo=timezone.utc)
 SOURCES = {}
 
 plt.rcParams.update({
@@ -102,7 +102,7 @@ def save(fig, name):
         if extension == 'pdf':
             metadata.update(CreationDate=DATE, ModDate=DATE)
         elif extension == 'svg':
-            metadata['Date'] = '2026-09-19'
+            metadata['Date'] = '2026-09-21'
         fig.savefig(OUT / f'{name}.{extension}', dpi=300, metadata=metadata)
     plt.close(fig)
 
@@ -113,23 +113,21 @@ def ordinary(metric):
     assert [int(r['n']) for r in rows] == list(range(3, 17))
     x = vector(rows, 'n')
     fig, (time, speed) = pair(TITLES[metric],
-        '10 random inputs per size; 5 repeats per input. Bands: middle 50% across inputs.')
+        'Initialization excluded. 10 inputs × 5 repeats. Bands: middle 50% across inputs.')
     band(time, rows, x, 'proposed_us', BLUE, 'Our method')
     for base, label, marker in [('peigen', 'PEIGEN (3–8 bits)', 's'),
-                                 ('bitwise', 'Bitwise baseline (9–16 bits)', '^')]:
+                                 ('bitwise', 'Bitwise method (9–16 bits)', '^')]:
         subset = [r for r in rows if r['baseline'] == base]
         band(time, subset, vector(subset, 'n'), 'baseline_us', RED, label, marker, '--')
     time.set_yscale('log')
-    time.set_ylabel('Core time per ' + ('evaluation' if metric == 'min' else 'update') + ' (µs)')
+    time.set_ylabel('Execution time per ' + ('calculation' if metric == 'min' else 'update') + ' (µs)')
     time.legend(loc='upper left', fontsize=7.5)
-    panel(time, 0, 'Computation time ↓')
+    panel(time, 0, 'Execution time ↓')
     width_axis(time, True)
-    band(speed, rows, x, 'paired_speedup', BLUE, 'Core computation')
-    band(speed, rows, x, 'total_speedup', GRAY, 'Including initialization', 's', '--')
+    band(speed, rows, x, 'paired_speedup', BLUE, 'Speedup')
     ratio_axis(speed)
     speed.set_ylim(0, max(vector(rows, 'paired_speedup_q3')) * 1.29)
-    speed.legend(loc='upper left', fontsize=7.5)
-    panel(speed, 1, 'Speedup over the baseline ↑')
+    panel(speed, 1, 'Speedup ↑')
     width_axis(speed, True)
     for r in rows:
         n = int(r['n'])
@@ -139,7 +137,6 @@ def ordinary(metric):
                 offset = (0, -17)
             label_point(speed, n, float(r['paired_speedup']), offset=offset,
                         ha='right' if n == 16 else 'center', bold=n == 16)
-    label_point(speed, 16, float(rows[-1]['total_speedup']), GRAY, (-3, -15), 'right')
     return fig
 
 
@@ -147,7 +144,7 @@ def search():
     data = read('serial/optimized/search-results.csv')
     fig, ax = plt.subplots(figsize=(7.4, 3.75))
     fig.subplots_adjust(left=.105, right=.975, bottom=.19, top=.77)
-    fig.suptitle('Faster completion of the same 8-bit search', y=.965, fontsize=12, fontweight='bold')
+    fig.suptitle('Execution time of 8-bit searches', y=.965, fontsize=12, fontweight='bold')
     for j, metric in enumerate(METRICS):
         rows = sorted([r for r in data if r['metric'] == metric and r['group'] == 'random'], key=lambda r: r['case'])
         assert len(rows) == 10
@@ -166,10 +163,10 @@ def search():
         ax.text(j, 137, f'{ratio:.2f}× faster', ha='center', color=BLUE, fontsize=12, fontweight='bold')
     ax.set_ylim(0, 153)
     ax.set_xticks(np.arange(3), ['Minimum degree', 'Maximum degree', 'Spectrum sum'])
-    ax.set_ylabel('Total search time (ms)')
+    ax.set_ylabel('Total execution time (ms)')
     ax.grid(axis='y', alpha=.3)
     ax.legend(loc='upper center', bbox_to_anchor=(.5, 1.23), ncol=2)
-    fig.text(.5, .078, 'Time includes initialization. Same candidates, accepted swaps and final result.',
+    fig.text(.5, .078, 'Execution time includes initialization and the complete search.',
              ha='center', fontsize=7.5, color='#404750')
     fig.text(.5, .025, '10 starts × 5 repeats; bars: median; whiskers: middle 50%; dots: per-start medians.',
              ha='center', fontsize=7.5, color='#404750')
@@ -186,13 +183,13 @@ def practical():
         row = [label, n, baseline]
         for metric in METRICS:
             r = next(r for r in data if r['case'] == case and r['metric'] == metric)
-            row.append(f"{float(r['paired_speedup']):.2f}× ({float(r['total_speedup']):.2f}×)")
+            row.append(f"{float(r['paired_speedup']):.2f}×")
         cells.append(row)
     fig, ax = plt.subplots(figsize=(7.4, 2.8))
     fig.subplots_adjust(left=.025, right=.975, bottom=.20, top=.79)
     ax.axis('off')
     fig.suptitle('Practical instances: speedup over the optimized baseline', y=.965, fontsize=11, fontweight='bold')
-    fig.text(.5, .825, 'Core speedup (speedup including initialization)', ha='center', fontsize=8.5, color=GRAY)
+    fig.text(.5, .825, 'Speedup; initialization excluded', ha='center', fontsize=8.5, color=GRAY)
     table = ax.table(cellText=cells, colLabels=['Instance', 'Bits', 'Baseline', 'Minimum degree',
                      'Maximum update', 'Spectrum update'], colWidths=[.17, .055, .105, .24, .215, .215],
                      cellLoc='center', loc='center', bbox=[0, 0, 1, 1])
@@ -209,7 +206,7 @@ def practical():
             if j >= 3:
                 cell.get_text().set_color(BLUE)
                 cell.get_text().set_fontweight('bold')
-    fig.text(.5, .075, 'Five repeats per instance. Ratios below 1 favor the baseline. FI uses fixed subkey 0.',
+    fig.text(.5, .075, 'Five repeats per instance. FI uses fixed subkey 0.',
              ha='center', fontsize=7.5, color='#404750')
     fig.text(.5, .025, 'Update measurements follow fixed transpositions starting from each named instance.',
              ha='center', fontsize=7.5, color='#404750')

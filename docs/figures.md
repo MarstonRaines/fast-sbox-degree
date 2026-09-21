@@ -1,10 +1,10 @@
 # Figure guide and captions
 
-The current set contains **four figures and one numerical table**. Blue identifies the proposed method or its core speedup; red identifies the optimized baseline; gray identifies the speedup including initialization. Direct annotations give measured ratios. Ratios below 1 are retained. Bars and speedup panels use zero-based linear axes; computation-time panels use logarithmic axes. No axis breaks or fitted curves are used.
+The current set contains **four figures and one numerical table**. Blue identifies the proposed method or its speedup; red identifies the optimized traditional implementation. Bars and speedup panels use zero-based linear axes; execution-time panels use logarithmic axes.
 
-**Timing.** Core time excludes context and state initialization. "Including initialization" is the ratio of complete fixed-batch times: context + state initialization + timed computation. It is not a single cold-call latency. Speedup is baseline time divided by proposed-method time.
+**Timing.** Execution time in Figures 1–3 and Table 1 excludes initialization. Figure 4 reports total execution time, including initialization and the complete search. Speedup is traditional-method time divided by proposed-method time. The archived tables retain both timing measurements.
 
-**Statistics.** Each random input first contributes its median over five repetitions. Curves show medians across ten inputs; speedups are computed within each input before summarizing. Bands show the middle 50% (IQR) across those inputs. An annotation is a rounded value at a selected point, not an additional measurement.
+**Statistics.** Each random input contributes its median over five repetitions. Curves show medians across ten inputs; speedups are computed for each input before taking their median. Bands show the middle 50% across inputs.
 
 Every figure/table has an embedded-font PDF, editable-text SVG and 300 dpi PNG, 7.4 inches wide. Data and export hashes are in [the manifest](../figures/manifest.json).
 
@@ -21,15 +21,15 @@ Use `--only 03_degree_spectrum_update` to regenerate one plot, or `--output buil
 
 ![Minimum degree](../figures/01_minimum_degree.png)
 
-**Figure 1.** Minimum algebraic degree computation on random n-by-n permutations, n = 3–16. Left: core time per evaluation, lower is better. Right: speedup over the optimized baseline, higher is better; gray includes initialization of the full timed batch. PEIGEN is used at 3–8 bits and the packed bitwise traditional implementation at 9–16 bits; the vertical dotted line marks this baseline switch. Ten inputs per size, five repeats per input; median and IQR as defined above. At 16 bits, median core and batch-total speedups are 25.91× and 18.64×.
+**Figure 1.** Minimum algebraic degree computation on random n-by-n permutations, n = 3–16. Left: execution time per calculation. Right: speedup. Initialization is excluded. PEIGEN is used at 3–8 bits and the bitwise traditional implementation at 9–16 bits; the vertical dotted line marks this change. Ten inputs per size, five repetitions per input; medians and middle-50% bands as defined above.
 
 ![Maximum degree update](../figures/02_maximum_degree_update.png)
 
-**Figure 2.** Maximum algebraic degree updates after committed output transpositions, with the same baseline selection and statistics as Figure 1. Left: core time per update. Right: core and initialization-inclusive batch speedups. The 16-bit batch contains 512 updates; its core and batch-total ratios are 37.14× and 15.50×.
+**Figure 2.** Maximum algebraic degree updates after output transpositions, with the same traditional implementations and statistics as Figure 1. Left: execution time per update. Right: speedup. Initialization is excluded. All transpositions are retained in sequence.
 
-![Complete degree-spectrum update](../figures/03_degree_spectrum_update.png)
+![Algebraic degree spectrum update](../figures/03_degree_spectrum_update.png)
 
-**Figure 3.** Complete algebraic degree-spectrum updates after committed output transpositions, with the same baseline selection and statistics as Figure 1. Each update maintains the complete component-degree histogram. The 16-bit batch contains 128 updates; its core and batch-total ratios are 2.52× and 2.05×. The full scale-dependent variation, including the 4-bit result below 1 and the 14-bit decrease, is retained.
+**Figure 3.** Algebraic degree spectrum updates after output transpositions, with the same traditional implementations and statistics as Figure 1. Left: execution time per update. Right: speedup. Initialization is excluded. Each update computes the full algebraic degree spectrum, and all transpositions are retained in sequence.
 
 Source for Figures 1–3: [scaling-results.csv](../results/serial/optimized/scaling-results.csv). Frozen metric-dependent batch sizes are described in [the protocol](protocol.md).
 
@@ -37,7 +37,7 @@ Source for Figures 1–3: [scaling-results.csv](../results/serial/optimized/scal
 
 ![Complete search times](../figures/04_search_time.png)
 
-**Figure 4.** Total time, including initialization, to complete deterministic first-improvement local searches from ten random 8-bit starting permutations. Minimum degree, maximum degree and spectrum sum are optimized in separate searches. Bar heights are medians across per-input five-repeat medians; whiskers show their IQR and dots show all ten per-input medians. Direct time labels give the bar heights. The annotations 7.03×, 6.26× and 2.06× are medians of paired per-input speedups, not ratios recomputed from the displayed bar heights. Both implementations examine the same candidates, accept the same transpositions and return the same final LUT and histogram. Zero-acceptance runs still complete the entire neighborhood scan. Practical and identity-control starts remain in the full table.
+**Figure 4.** Total execution time, including initialization, for complete local searches from ten random 8-bit starting permutations. Minimum degree, maximum degree and spectrum sum are optimized in separate searches. Bars show medians of the ten per-input five-repeat medians; whiskers show the middle 50%, and dots show individual inputs. Speedup labels are medians of the ten per-input ratios. Both implementations use the same search procedure and obtain the same results. The full table also includes practical and identity inputs.
 
 Source: [search-results.csv](../results/serial/optimized/search-results.csv).
 
@@ -45,6 +45,6 @@ Source: [search-results.csv](../results/serial/optimized/search-results.csv).
 
 ![Practical-instance speedups](../figures/table01_practical_instances.png)
 
-**Table 1.** Optimized-baseline/proposed speedups on six practical inputs. Each cell gives core speedup followed by initialization-inclusive batch speedup in parentheses. Each method contributes its median over five repeats. Baselines are PEIGEN up to 8 bits and the packed bitwise traditional implementation at 9 and 16 bits. FI is evaluated at fixed subkey 0. Minimum-degree evaluation uses the original input; update measurements follow fixed transpositions starting from it. Ratios below 1 favor the baseline. The approximately 992× minimum-degree ratio on the structured FI instance is specific to that instance; random 16-bit inputs have the separate 25.91× median in Figure 1.
+**Table 1.** Speedups on six practical inputs, excluding initialization. Each method contributes its median over five repetitions. Traditional implementations are PEIGEN up to 8 bits and the bitwise method at 9 and 16 bits. FI uses fixed subkey 0. Minimum-degree calculation uses the original input; update measurements follow fixed transpositions starting from it.
 
 Source: [practical-results.csv](../results/serial/optimized/practical-results.csv).

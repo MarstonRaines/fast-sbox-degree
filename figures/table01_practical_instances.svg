@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-19</dc:date>
+    <dc:date>2026-09-21</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -138,7 +138,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_10">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="70.0315" transform="rotate(-0 241.092 70.0315)">0.42× (0.49×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="70.0315" transform="rotate(-0 241.092 70.0315)">0.42×</text>
     </g>
     <g id="patch_12">
      <path d="M 301.8312 76.32 
@@ -149,7 +149,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_11">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="70.0315" transform="rotate(-0 356.2434 70.0315)">1.66× (1.64×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="70.0315" transform="rotate(-0 356.2434 70.0315)">1.66×</text>
     </g>
     <g id="patch_13">
      <path d="M 410.6556 76.32 
@@ -160,7 +160,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_12">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="70.0315" transform="rotate(-0 465.0678 70.0315)">0.83× (0.84×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="70.0315" transform="rotate(-0 465.0678 70.0315)">0.83×</text>
     </g>
     <g id="patch_14">
      <path d="M 13.32 93.312 
@@ -204,7 +204,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_16">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="87.0235" transform="rotate(-0 241.092 87.0235)">1.22× (1.22×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="87.0235" transform="rotate(-0 241.092 87.0235)">1.22×</text>
     </g>
     <g id="patch_18">
      <path d="M 301.8312 93.312 
@@ -215,7 +215,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_17">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="87.0235" transform="rotate(-0 356.2434 87.0235)">8.24× (8.09×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="87.0235" transform="rotate(-0 356.2434 87.0235)">8.24×</text>
     </g>
     <g id="patch_19">
      <path d="M 410.6556 93.312 
@@ -226,7 +226,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_18">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="87.0235" transform="rotate(-0 465.0678 87.0235)">2.94× (2.85×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="87.0235" transform="rotate(-0 465.0678 87.0235)">2.94×</text>
     </g>
     <g id="patch_20">
      <path d="M 13.32 110.304 
@@ -270,7 +270,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_22">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="104.0155" transform="rotate(-0 241.092 104.0155)">2.40× (2.41×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="104.0155" transform="rotate(-0 241.092 104.0155)">2.40×</text>
     </g>
     <g id="patch_24">
      <path d="M 301.8312 110.304 
@@ -281,7 +281,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_23">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="104.0155" transform="rotate(-0 356.2434 104.0155)">6.52× (6.31×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="104.0155" transform="rotate(-0 356.2434 104.0155)">6.52×</text>
     </g>
     <g id="patch_25">
      <path d="M 410.6556 110.304 
@@ -292,7 +292,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_24">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="104.0155" transform="rotate(-0 465.0678 104.0155)">2.96× (2.84×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="104.0155" transform="rotate(-0 465.0678 104.0155)">2.96×</text>
     </g>
     <g id="patch_26">
      <path d="M 13.32 127.296 
@@ -336,7 +336,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_28">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="121.0075" transform="rotate(-0 241.092 121.0075)">1.30× (1.32×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="121.0075" transform="rotate(-0 241.092 121.0075)">1.30×</text>
     </g>
     <g id="patch_30">
      <path d="M 301.8312 127.296 
@@ -347,7 +347,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_29">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="121.0075" transform="rotate(-0 356.2434 121.0075)">7.96× (7.67×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="121.0075" transform="rotate(-0 356.2434 121.0075)">7.96×</text>
     </g>
     <g id="patch_31">
      <path d="M 410.6556 127.296 
@@ -358,7 +358,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_30">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="121.0075" transform="rotate(-0 465.0678 121.0075)">3.25× (3.19×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="121.0075" transform="rotate(-0 465.0678 121.0075)">3.25×</text>
     </g>
     <g id="patch_32">
      <path d="M 13.32 144.288 
@@ -402,7 +402,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_34">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="137.9995" transform="rotate(-0 241.092 137.9995)">19.32× (18.63×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="137.9995" transform="rotate(-0 241.092 137.9995)">19.32×</text>
     </g>
     <g id="patch_36">
      <path d="M 301.8312 144.288 
@@ -413,7 +413,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_35">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="137.9995" transform="rotate(-0 356.2434 137.9995)">5.61× (5.44×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="137.9995" transform="rotate(-0 356.2434 137.9995)">5.61×</text>
     </g>
     <g id="patch_37">
      <path d="M 410.6556 144.288 
@@ -424,7 +424,7 @@ z
 " style="fill: #ffffff; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_36">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="137.9995" transform="rotate(-0 465.0678 137.9995)">2.72× (2.30×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="137.9995" transform="rotate(-0 465.0678 137.9995)">2.72×</text>
     </g>
     <g id="patch_38">
      <path d="M 13.32 161.28 
@@ -468,7 +468,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_40">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="154.9915" transform="rotate(-0 241.092 154.9915)">992.17× (841.84×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="241.092" y="154.9915" transform="rotate(-0 241.092 154.9915)">992.17×</text>
     </g>
     <g id="patch_42">
      <path d="M 301.8312 161.28 
@@ -479,7 +479,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_41">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="154.9915" transform="rotate(-0 356.2434 154.9915)">36.58× (13.08×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="356.2434" y="154.9915" transform="rotate(-0 356.2434 154.9915)">36.58×</text>
     </g>
     <g id="patch_43">
      <path d="M 410.6556 161.28 
@@ -490,7 +490,7 @@ z
 " style="fill: #f6f8fb; stroke: #d5dce4; stroke-width: 0.45; stroke-linejoin: miter"/>
     </g>
     <g id="text_42">
-     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="154.9915" transform="rotate(-0 465.0678 154.9915)">4.25× (2.04×)</text>
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="465.0678" y="154.9915" transform="rotate(-0 465.0678 154.9915)">4.25×</text>
     </g>
    </g>
   </g>
@@ -498,10 +498,10 @@ z
    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Serif'; text-anchor: middle" x="266.4" y="15.414281" transform="rotate(-0 266.4 15.414281)">Practical instances: speedup over the optimized baseline</text>
   </g>
   <g id="text_44">
-   <text style="font-size: 8.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #646d78" x="266.4" y="35.28" transform="rotate(-0 266.4 35.28)">Core speedup (speedup including initialization)</text>
+   <text style="font-size: 8.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #646d78" x="266.4" y="35.28" transform="rotate(-0 266.4 35.28)">Speedup; initialization excluded</text>
   </g>
   <g id="text_45">
-   <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="186.48" transform="rotate(-0 266.4 186.48)">Five repeats per instance. Ratios below 1 favor the baseline. FI uses fixed subkey 0.</text>
+   <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="186.48" transform="rotate(-0 266.4 186.48)">Five repeats per instance. FI uses fixed subkey 0.</text>
   </g>
   <g id="text_46">
    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #404750" x="266.4" y="196.56" transform="rotate(-0 266.4 196.56)">Update measurements follow fixed transpositions starting from each named instance.</text>

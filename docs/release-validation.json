@@ -1,60 +1,184 @@
 {
   "status": "pass",
-  "date": "2026-09-19",
-  "platform": "Linux x86_64",
+  "version": "1.1.0",
+  "checked_utc": "2026-09-22T15:54:06.992078+00:00",
+  "platform": "Linux x86_64, Ubuntu 24.04.3 LTS",
   "compiler": "GCC 13.3.0",
   "build_flags": "-std=c++20 -O3 -march=native -fopenmp -Wall -Wextra",
-  "sanitizer_flags": "-O1 -g -march=native -fopenmp -fsanitize=address,undefined -fno-omit-frame-pointer",
-  "checks": {
-    "serial": {
-      "status": "pass",
-      "static_cases": 346,
-      "swap_cases_per_implementation_group": 2616,
-      "exhaustive_2x2_maps": 256
-    },
-    "counts": {
-      "status": "pass",
-      "static_cases": 346,
-      "swap_cases_per_implementation_group": 2616,
-      "exhaustive_2x2_maps": 256
-    },
-    "sanitize": {
-      "status": "pass",
-      "static_cases": 346,
-      "swap_cases_per_implementation_group": 2616,
-      "exhaustive_2x2_maps": 256
-    },
-    "full": {
-      "status": "pass",
-      "inputs": 2,
-      "full_states": 12,
-      "coefficients_per_state": 4294901760,
-      "includes_update_and_rollback": true
-    },
-    "archived-data-audit": {
-      "status": "pass",
-      "timing_records": 12100,
-      "separate_count_records": 1460,
-      "input_cases": 147
-    },
-    "serial-replay": {
-      "status": "pass",
-      "tasks": 2
-    }
-  },
+  "features": [
+    "COAM_OUTPUT_PACKED_MINIMUM",
+    "COAM_TILED_SPECTRUM",
+    "COAM_SPARSE_DELTA"
+  ],
   "validated_cpp_sha256": {
-    "src/serial/bench.cpp": "b39f92d0902d5b616bdcfbdc412adbcea4314cdc6d625054c98617dd64d2fdaf",
+    "src/verify_minmax.cpp": "5cfa58c3fe3d38c8f7eb50c3aade4f65e1d4f9ad12528d17d55cc5787b9335ad",
+    "src/warm_cpu.cpp": "1ddc642e70e219b8079f9ec5349e818a3628c97ba22b1f0b93e543bf7f625eaf",
+    "src/verify_full_state.cpp": "40b0e284f8ce9e752a876fea5fff70714e7984648b10d6cd5bb8a9bc1c77bd2f",
+    "src/postprocess.cpp": "ee682beb7526221d04d861c7b5c469a60aa5738ac087b82e90131982d88b7022",
+    "src/minmax/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/minmax/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
+    "src/minmax/degree.hpp": "b7ccdcb81a55076a498884a8499077b0ae64c66f4f3562d9d7d31c8bda4aff44",
+    "src/minmax/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
+    "src/minmax/bench.cpp": "1dd63220722871f83d27f34ee5f27280e04224914052b184c4a3660be80f69a1",
+    "src/extended/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/extended/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
+    "src/extended/degree.hpp": "5918a90d05ba01fe4bba5b68d8f5f9519acc4b2d62e4e89008e64e15f404e632",
+    "src/extended/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
+    "src/extended/bench.cpp": "d55290de52fdc13a16d47b986eb0eaedab9c51c0d4080c40e636e5537e550921",
+    "src/optimized/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/optimized/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
+    "src/optimized/degree.hpp": "3d844388c87958a0b0a1970944f4ecd7a4cb5d2fedbdd87fbfca813ed0aaae5d",
+    "src/optimized/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
+    "src/optimized/bench.cpp": "b39f92d0902d5b616bdcfbdc412adbcea4314cdc6d625054c98617dd64d2fdaf",
     "src/serial/counts.hpp": "4924def243bd495c9dd82c62a4c7d3e0e75cb127910895cdce97172f174a33f5",
+    "src/serial/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
     "src/serial/degree.hpp": "0b4918e38d1ecf166bd4e61cfd27c222d11a34dab1925cccae071b6ee328ebb3",
     "src/serial/peigen_adapter.cpp": "547f69095b5f939122cc8b7724e492c7e613100ff99aa245203b3e9ce377caad",
-    "src/serial/reference.hpp": "254ed3348c497dcb45fa5b29f745ed0b334f247ade97e05717f5c2a8f85cf8dc",
-    "src/verify_full_state.cpp": "40b0e284f8ce9e752a876fea5fff70714e7984648b10d6cd5bb8a9bc1c77bd2f"
+    "src/serial/bench.cpp": "b39f92d0902d5b616bdcfbdc412adbcea4314cdc6d625054c98617dd64d2fdaf"
   },
   "release_binary_sha256": {
-    "serial": "06be4db3faae153e4c587c8f61b4817a200539755701c8597ba9892f1173424f",
+    "warm_cpu": "40c6a987412ab0be06e12272ded9dfbde3511d6452d82d6f96144730c7afc487",
     "counts": "17904b4d963f791d1d90e7222e2916482f7ba9d3b6f9d19dc893fb18255700ec",
-    "sanitize": "46104cecdf51521865cfa6f49063af61b6cba0e33c3d3c7c36d75b06d6c50718",
+    "minmax": "e52af2ab26e9383db44bd4bba78d15082932ce5a3e807dfc4ce3a63248f4a336",
+    "postprocess": "f0f8d97fc08cc38678cf1a509c63fb87fea6b45a05cc61bcd51628e8b5c284cb",
+    "extended": "7d5d3022a2e06cc5bc1fe7e5ca8a1b97642dde233032d43f285a2343acdfade3",
+    "optimized": "77c6134e8ab42d2c7dc59d3c046a2e58dc626267da043364e84d1a8a26b30f97",
+    "verify-minmax": "38444a3ff489071037fddf06a1f6068e4fa1b36d8a4529c5a9a21780bf94c8c9",
+    "serial": "06be4db3faae153e4c587c8f61b4817a200539755701c8597ba9892f1173424f",
     "verify-full": "6e4e488638560d1b1b58121752f6e23dcc748b7e676c5be7f789606ddc3c59a8"
   },
-  "notes": "Correctness, archived-data audit and replay checks only. These runs do not replace the archived timing measurements. Compiler warnings originate in the unchanged PEIGEN dependency and are retained in the validation log."
+  "checks": {
+    "reference": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "optimized": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "extended": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "minmax-min": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "minmax-max": {
+      "status": "pass",
+      "tasks": 2
+    },
+    "literature": {
+      "status": "pass",
+      "records": 30,
+      "witnesses": {
+        "freyre2020-s8": [
+          {
+            "nl": 104,
+            "minimum": 6,
+            "maximum": 7,
+            "sum": 1778,
+            "histogram": {
+              "7": 248,
+              "6": 7
+            },
+            "du": 8,
+            "rank7": 5
+          },
+          {
+            "nl": 104,
+            "minimum": 6,
+            "maximum": 7,
+            "sum": 1782,
+            "histogram": {
+              "7": 252,
+              "6": 3
+            },
+            "du": 8,
+            "rank7": 6
+          },
+          {
+            "nl": 104,
+            "minimum": 6,
+            "maximum": 7,
+            "sum": 1784,
+            "histogram": {
+              "7": 254,
+              "6": 1
+            },
+            "du": 8,
+            "rank7": 7
+          },
+          {
+            "nl": 104,
+            "minimum": 7,
+            "maximum": 7,
+            "sum": 1785,
+            "histogram": {
+              "7": 255
+            },
+            "du": 8,
+            "rank7": 8
+          }
+        ],
+        "kuznetsov2023-hill-2": [
+          {
+            "nl": 104,
+            "minimum": 6,
+            "maximum": 7,
+            "sum": 1784,
+            "histogram": {
+              "7": 254,
+              "6": 1
+            },
+            "du": 8,
+            "rank7": 7
+          },
+          {
+            "nl": 104,
+            "minimum": 7,
+            "maximum": 7,
+            "sum": 1785,
+            "histogram": {
+              "7": 255
+            },
+            "du": 8,
+            "rank7": 8
+          }
+        ],
+        "kuznetsov2023-hill-3": [
+          {
+            "nl": 104,
+            "minimum": 6,
+            "maximum": 7,
+            "sum": 1784,
+            "histogram": {
+              "7": 254,
+              "6": 1
+            },
+            "du": 8,
+            "rank7": 7
+          },
+          {
+            "nl": 104,
+            "minimum": 7,
+            "maximum": 7,
+            "sum": 1785,
+            "histogram": {
+              "7": 255
+            },
+            "du": 8,
+            "rank7": 8
+          }
+        ]
+      },
+      "replayed": true
+    },
+    "make_check": {
+      "status": "pass",
+      "log_sha256": "40749f5446b778a67a31a6ce38cecf602ee14ec5372d288f2f86f4789f04e70c"
+    }
+  },
+  "build_log_sha256": "bd04a6f80d443a8299d6770211983d77280e1db32e37eea7bdf84f73570289c1",
+  "note": "Publication-build correctness and replay checks, not replacements for formal timing measurements. Sanitizer and complete-state checks are recorded with the frozen experimental batches."
 }

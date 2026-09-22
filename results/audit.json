@@ -1,10 +1,10 @@
 {
   "status": "pass",
-  "timing_records": 12100,
+  "timing_records": 13000,
   "separate_count_records": 1460,
-  "input_cases": 147,
+  "input_cases": 177,
   "archived_record_sha256": {
-    "serial": "d9406ce1681f236f5d6650e534da0aa8fd46df5e36b95d5a9d2c212608f30f88"
+    "serial": "0f21f85269c492ac9540a1d8649f56425f395a21ce2e42417259bc94c379951c"
   },
   "result_tables": {
     "serial/reference-per-input.csv": 1460,
@@ -13,11 +13,11 @@
     "serial/reference-scaling.csv": 70,
     "serial/operation-counts.csv": 1460,
     "serial/mechanism-per-input.csv": 730,
-    "serial/optimized/per-input-results.csv": 876,
+    "serial/optimized/per-input-results.csv": 1056,
     "serial/optimized/search-per-method.csv": 84,
     "serial/optimized/search-results.csv": 42,
     "serial/optimized/practical-results.csv": 18,
-    "serial/optimized/scaling-results.csv": 42
+    "serial/optimized/scaling-results.csv": 51
   },
   "same_workload_outputs_equal": true,
   "complete_repeat_sets": true

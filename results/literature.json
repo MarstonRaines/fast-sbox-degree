@@ -1,0 +1,110 @@
+{
+  "status": "pass",
+  "records": 30,
+  "repeats": 5,
+  "cases": 3,
+  "paired_candidates_per_build": 18471,
+  "ordinary_and_sanitized_paths_agree": true,
+  "python_witnesses_agree": true,
+  "timing_includes_nl": true,
+  "summary": [
+    {
+      "case": "freyre2020-s8",
+      "attempts": 17555,
+      "accepted": 3,
+      "nl_calls": 4501,
+      "peigen": {
+        "median_ms": 169.233775,
+        "min_ms": 168.843992,
+        "max_ms": 170.869102,
+        "all_ms": [
+          170.869102,
+          170.005242,
+          169.233775,
+          169.076801,
+          168.843992
+        ]
+      },
+      "proposed": {
+        "median_ms": 114.471641,
+        "min_ms": 113.851796,
+        "max_ms": 114.552379,
+        "all_ms": [
+          114.391436,
+          113.851796,
+          114.484722,
+          114.552379,
+          114.471641
+        ]
+      },
+      "speedup": 1.478390398893644,
+      "final_lut_bytes_sha256": "f3c220ecd339c76d467a63568c3b3b1ae2e4fbcb06fafede1af3118aab40647c"
+    },
+    {
+      "case": "kuznetsov2023-hill-2",
+      "attempts": 488,
+      "accepted": 1,
+      "nl_calls": 121,
+      "peigen": {
+        "median_ms": 7.381943,
+        "min_ms": 7.343594,
+        "max_ms": 7.57917,
+        "all_ms": [
+          7.57917,
+          7.370246,
+          7.387496,
+          7.343594,
+          7.381943
+        ]
+      },
+      "proposed": {
+        "median_ms": 6.035957,
+        "min_ms": 6.023067,
+        "max_ms": 6.222348,
+        "all_ms": [
+          6.031847,
+          6.222348,
+          6.023067,
+          6.207664,
+          6.035957
+        ]
+      },
+      "speedup": 1.2229946303461074,
+      "final_lut_bytes_sha256": "a38d9f3179d047b370144a09c7066f920ec91397e577469b0e020f78ad6c7b75"
+    },
+    {
+      "case": "kuznetsov2023-hill-3",
+      "attempts": 428,
+      "accepted": 1,
+      "nl_calls": 110,
+      "peigen": {
+        "median_ms": 5.592329,
+        "min_ms": 5.548307,
+        "max_ms": 5.748821,
+        "all_ms": [
+          5.592329,
+          5.548307,
+          5.707396,
+          5.581364,
+          5.748821
+        ]
+      },
+      "proposed": {
+        "median_ms": 4.404709,
+        "min_ms": 4.403898,
+        "max_ms": 4.59515,
+        "all_ms": [
+          4.59515,
+          4.529939,
+          4.403898,
+          4.404709,
+          4.404348
+        ]
+      },
+      "speedup": 1.2696250762536185,
+      "final_lut_bytes_sha256": "e1a44ba495b97213aba15579c7c4cbd4ede1e78b99fd24413c85fd307307533c"
+    }
+  ],
+  "records_sha256": "78972c82047e32ce7bd5efe298b6f2cf915756dc7b92f8f5ec60094e45e5fd45",
+  "audit_source_sha256": "d7d0e6edf8c245cb98ab9d5efb17a2aa92fe372ecfc212e9bbdc47ccc947e40d"
+}

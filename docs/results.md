@@ -1,23 +1,33 @@
 # Results guide
 
-Speedup is traditional-method execution time divided by proposed-method execution time. The tables below summarize the complete CSV records.
+The archive contains 13,000 serial timing records, 30 literature-postprocessing timings, and 1,460 separate operation-count records. All three degree metrics cover every width from 3 through 19.
 
-## Optimized single-thread comparison
+## Fixed-workload comparison
 
-| Width / baseline | Minimum evaluation | Maximum update | Spectrum update |
-|---|---:|---:|---:|
-| 8 / PEIGEN | 1.21x | 8.66x | 3.04x |
-| 9 / packed traditional | 1.35x | 5.37x | 2.48x |
-| 16 / packed traditional | 25.91x | 37.14x | 2.52x |
+| Width | Minimum | Maximum updates | Spectrum updates | Baseline |
+|---|---:|---:|---:|---|
+| 8 | 10.66× | 12.40× | 10.85× | PEIGEN |
+| 16 | 448.29× | 96.07× | 6.79× | Bitwise |
+| 17 | 813.65× | 188.65× | 8.83× | Bitwise |
+| 18 | 1452.06× | 229.46× | 11.25× | Bitwise |
+| 19 | 2728.09× | 319.38× | 15.29× | Bitwise |
 
-These speedups exclude initialization. For each input, the execution time is the median of five repetitions; the displayed value is the median speedup across ten random inputs. The [full scaling table](../results/serial/optimized/scaling-results.csv) also reports total execution time, including initialization. The 16-bit workloads contain 1 minimum-degree calculation, 512 maximum-degree updates or 128 spectrum updates. [Practical-instance results](../results/serial/optimized/practical-results.csv) report the six named inputs separately.
+These are median paired speedups across ten inputs, using each evaluator’s five-run median and excluding initialization. Each 16–19-bit workload contains one minimum calculation, 512 maximum updates, or 128 full-spectrum updates. The [full table](../results/serial/optimized/scaling-results.csv) also includes initialization and total times. Slower 4-bit cases remain in the archive. The [practical table](../results/serial/optimized/practical-results.csv) covers six named components.
 
-## Reference audit tables
+## Published S-boxes at strict NL 104
 
-The scalar-reference measurements and logical operation counts are retained as secondary audit material for Propositions 2--4. They use the scalar representation described in the protocol and are separate from the practical PEIGEN/packed comparison above. See [reference-scaling.csv](../results/serial/reference-scaling.csv) and [mechanism-per-input.csv](../results/serial/mechanism-per-input.csv).
+Three original tables from two papers reach minimum degree 7 and the saturated spectrum of 255 degree-7 components. Every accepted state retains standard vectorial NL 104 and differential uniformity 8.
 
-## Complete 8-bit search
+| Starting table | Degree sum | Candidates | PEIGEN (ms) | Proposed (ms) | Speedup |
+|---|---|---:|---:|---:|---:|
+| freyre2020-s8 | 1778 → 1785 | 17,555 | 169.234 | 114.472 | 1.478× |
+| kuznetsov2023-hill-2 | 1784 → 1785 | 488 | 7.382 | 6.036 | 1.223× |
+| kuznetsov2023-hill-3 | 1784 → 1785 | 428 | 5.592 | 4.405 | 1.270× |
 
-For ten random starting permutations, median per-input total-time ratios against PEIGEN are **7.03x / 6.26x / 2.06x** for minimum degree, maximum degree and spectrum sum. Both implementations follow the same search trajectory and obtain the same final result. Five minimum-degree searches improve their objective; seven spectrum searches improve theirs. Random maximum-degree starts already have degree 7 and still complete the full neighborhood scan.
+Times include initialization, degree checks, shared NL checks, and rollback. Both evaluators use identical candidates, acceptance and stopping rules. Freyre S8 takes three accepted swaps, with degree-7 coefficient ranks 5 → 6 → 7 → 8. A swap changes this block by rank at most one, so this path attains the three-swap lower bound. Strict minimum-only improvement stalls on this starting table; improving the spectrum allows progress before the minimum changes.
 
-For CLEFIA S0, spectrum sum increases from 1530 to 1785, with 8 accepted swaps and 32,899 examined candidates. Median total times are 112.86 ms for PEIGEN and 56.25 ms for the proposed evaluator. All fourteen starts, their initial/final scores, candidate counts and times are in [search-results.csv](../results/serial/optimized/search-results.csv); complete accepted swaps and final permutations are linked from the raw records.
+The [sources and witnesses](../data/literature/sources-and-witnesses.json) give full original/final LUTs and paths. `python3 scripts/literature.py --check` independently recomputes all component degrees and Walsh transforms, differential uniformity, and ranks.
+
+## Additional archived evidence
+
+Group A and its operation-count tables cover 3–16 bits and support the complexity analysis. The [legacy search table](../results/serial/optimized/search-results.csv) retains 42 unconstrained degree searches from fourteen 8-bit starts using the optimized build. Those runs are separate from the strict-NL experiment shown in Figure 4; they do not establish preservation of NL.

@@ -2,7 +2,7 @@
 
 Code and experimental data for **A Series of Faster Approaches for Computing the Algebraic Degree Properties of S-boxes**, by Renjie Zhou, Zhen Li and Yan Tong.
 
-The implementations compute the minimum algebraic degree and update the maximum algebraic degree or the algebraic degree spectrum after an output transposition. The artifact includes reproducible single-thread experiments and complete 8-bit local searches.
+The implementations compute the minimum algebraic degree and update the maximum algebraic degree or the full degree spectrum after an output transposition. All three metrics are evaluated at every width from 3 to 19 bits. A second experiment improves three published 8-bit S-boxes from minimum degree 6 to 7 while preserving standard vectorial nonlinearity exactly at 104, and compares total target times with PEIGEN.
 
 ## Start here
 
@@ -18,15 +18,18 @@ python3 scripts/analyze.py --check
 
 The build downloads 21 unchanged PEIGEN headers from a fixed upstream commit and checks every file against a saved SHA-256 digest. `make check` runs independent small-input checks, update/rollback checks, exhaustive 2-by-2 mappings and component-enumeration checks. `make check-full` additionally checks every stored component-ANF coefficient in 12 states of two 16-bit inputs.
 
-The 16-bit spectrum state uses about 512 MiB with packed coefficients, or about 16 GiB with scalar coefficients, before auxiliary buffers. Reading the existing results and recomputing their tables needs no C++ build.
+The packed spectrum state uses about 512 MiB at 16 bits and 32 GiB at 19 bits, before auxiliary buffers. Minimum/maximum computations use much smaller states. Reading the archived results and recomputing their tables needs no C++ build.
 
 ## Contents
 
 | Directory | Contents |
 |---|---|
-| `src/serial/` | Scalar reference algorithms, packed proposed algorithms and the PEIGEN adapter |
-| `data/inputs/` | 147 explicit LUTs and fixed swap/check sequences |
-| `data/measurements/` | 12,100 timing records and 1,460 separate operation-count records |
+| `src/serial/` | Preserved implementation for the reference timings and counts |
+| `src/optimized/`, `src/extended/`, `src/minmax/` | Frozen measured implementations for 3–16 bits, 17–19-bit spectrum, and 17–19-bit minimum/maximum, respectively |
+| `src/postprocess.cpp` | Common strict-NL literature postprocessing driver |
+| `data/inputs/` | 177 explicit LUTs: 170 random, six practical, one legacy identity control |
+| `data/literature/` | Three published starting LUTs, improved LUTs, source attribution and accepted trajectories |
+| `data/measurements/` | 13,000 reference/fixed-workload/legacy-search timings, 30 literature timings, and 1,460 separate counts |
 | `data/outputs/` | Deduplicated complete final LUTs, degree histograms and accepted swaps |
 | `protocol/` | Exact ordered tasks, repetitions and frozen workload sizes |
 | `results/serial/` | Reference, optimized, practical-instance and search tables |
@@ -42,9 +45,13 @@ Start with a small subset:
 
 ```sh
 python3 scripts/run.py --suite serial --group B --case random_n08_00 --metric spectrum --limit 2 --output runs/smoke
+python3 scripts/literature.py --check
+python3 scripts/literature.py --replay --output runs/literature
 ```
 
 Use `--list` to inspect selected tasks; omit filters to replay the full serial suite. Optional `--cpu-start` and `--numa-node` use `numactl` for binding. Every run uses a new output directory and checks its full final output against the saved expected output.
+
+The literature checker independently recomputes full-component NL, degree spectra, differential uniformity, and the degree-7 coefficient ranks along every accepted path. `--replay` additionally reruns both C++ evaluators and checks their complete candidate digests and final LUTs. The shared nonlinearity checks are included in total search times.
 
 Regenerate the published result tables:
 
@@ -69,8 +76,8 @@ The [figure guide](docs/figures.md) contains the current previews, source-table 
 
 ## Version and license
 
-Release **v1.0.3** contains the experiments used by the manuscript: optimized single-thread comparisons over 3–16 bits, practical instances, complete searches, and the operation-count and reference tables. This release simplifies the terminology and figure presentation; the numerical implementations and archived measurements are unchanged from v1.0.2.
+Release **v1.1.0** contains the optimized 3–19-bit comparison for all three metrics, six practical components, and three literature postprocessing cases at exact NL 104. The earlier unconstrained 14-start searches remain as additional archived experiments; Figure 4 now presents the literature target times. Older releases and their measurements remain available in Git history and release assets.
 
-This is a publication packaging revision: the retained numerical kernels match the measured source versions, while validation and reporting have been repackaged. [Provenance](docs/provenance.json) records the measured source and binary digests; [release validation](docs/release-validation.json) records checks of the packaged build. The archived timings were not regenerated using the packaged build.
+The separate source directories preserve the measured numerical versions. [Provenance](docs/provenance.json) identifies their roles and source/binary digests; [release validation](docs/release-validation.json) records checks of the packaged build. Replays check numerical identity and produce new timings without overwriting the archive.
 
 The project is licensed under **GPL-3.0-only**; see [LICENSE](LICENSE). PEIGEN is an external dependency with its own retained [GPL-3.0 license](third_party/PEIGEN-LICENSE), authorship and header notices. Its exact revision is recorded in [third_party/peigen.json](third_party/peigen.json). Please also cite Bao, Guo, Ling and Sasaki's [PEIGEN paper](https://doi.org/10.13154/tosc.v2019.i1.330-394) when using that baseline.

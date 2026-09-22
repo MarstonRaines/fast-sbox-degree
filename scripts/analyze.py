@@ -229,14 +229,16 @@ def main():
     parser.add_argument('--check', action='store_true', help='Verify tables without overwriting them')
     CHECK = parser.parse_args().check
     manifest = json.loads((ROOT / 'data/input-manifest.json').read_text())
-    assert len(manifest['inputs']) == 147
+    assert len(manifest['inputs']) == 177
     for entry in manifest['inputs']:
         assert sha(ROOT / entry['input']) == entry['input_sha256']
         assert sha(ROOT / entry['swaps']) == entry['swaps_sha256']
     serial = load_audit()
-    assert len(serial) == 13560
+    assert len(serial) == 14460
     serial_tables(serial)
-    audit = dict(status='pass', timing_records=12100, separate_count_records=1460, input_cases=147,
+    main_rows=[r for r in serial if r['group']=='B' and r['input_group']=='random']
+    assert {(r['n'],r['metric']) for r in main_rows} == {(n,m) for n in range(3,20) for m in ['min','max','spectrum']}
+    audit = dict(status='pass', timing_records=13000, separate_count_records=1460, input_cases=177,
                  archived_record_sha256={'serial': sha(ROOT / 'data/measurements/serial.jsonl')},
                  result_tables=TABLES, same_workload_outputs_equal=True, complete_repeat_sets=True)
     if not CHECK:

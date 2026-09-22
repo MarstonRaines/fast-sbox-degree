@@ -20,7 +20,7 @@ BLUE, RED, GRAY = '#1565B5', '#B74D48', '#646D78'
 METRICS = ['min', 'max', 'spectrum']
 TITLES = {'min': 'Minimum algebraic degree', 'max': 'Maximum algebraic degree update',
           'spectrum': 'Algebraic degree spectrum update'}
-DATE = datetime(2026, 9, 21, tzinfo=timezone.utc)
+DATE = datetime(2026, 9, 22, tzinfo=timezone.utc)
 SOURCES = {}
 
 plt.rcParams.update({
@@ -61,8 +61,8 @@ def panel(ax, index, title):
 
 
 def width_axis(ax, boundary=False):
-    ax.set_xlim(2.7, 16.5)
-    ax.set_xticks(range(3, 17))
+    ax.set_xlim(2.7, 19.5)
+    ax.set_xticks(range(3, 20))
     ax.set_xlabel(r'S-box size $n$ ($n\times n$)')
     if boundary:
         ax.axvline(8.5, color='#A6ADB5', linewidth=.75, linestyle=':')
@@ -102,7 +102,7 @@ def save(fig, name):
         if extension == 'pdf':
             metadata.update(CreationDate=DATE, ModDate=DATE)
         elif extension == 'svg':
-            metadata['Date'] = '2026-09-21'
+            metadata['Date'] = '2026-09-22'
         fig.savefig(OUT / f'{name}.{extension}', dpi=300, metadata=metadata)
     plt.close(fig)
 
@@ -110,13 +110,13 @@ def save(fig, name):
 def ordinary(metric):
     rows = sorted([r for r in read('serial/optimized/scaling-results.csv') if r['metric'] == metric],
                   key=lambda r: int(r['n']))
-    assert [int(r['n']) for r in rows] == list(range(3, 17))
+    assert [int(r['n']) for r in rows] == list(range(3, 20))
     x = vector(rows, 'n')
     fig, (time, speed) = pair(TITLES[metric],
         'Initialization excluded. 10 inputs × 5 repeats. Bands: middle 50% across inputs.')
     band(time, rows, x, 'proposed_us', BLUE, 'Our method')
     for base, label, marker in [('peigen', 'PEIGEN (3–8 bits)', 's'),
-                                 ('bitwise', 'Bitwise method (9–16 bits)', '^')]:
+                                 ('bitwise', 'Bitwise method (9–19 bits)', '^')]:
         subset = [r for r in rows if r['baseline'] == base]
         band(time, subset, vector(subset, 'n'), 'baseline_us', RED, label, marker, '--')
     time.set_yscale('log')
@@ -131,45 +131,36 @@ def ordinary(metric):
     width_axis(speed, True)
     for r in rows:
         n = int(r['n'])
-        if n in [3, 6, 8, 12, 16] or (metric == 'spectrum' and n in [4, 14]):
-            offset = (-3, 10) if n == 16 else (0, 8)
+        if n in ([3, 8, 12, 16, 19] if metric != 'spectrum' else [4, 8, 12, 14, 16, 19]):
+            offset = (-3, 10) if n == 19 else (0, 8)
             if metric == 'spectrum' and n in [3, 6, 14]:
                 offset = (0, -17)
             label_point(speed, n, float(r['paired_speedup']), offset=offset,
-                        ha='right' if n == 16 else 'center', bold=n == 16)
+                        ha='right' if n == 19 else 'center', bold=n == 19)
     return fig
 
 
 def search():
-    data = read('serial/optimized/search-results.csv')
-    fig, ax = plt.subplots(figsize=(7.4, 3.75))
-    fig.subplots_adjust(left=.105, right=.975, bottom=.19, top=.77)
-    fig.suptitle('Execution time of 8-bit searches', y=.965, fontsize=12, fontweight='bold')
-    for j, metric in enumerate(METRICS):
-        rows = sorted([r for r in data if r['metric'] == metric and r['group'] == 'random'], key=lambda r: r['case'])
-        assert len(rows) == 10
-        for field, shift, color, label in [('baseline_total_ms', -.19, RED, 'PEIGEN'),
-                                           ('proposed_total_ms', .19, BLUE, 'Our method')]:
-            values = vector(rows, field)
-            y = median(values)
-            q1, q3 = np.quantile(values, [.25, .75])
-            ax.bar(j + shift, y, width=.32, color=color, alpha=.90, label=label if j == 0 else None)
-            ax.errorbar(j + shift, y, yerr=[[y - q1], [q3 - y]], color='#313840', fmt='none', capsize=3, linewidth=.9)
-            ax.scatter(j + shift + np.linspace(-.075, .075, 10), values, s=9,
-                       color='white', edgecolor=color, linewidth=.6, zorder=3)
-            ax.text(j + shift, max(values) + 3.2, f'{y:.2f} ms', ha='center', fontsize=8.5,
-                    color=color, fontweight='bold' if color == BLUE else 'normal')
-        ratio = median(vector(rows, 'total_speedup'))
-        ax.text(j, 137, f'{ratio:.2f}× faster', ha='center', color=BLUE, fontsize=12, fontweight='bold')
-    ax.set_ylim(0, 153)
-    ax.set_xticks(np.arange(3), ['Minimum degree', 'Maximum degree', 'Spectrum sum'])
-    ax.set_ylabel('Total execution time (ms)')
-    ax.grid(axis='y', alpha=.3)
-    ax.legend(loc='upper center', bbox_to_anchor=(.5, 1.23), ncol=2)
-    fig.text(.5, .078, 'Execution time includes initialization and the complete search.',
-             ha='center', fontsize=7.5, color='#404750')
-    fig.text(.5, .025, '10 starts × 5 repeats; bars: median; whiskers: middle 50%; dots: per-start medians.',
-             ha='center', fontsize=7.5, color='#404750')
+    source=ROOT/'results/literature.json'
+    SOURCES[str(source.relative_to(ROOT))]=hashlib.sha256(source.read_bytes()).hexdigest()
+    data=json.loads(source.read_text())['summary']
+    fig, axes=plt.subplots(1,3,figsize=(7.4,3.55))
+    fig.subplots_adjust(left=.085,right=.98,bottom=.20,top=.73,wspace=.43)
+    fig.suptitle('Time to minimum degree 7 at strict NL = 104',y=.98,fontsize=12,fontweight='bold')
+    for ax,row,title in zip(axes,data,['Freyre S8','Kuznetsov S-box2','Kuznetsov S-box3']):
+        for x,method,color in [(0,'peigen',RED),(1,'proposed',BLUE)]:
+            vals=row[method]['all_ms'];y=median(vals)
+            ax.bar(x,y,width=.58,color=color,alpha=.90)
+            ax.errorbar(x,y,yerr=[[y-min(vals)],[max(vals)-y]],fmt='none',color=GRAY,capsize=3)
+            ax.scatter(x+np.linspace(-.12,.12,5),vals,s=12,color='white',edgecolor=color,linewidth=.65,zorder=3)
+            ax.text(x,max(vals)+max(row['peigen']['all_ms'])*.045,f'{y:.3f}',ha='center',fontsize=8,color=color)
+        ax.set_ylim(0,max(row['peigen']['all_ms'])*1.27)
+        ax.set_xticks([0,1],['PEIGEN','Our method'],fontsize=8)
+        ax.set_title(title+'\n'+f"{row['speedup']:.2f}× faster",fontsize=9.5,pad=10)
+        ax.set_ylabel('Total time (ms)')
+        ax.grid(axis='y',alpha=.3)
+    fig.text(.5,.065,'Initialization, degree evaluation, NL checks and rollback included.',ha='center',fontsize=7.5,color=GRAY)
+    fig.text(.5,.02,'Each panel has its own scale. Bars: median; whiskers: range; dots: five runs.',ha='center',fontsize=7.5,color=GRAY)
     return fig
 
 

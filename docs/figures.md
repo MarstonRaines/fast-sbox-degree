@@ -21,7 +21,7 @@ Use `--only 03_degree_spectrum_update` to regenerate one plot, or `--output buil
 
 ![Minimum degree](../figures/01_minimum_degree.png)
 
-**Figure 1.** Minimum algebraic degree computation on random n-by-n permutations, n = 3–16. Left: execution time per calculation. Right: speedup. Initialization is excluded. PEIGEN is used at 3–8 bits and the bitwise traditional implementation at 9–16 bits; the vertical dotted line marks this change. Ten inputs per size, five repetitions per input; medians and middle-50% bands as defined above.
+**Figure 1.** Minimum algebraic degree computation on random n-by-n permutations, n = 3–19. Left: execution time per calculation. Right: speedup. Initialization is excluded. PEIGEN is used at 3–8 bits and the bitwise traditional implementation at 9–19 bits; the vertical dotted line marks this change. Ten inputs per size, five repetitions per input; medians and middle-50% bands as defined above.
 
 ![Maximum degree update](../figures/02_maximum_degree_update.png)
 
@@ -33,13 +33,13 @@ Use `--only 03_degree_spectrum_update` to regenerate one plot, or `--output buil
 
 Source for Figures 1–3: [scaling-results.csv](../results/serial/optimized/scaling-results.csv). Frozen metric-dependent batch sizes are described in [the protocol](protocol.md).
 
-## 4. Complete 8-bit search
+## 4. Published S-box postprocessing at strict NL 104
 
 ![Complete search times](../figures/04_search_time.png)
 
-**Figure 4.** Total execution time, including initialization, for complete local searches from ten random 8-bit starting permutations. Minimum degree, maximum degree and spectrum sum are optimized in separate searches. Bars show medians of the ten per-input five-repeat medians; whiskers show the middle 50%, and dots show individual inputs. Speedup labels are medians of the ten per-input ratios. Both implementations use the same search procedure and obtain the same results. The full table also includes practical and identity inputs.
+**Figure 4.** Total time to minimum degree 7 for Freyre S8 and Kuznetsov S-box2/S-box3 while strictly preserving NL 104. Each panel has its own time scale. Bars give five-run medians, whiskers give the full range, and dots show all five runs. Total times include initialization, candidate degree evaluation, full-component NL checks and rollback. Both evaluators follow the same trajectory and produce the same final LUT.
 
-Source: [search-results.csv](../results/serial/optimized/search-results.csv).
+Source: [literature.json](../results/literature.json), independently reconstructed from [the 30 raw timing records](../data/measurements/literature.jsonl).
 
 ## Table 1. Practical instances
 

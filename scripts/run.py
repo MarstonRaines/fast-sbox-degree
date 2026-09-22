@@ -55,7 +55,7 @@ def main():
     (output / 'traces').mkdir(parents=True, exist_ok=True)
     binaries = {}
     for task in tasks:
-        name = 'counts' if task['group'] == 'counts' else 'serial'
+        name = 'counts' if task['group'] == 'counts' else ('serial' if task['binary']=='coam' else task['binary'])
         binary = ROOT / 'build' / name
         if not binary.is_file():
             parser.error(f'Missing {binary.name}; run make all')
@@ -72,7 +72,7 @@ def main():
                 if (r := json.loads(line))}
     for index, task in enumerate(tasks, 1):
         threads = task['threads']
-        name = 'counts' if task['group'] == 'counts' else 'serial'
+        name = 'counts' if task['group'] == 'counts' else ('serial' if task['binary']=='coam' else task['binary'])
         env = {**os.environ, 'OMP_NUM_THREADS': str(threads), 'OMP_DYNAMIC': 'false',
                'OMP_PROC_BIND': 'close', 'OMP_WAIT_POLICY': 'PASSIVE',
                'COAM_OMP_MIN_WORK': '32768', 'OMP_PLACES': 'cores'}
@@ -84,6 +84,8 @@ def main():
             if args.numa_node is not None:
                 command.append('--membind=' + str(args.numa_node))
         trace = output / 'traces' / (task['id'] + '.json')
+        if name in ['optimized','extended','minmax']:
+            command += [str(ROOT / 'build/warm_cpu'), '50']
         command += [str(ROOT / 'build' / name), 'bench', task['method'], task['metric'],
                     task['mode'], str(ROOT / task['input']),
                     '-' if task['swaps'] == '-' else str(ROOT / task['swaps']), str(task['loops']), str(trace)]

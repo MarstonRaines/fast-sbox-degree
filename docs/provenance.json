@@ -6,20 +6,32 @@
     "serial/bench.cpp": "60733c352ea2130de455dcf079dc84b2022d47be41c26fbf8f5148cbcd3c09ca",
     "serial/peigen_adapter.cpp": "9cde67d6a47993514abfab3d28c1b7b1eaa9b2cca054edd4567b4361570c4655"
   },
-  "source_measurement_archive_sha256": {
+  "published_record_counts": {
+    "serial": {
+      "A": 7300,
+      "B": 5280,
+      "search": 420,
+      "counts": 1460
+    },
+    "literature": 30
+  },
+  "serial_measured_binary_sha256": "f536e0214d8ac51818c10d204941cd9ea321de175b21c2c1cba54be5d43c040e",
+  "source_relation": "Group A/counts retain the previous serial build. OPT-01 replaces B/search through 16 bits. FINAL-01 adds spectrum at 17--19 bits; MINMAX-19 adds minimum and maximum at 17--19 bits. The three measured source snapshots are copied byte-for-byte. Literature searches use the frozen OPT evaluator and the shared postprocess driver. Packaging checks and replays do not replace formal archived measurements.",
+  "version": "1.1.0",
+  "legacy_v1_0_3_archive_sources": {
     "serial/formal-A": "3205bd4eaf02f025d5ddae0b4f08d5bc0f02b7d53c925df644e617f68d6a7336",
     "serial/formal-B": "13fb1c82763de6e9a7c89f983399dff24cc9c268178b91d53fd8de5dfb434107",
     "serial/search-B": "917a249caa4af47c72362bf4808f9e0e851d45741fde59553c3719fba697859c",
     "serial/counts-A": "0286fdc2a486b8bdff037136b1dc1c57127ef1f76190d8c6913cb537dbb0176f"
   },
-  "published_record_counts": {
-    "serial": {
-      "A": 7300,
-      "B": 4380,
-      "counts": 1460,
-      "search": 420
-    }
-  },
-  "serial_measured_binary_sha256": "f536e0214d8ac51818c10d204941cd9ea321de175b21c2c1cba54be5d43c040e",
-  "source_relation": "Publication packaging revision. Retained numerical kernels are unchanged; validation and reporting are repackaged. Archived timings were not regenerated from the packaged sources."
+  "frozen_batch_provenance": [
+    "OPT-01-provenance.json",
+    "FINAL-01-provenance.json",
+    "MINMAX-19-provenance.json",
+    "../protocol/literature.json"
+  ],
+  "published_measurement_sha256": {
+    "serial.jsonl": "0f21f85269c492ac9540a1d8649f56425f395a21ce2e42417259bc94c379951c",
+    "literature.jsonl": "78972c82047e32ce7bd5efe298b6f2cf915756dc7b92f8f5ec60094e45e5fd45"
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "input": "random_n05_09",
+  "n": 5,
+  "metric": "max",
+  "method": "proposed",
+  "repetition": 0,
+  "steps": 262144,
+  "variant": "optimized",
+  "command": [
+    "numactl",
+    "--physcpubind=0",
+    "--membind=0",
+    "build/minmax-optimized",
+    "proposed",
+    "max",
+    "data/inputs/random_n05_09.lut",
+    "data/inputs/random_n05_09.swaps",
+    "262144"
+  ],
+  "started_utc": "2026-10-07T10:55:38.448587+00:00",
+  "process_seconds": 0.06542358919978142,
+  "binary_sha256": "9c5404360c3bc634e8cd4162bfed616c7dac1f42493416dfdef45a176dd7a726",
+  "input_sha256": "d8a50f8e44ee78d2dc43bd54d91abdf4d77cbd0c91dffe9956209e2bfdaaf2c1",
+  "swaps_sha256": "8e7cb32db4d98c187801ae10d5926de0b859d8b78f807d90f1dee1996d9a45ce",
+  "returncode": 0,
+  "result": {
+    "context_ns": 11446,
+    "init_ns": 1564,
+    "kernel_ns": 10228283,
+    "steps": 262144,
+    "final_value": 4,
+    "final_box_hash": 12037126603382893635,
+    "digest": 13518465962012049408
+  }
+}

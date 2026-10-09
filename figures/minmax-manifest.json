@@ -1,0 +1,20 @@
+{
+  "data_sha256": {
+    "results/minmax/scaling-results.csv": "0b302d55b4fba31728dc133b803f8a0b6ebd48aad94f7c6f2be1322d9cae278b"
+  },
+  "plot_script_sha256": "c2972aa710b3c3d50bc122f596a69f4b2cc0f0d08726f6370614310d0b4dbeb1",
+  "matplotlib": "3.10.6",
+  "numpy": "2.3.3",
+  "font": "DejaVu Serif",
+  "width_inches": 7.4,
+  "png_dpi": 300,
+  "vector_text": "PDF embedded TrueType; SVG live text",
+  "exports_sha256": {
+    "01_minimum_degree.pdf": "c5e402e1f865409cc7a6d7d2139b8548c574768b44270f3173e26080b0a94173",
+    "01_minimum_degree.png": "e8af8078aa9c8992c9a5371fb38908ae2eb08f95dfa38a2c5f0e57b7c4465a1e",
+    "01_minimum_degree.svg": "b3c227bf0c379941ccb1fa2cf4473a4df5ada9d8912e99288a5eea38dad42623",
+    "02_maximum_degree_update.pdf": "af93fcf98365557a98f37769ba50c990002fc5d716858ff452c61a0786f2f760",
+    "02_maximum_degree_update.png": "f3a3ca886d0ee05679bb903fbd9c917e0a4febe7930bae47776e82b10f29558f",
+    "02_maximum_degree_update.svg": "f01402db85f212e3a95119adeb7c562a250a4288d84ea9d4f4e9098087907f93"
+  }
+}

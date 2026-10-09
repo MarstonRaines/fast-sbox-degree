@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "records": 72,
+  "formal_search_records": 45,
+  "verification_records": 9,
+  "warmups": 9,
+  "diagnostics": 9,
+  "binary_sha256": "7239b1ed0bc0fee841d40232464c592bf95b1cf39af5b881bb1e2b9c6d498956",
+  "finished_utc": "2026-10-08T14:38:04.338046+00:00"
+}

@@ -1,0 +1,1703 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="532.8pt" height="244.4pt" viewBox="0 0 532.8 244.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-07</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib; scripts/plot_minmax.py</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 244.4 
+L 532.8 244.4 
+L 532.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 49.0176 211.788 
+L 252.032772 211.788 
+L 252.032772 54.612 
+L 49.0176 54.612 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="me6ac24c395" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me6ac24c395" x="52.642871" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="52.642871" y="224.86675" transform="rotate(-0 52.642871 224.86675)">3</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#me6ac24c395" x="64.727107" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="64.727107" y="224.86675" transform="rotate(-0 64.727107 224.86675)">4</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#me6ac24c395" x="76.811344" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="76.811344" y="224.86675" transform="rotate(-0 76.811344 224.86675)">5</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#me6ac24c395" x="88.89558" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="88.89558" y="224.86675" transform="rotate(-0 88.89558 224.86675)">6</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#me6ac24c395" x="100.979817" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="100.979817" y="224.86675" transform="rotate(-0 100.979817 224.86675)">7</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#me6ac24c395" x="113.064053" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="113.064053" y="224.86675" transform="rotate(-0 113.064053 224.86675)">8</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#me6ac24c395" x="125.14829" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="125.14829" y="224.86675" transform="rotate(-0 125.14829 224.86675)">9</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#me6ac24c395" x="137.232526" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="137.232526" y="224.86675" transform="rotate(-0 137.232526 224.86675)">10</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#me6ac24c395" x="149.316763" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="149.316763" y="224.86675" transform="rotate(-0 149.316763 224.86675)">11</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#me6ac24c395" x="161.400999" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="161.400999" y="224.86675" transform="rotate(-0 161.400999 224.86675)">12</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#me6ac24c395" x="173.485235" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="173.485235" y="224.86675" transform="rotate(-0 173.485235 224.86675)">13</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#me6ac24c395" x="185.569472" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="185.569472" y="224.86675" transform="rotate(-0 185.569472 224.86675)">14</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#me6ac24c395" x="197.653708" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="197.653708" y="224.86675" transform="rotate(-0 197.653708 224.86675)">15</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#me6ac24c395" x="209.737945" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="209.737945" y="224.86675" transform="rotate(-0 209.737945 224.86675)">16</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#me6ac24c395" x="221.822181" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="221.822181" y="224.86675" transform="rotate(-0 221.822181 224.86675)">17</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#me6ac24c395" x="233.906418" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="233.906418" y="224.86675" transform="rotate(-0 233.906418 224.86675)">18</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#me6ac24c395" x="245.990654" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="245.990654" y="224.86675" transform="rotate(-0 245.990654 224.86675)">19</text>
+     </g>
+    </g>
+    <g id="text_18">
+     <!-- S-box size $n$ ($n\times n$) -->
+     <g transform="translate(108.012686 237.749016)">
+      <text>
+       <tspan x="0" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">S</tspan>
+       <tspan x="6.508057" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">-</tspan>
+       <tspan x="9.718018" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">b</tspan>
+       <tspan x="15.799316" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">o</tspan>
+       <tspan x="21.518799" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">x</tspan>
+       <tspan x="26.876465" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="29.89624" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">s</tspan>
+       <tspan x="34.771484" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">i</tspan>
+       <tspan x="37.809814" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">z</tspan>
+       <tspan x="42.814941" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">e</tspan>
+       <tspan x="48.437012" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="56.206772" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="59.226547" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">(</tspan>
+       <tspan x="81.2564" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">)</tspan>
+       <tspan x="51.456787" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="62.932846" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="76.506415" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="69.05463" y="-0.40625" style="font-size: 9.5px; font-family: 'STIXGeneral'">×</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_18">
+      <path d="M 49.0176 205.061442 
+L 252.032772 205.061442 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19">
+      <defs>
+       <path id="m0df696d80e" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="205.061442" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <!-- $\mathdefault{10^{-2}}$ -->
+      <g transform="translate(23.2976 208.100817)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">−</tspan>
+        <tspan x="14.944609" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">2</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_20">
+      <path d="M 49.0176 187.740468 
+L 252.032772 187.740468 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="187.740468" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <!-- $\mathdefault{10^{-1}}$ -->
+      <g transform="translate(23.2976 190.779843)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">−</tspan>
+        <tspan x="14.944609" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_22">
+      <path d="M 49.0176 170.419494 
+L 252.032772 170.419494 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="170.419494" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <!-- $\mathdefault{10^{0}}$ -->
+      <g transform="translate(27.9376 173.458869)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">0</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_24">
+      <path d="M 49.0176 153.09852 
+L 252.032772 153.09852 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="153.09852" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <!-- $\mathdefault{10^{1}}$ -->
+      <g transform="translate(27.9376 156.137895)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_26">
+      <path d="M 49.0176 135.777547 
+L 252.032772 135.777547 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="135.777547" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <!-- $\mathdefault{10^{2}}$ -->
+      <g transform="translate(27.9376 138.816922)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">2</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_28">
+      <path d="M 49.0176 118.456573 
+L 252.032772 118.456573 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="118.456573" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <!-- $\mathdefault{10^{3}}$ -->
+      <g transform="translate(27.9376 121.495948)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">3</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_30">
+      <path d="M 49.0176 101.135599 
+L 252.032772 101.135599 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="101.135599" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <!-- $\mathdefault{10^{4}}$ -->
+      <g transform="translate(27.9376 104.174974)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">4</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_32">
+      <path d="M 49.0176 83.814625 
+L 252.032772 83.814625 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_33">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="83.814625" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <!-- $\mathdefault{10^{5}}$ -->
+      <g transform="translate(27.9376 86.854)">
+       <text>
+        <tspan x="0" y="-0.010938" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.010938" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-2.920313" style="font-size: 5.6px; font-family: 'DejaVu Serif'">5</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_34">
+      <path d="M 49.0176 66.493651 
+L 252.032772 66.493651 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_35">
+      <g>
+       <use xlink:href="#m0df696d80e" x="49.0176" y="66.493651" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_27">
+      <!-- $\mathdefault{10^{6}}$ -->
+      <g transform="translate(27.9376 69.533026)">
+       <text>
+        <tspan x="0" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">1</tspan>
+        <tspan x="5.089844" y="-0.934375" style="font-size: 8px; font-family: 'DejaVu Serif'">0</tspan>
+        <tspan x="10.252422" y="-3.84375" style="font-size: 5.6px; font-family: 'DejaVu Serif'">6</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_36">
+      <defs>
+       <path id="mf5ce748ab0" d="M 0 0 
+L -2 0 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="210.275575" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_37">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="208.904078" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_38">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="207.744495" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_39">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="206.740018" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_40">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="205.854006" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_41">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="199.847309" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_42">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="196.797237" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_43">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="194.633177" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_44">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="192.954601" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_45">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="191.583104" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_46">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="190.423521" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_47">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="189.419044" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_48">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="188.533032" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_49">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="182.526335" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_50">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="179.476263" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_51">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="177.312203" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_52">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="175.633627" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_53">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="174.262131" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_54">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="173.102547" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_55">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="172.09807" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_56">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="171.212059" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_31">
+     <g id="line2d_57">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="165.205362" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_32">
+     <g id="line2d_58">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="162.155289" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_33">
+     <g id="line2d_59">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="159.991229" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_34">
+     <g id="line2d_60">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="158.312653" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_35">
+     <g id="line2d_61">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="156.941157" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_36">
+     <g id="line2d_62">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="155.781573" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_37">
+     <g id="line2d_63">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="154.777096" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_38">
+     <g id="line2d_64">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="153.891085" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_39">
+     <g id="line2d_65">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="147.884388" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_40">
+     <g id="line2d_66">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="144.834316" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_41">
+     <g id="line2d_67">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="142.670255" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_42">
+     <g id="line2d_68">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="140.991679" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_43">
+     <g id="line2d_69">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="139.620183" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_44">
+     <g id="line2d_70">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="138.460599" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_45">
+     <g id="line2d_71">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="137.456122" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_46">
+     <g id="line2d_72">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="136.570111" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_47">
+     <g id="line2d_73">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="130.563414" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_48">
+     <g id="line2d_74">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="127.513342" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_49">
+     <g id="line2d_75">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="125.349281" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_50">
+     <g id="line2d_76">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="123.670705" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_51">
+     <g id="line2d_77">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="122.299209" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_52">
+     <g id="line2d_78">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="121.139625" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_53">
+     <g id="line2d_79">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="120.135148" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_54">
+     <g id="line2d_80">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="119.249137" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_55">
+     <g id="line2d_81">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="113.24244" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_56">
+     <g id="line2d_82">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="110.192368" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_57">
+     <g id="line2d_83">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="108.028307" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_58">
+     <g id="line2d_84">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="106.349732" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_59">
+     <g id="line2d_85">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="104.978235" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_60">
+     <g id="line2d_86">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="103.818652" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_61">
+     <g id="line2d_87">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="102.814175" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_62">
+     <g id="line2d_88">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="101.928163" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_63">
+     <g id="line2d_89">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="95.921466" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_64">
+     <g id="line2d_90">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="92.871394" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_65">
+     <g id="line2d_91">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="90.707333" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_66">
+     <g id="line2d_92">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="89.028758" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_67">
+     <g id="line2d_93">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="87.657261" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_68">
+     <g id="line2d_94">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="86.497678" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_69">
+     <g id="line2d_95">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="85.493201" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_70">
+     <g id="line2d_96">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="84.607189" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_71">
+     <g id="line2d_97">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="78.600492" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_72">
+     <g id="line2d_98">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="75.55042" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_73">
+     <g id="line2d_99">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="73.38636" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_74">
+     <g id="line2d_100">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="71.707784" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_75">
+     <g id="line2d_101">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="70.336288" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_76">
+     <g id="line2d_102">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="69.176704" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_77">
+     <g id="line2d_103">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="68.172227" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_78">
+     <g id="line2d_104">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="67.286215" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_79">
+     <g id="line2d_105">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="61.279518" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_80">
+     <g id="line2d_106">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="58.229446" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_81">
+     <g id="line2d_107">
+      <g>
+       <use xlink:href="#mf5ce748ab0" x="49.0176" y="56.065386" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 9.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="17.321897" y="133.2" transform="rotate(-90 17.321897 133.2)">Execution time per calculation (µs)</text>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_1">
+    <defs>
+     <path id="m2165680206" d="M 52.642871 -40.524075 
+L 52.642871 -39.756364 
+L 64.727107 -40.107937 
+L 76.811344 -48.073812 
+L 88.89558 -52.565623 
+L 100.979817 -56.53828 
+L 113.064053 -59.558647 
+L 125.14829 -65.984162 
+L 137.232526 -68.835137 
+L 149.316763 -73.899075 
+L 161.400999 -79.752646 
+L 173.485235 -85.302969 
+L 185.569472 -90.832226 
+L 197.653708 -96.814744 
+L 209.737945 -102.247747 
+L 221.822181 -113.277606 
+L 233.906418 -119.215342 
+L 245.990654 -125.087286 
+L 245.990654 -125.134094 
+L 245.990654 -125.134094 
+L 233.906418 -119.291358 
+L 221.822181 -113.418311 
+L 209.737945 -102.280153 
+L 197.653708 -96.832284 
+L 185.569472 -90.870998 
+L 173.485235 -85.376333 
+L 161.400999 -79.862881 
+L 149.316763 -74.020394 
+L 137.232526 -69.261949 
+L 125.14829 -66.289818 
+L 113.064053 -60.577845 
+L 100.979817 -58.609163 
+L 88.89558 -54.932577 
+L 76.811344 -50.318597 
+L 64.727107 -41.201065 
+L 52.642871 -40.524075 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#m2165680206" x="0" y="244.4" style="fill: #1565b5; fill-opacity: 0.6"/>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_2">
+    <defs>
+     <path id="m094c3923e2" d="M 52.642871 -45.863454 
+L 52.642871 -45.850767 
+L 64.727107 -48.713761 
+L 76.811344 -53.952044 
+L 88.89558 -59.72756 
+L 100.979817 -75.687862 
+L 113.064053 -80.475963 
+L 113.064053 -80.512191 
+L 113.064053 -80.512191 
+L 100.979817 -75.747806 
+L 88.89558 -59.84891 
+L 76.811344 -54.326406 
+L 64.727107 -48.721179 
+L 52.642871 -45.863454 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#m094c3923e2" x="0" y="244.4" style="fill: #b74d48; fill-opacity: 0.6"/>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_3">
+    <defs>
+     <path id="m608a9d6a3d" d="M 125.14829 -83.649569 
+L 125.14829 -83.505336 
+L 137.232526 -92.157403 
+L 149.316763 -101.123772 
+L 161.400999 -110.569878 
+L 173.485235 -120.462273 
+L 185.569472 -130.403286 
+L 197.653708 -141.019342 
+L 209.737945 -151.619845 
+L 221.822181 -161.77764 
+L 233.906418 -172.248615 
+L 245.990654 -182.623778 
+L 245.990654 -182.643636 
+L 245.990654 -182.643636 
+L 233.906418 -172.271925 
+L 221.822181 -161.805339 
+L 209.737945 -151.894822 
+L 197.653708 -141.363452 
+L 185.569472 -130.554023 
+L 173.485235 -120.605684 
+L 161.400999 -110.679676 
+L 149.316763 -101.264519 
+L 137.232526 -92.702918 
+L 125.14829 -83.649569 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#m608a9d6a3d" x="0" y="244.4" style="fill: #b74d48; fill-opacity: 0.6"/>
+    </g>
+   </g>
+   <g id="line2d_108">
+    <path d="M 52.642871 198.540534 
+L 64.727107 195.682051 
+L 76.811344 190.357693 
+L 88.89558 184.631825 
+L 100.979817 168.700192 
+L 113.064053 163.913409 
+" clip-path="url(#p999e238264)" style="fill: none; stroke-dasharray: 6.105,2.64; stroke-dashoffset: 0; stroke: #b74d48; stroke-width: 1.65"/>
+    <defs>
+     <path id="m3a92565705" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #b74d48; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#m3a92565705" x="52.642871" y="198.540534" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m3a92565705" x="64.727107" y="195.682051" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m3a92565705" x="76.811344" y="190.357693" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m3a92565705" x="88.89558" y="184.631825" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m3a92565705" x="100.979817" y="168.700192" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m3a92565705" x="113.064053" y="163.913409" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_109">
+    <path d="M 125.14829 160.791034 
+L 137.232526 151.964001 
+L 149.316763 143.215444 
+L 161.400999 133.785729 
+L 173.485235 123.922234 
+L 185.569472 113.928137 
+L 197.653708 103.251454 
+L 209.737945 92.709662 
+L 221.822181 82.613719 
+L 233.906418 72.133937 
+L 245.990654 61.759535 
+" clip-path="url(#p999e238264)" style="fill: none; stroke-dasharray: 6.105,2.64; stroke-dashoffset: 0; stroke: #b74d48; stroke-width: 1.65"/>
+    <defs>
+     <path id="m267dcf67e6" d="M 0 -2 
+L -2 2 
+L 2 2 
+z
+" style="stroke: #b74d48; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#m267dcf67e6" x="125.14829" y="160.791034" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="137.232526" y="151.964001" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="149.316763" y="143.215444" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="161.400999" y="133.785729" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="173.485235" y="123.922234" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="185.569472" y="113.928137" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="197.653708" y="103.251454" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="209.737945" y="92.709662" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="221.822181" y="82.613719" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="233.906418" y="72.133937" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     <use xlink:href="#m267dcf67e6" x="245.990654" y="61.759535" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_110">
+    <path d="M 119.106171 211.788 
+L 119.106171 54.612 
+" clip-path="url(#p999e238264)" style="fill: none; stroke-dasharray: 0.75,1.2375; stroke-dashoffset: 0; stroke: #a6adb5; stroke-width: 0.75"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 49.0176 211.788 
+L 49.0176 54.612 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 49.0176 211.788 
+L 252.032772 211.788 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_111">
+    <path d="M 52.642871 203.926001 
+L 64.727107 203.818847 
+L 76.811344 195.482931 
+L 88.89558 190.060714 
+L 100.979817 186.882063 
+L 113.064053 184.041898 
+L 125.14829 178.25657 
+L 137.232526 175.360119 
+L 149.316763 170.461654 
+L 161.400999 164.634062 
+L 173.485235 159.047766 
+L 185.569472 153.545828 
+L 197.653708 147.579234 
+L 209.737945 142.137697 
+L 221.822181 131.064481 
+L 233.906418 125.155492 
+L 245.990654 119.292701 
+" clip-path="url(#p999e238264)" style="fill: none; stroke: #1565b5; stroke-width: 2.1; stroke-linecap: square"/>
+    <defs>
+     <path id="md84dc64755" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #1565b5"/>
+    </defs>
+    <g clip-path="url(#p999e238264)">
+     <use xlink:href="#md84dc64755" x="52.642871" y="203.926001" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="64.727107" y="203.818847" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="76.811344" y="195.482931" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="88.89558" y="190.060714" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="100.979817" y="186.882063" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="113.064053" y="184.041898" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="125.14829" y="178.25657" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="137.232526" y="175.360119" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="149.316763" y="170.461654" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="161.400999" y="164.634062" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="173.485235" y="159.047766" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="185.569472" y="153.545828" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="197.653708" y="147.579234" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="209.737945" y="142.137697" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="221.822181" y="131.064481" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="233.906418" y="125.155492" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="245.990654" y="119.292701" style="fill: #1565b5; stroke: #1565b5"/>
+    </g>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10px; font-family: 'DejaVu Serif'; text-anchor: start" x="49.0176" y="45.612" transform="rotate(-0 49.0176 45.612)">(a) Execution time ↓</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_112">
+     <path d="M 55.7676 64.435828 
+L 63.2676 64.435828 
+L 70.7676 64.435828 
+" style="fill: none; stroke: #1565b5; stroke-width: 2.1; stroke-linecap: square"/>
+     <g>
+      <use xlink:href="#md84dc64755" x="63.2676" y="64.435828" style="fill: #1565b5; stroke: #1565b5"/>
+     </g>
+    </g>
+    <g id="text_30">
+     <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: start" x="76.7676" y="67.060828" transform="rotate(-0 76.7676 67.060828)">Our method</text>
+    </g>
+    <g id="line2d_113">
+     <path d="M 55.7676 75.444422 
+L 63.2676 75.444422 
+L 70.7676 75.444422 
+" style="fill: none; stroke-dasharray: 6.105,2.64; stroke-dashoffset: 0; stroke: #b74d48; stroke-width: 1.65"/>
+     <g>
+      <use xlink:href="#m3a92565705" x="63.2676" y="75.444422" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_31">
+     <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: start" x="76.7676" y="78.069422" transform="rotate(-0 76.7676 78.069422)">PEIGEN (3–8 bits)</text>
+    </g>
+    <g id="line2d_114">
+     <path d="M 55.7676 86.453016 
+L 63.2676 86.453016 
+L 70.7676 86.453016 
+" style="fill: none; stroke-dasharray: 6.105,2.64; stroke-dashoffset: 0; stroke: #b74d48; stroke-width: 1.65"/>
+     <g>
+      <use xlink:href="#m267dcf67e6" x="63.2676" y="86.453016" style="fill: #b74d48; stroke: #b74d48; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: start" x="76.7676" y="89.078016" transform="rotate(-0 76.7676 89.078016)">Bitwise method (9–19 bits)</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 316.997628 211.788 
+L 520.0128 211.788 
+L 520.0128 54.612 
+L 316.997628 54.612 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_18">
+     <g id="line2d_115">
+      <g>
+       <use xlink:href="#me6ac24c395" x="320.622899" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_33">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="320.622899" y="224.86675" transform="rotate(-0 320.622899 224.86675)">3</text>
+     </g>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_116">
+      <g>
+       <use xlink:href="#me6ac24c395" x="332.707135" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_34">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="332.707135" y="224.86675" transform="rotate(-0 332.707135 224.86675)">4</text>
+     </g>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_117">
+      <g>
+       <use xlink:href="#me6ac24c395" x="344.791371" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_35">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="344.791371" y="224.86675" transform="rotate(-0 344.791371 224.86675)">5</text>
+     </g>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_118">
+      <g>
+       <use xlink:href="#me6ac24c395" x="356.875608" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="356.875608" y="224.86675" transform="rotate(-0 356.875608 224.86675)">6</text>
+     </g>
+    </g>
+    <g id="xtick_22">
+     <g id="line2d_119">
+      <g>
+       <use xlink:href="#me6ac24c395" x="368.959844" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_37">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="368.959844" y="224.86675" transform="rotate(-0 368.959844 224.86675)">7</text>
+     </g>
+    </g>
+    <g id="xtick_23">
+     <g id="line2d_120">
+      <g>
+       <use xlink:href="#me6ac24c395" x="381.044081" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_38">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="381.044081" y="224.86675" transform="rotate(-0 381.044081 224.86675)">8</text>
+     </g>
+    </g>
+    <g id="xtick_24">
+     <g id="line2d_121">
+      <g>
+       <use xlink:href="#me6ac24c395" x="393.128317" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_39">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="393.128317" y="224.86675" transform="rotate(-0 393.128317 224.86675)">9</text>
+     </g>
+    </g>
+    <g id="xtick_25">
+     <g id="line2d_122">
+      <g>
+       <use xlink:href="#me6ac24c395" x="405.212554" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_40">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="405.212554" y="224.86675" transform="rotate(-0 405.212554 224.86675)">10</text>
+     </g>
+    </g>
+    <g id="xtick_26">
+     <g id="line2d_123">
+      <g>
+       <use xlink:href="#me6ac24c395" x="417.29679" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_41">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="417.29679" y="224.86675" transform="rotate(-0 417.29679 224.86675)">11</text>
+     </g>
+    </g>
+    <g id="xtick_27">
+     <g id="line2d_124">
+      <g>
+       <use xlink:href="#me6ac24c395" x="429.381027" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_42">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="429.381027" y="224.86675" transform="rotate(-0 429.381027 224.86675)">12</text>
+     </g>
+    </g>
+    <g id="xtick_28">
+     <g id="line2d_125">
+      <g>
+       <use xlink:href="#me6ac24c395" x="441.465263" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_43">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="441.465263" y="224.86675" transform="rotate(-0 441.465263 224.86675)">13</text>
+     </g>
+    </g>
+    <g id="xtick_29">
+     <g id="line2d_126">
+      <g>
+       <use xlink:href="#me6ac24c395" x="453.5495" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_44">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="453.5495" y="224.86675" transform="rotate(-0 453.5495 224.86675)">14</text>
+     </g>
+    </g>
+    <g id="xtick_30">
+     <g id="line2d_127">
+      <g>
+       <use xlink:href="#me6ac24c395" x="465.633736" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_45">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="465.633736" y="224.86675" transform="rotate(-0 465.633736 224.86675)">15</text>
+     </g>
+    </g>
+    <g id="xtick_31">
+     <g id="line2d_128">
+      <g>
+       <use xlink:href="#me6ac24c395" x="477.717972" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_46">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="477.717972" y="224.86675" transform="rotate(-0 477.717972 224.86675)">16</text>
+     </g>
+    </g>
+    <g id="xtick_32">
+     <g id="line2d_129">
+      <g>
+       <use xlink:href="#me6ac24c395" x="489.802209" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_47">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="489.802209" y="224.86675" transform="rotate(-0 489.802209 224.86675)">17</text>
+     </g>
+    </g>
+    <g id="xtick_33">
+     <g id="line2d_130">
+      <g>
+       <use xlink:href="#me6ac24c395" x="501.886445" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_48">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="501.886445" y="224.86675" transform="rotate(-0 501.886445 224.86675)">18</text>
+     </g>
+    </g>
+    <g id="xtick_34">
+     <g id="line2d_131">
+      <g>
+       <use xlink:href="#me6ac24c395" x="513.970682" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_49">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="513.970682" y="224.86675" transform="rotate(-0 513.970682 224.86675)">19</text>
+     </g>
+    </g>
+    <g id="text_50">
+     <!-- S-box size $n$ ($n\times n$) -->
+     <g transform="translate(375.992714 237.749016)">
+      <text>
+       <tspan x="0" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">S</tspan>
+       <tspan x="6.508057" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">-</tspan>
+       <tspan x="9.718018" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">b</tspan>
+       <tspan x="15.799316" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">o</tspan>
+       <tspan x="21.518799" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">x</tspan>
+       <tspan x="26.876465" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="29.89624" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">s</tspan>
+       <tspan x="34.771484" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">i</tspan>
+       <tspan x="37.809814" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">z</tspan>
+       <tspan x="42.814941" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">e</tspan>
+       <tspan x="48.437012" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="56.206772" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'"> </tspan>
+       <tspan x="59.226547" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">(</tspan>
+       <tspan x="81.2564" y="-0.40625" style="font-size: 9.5px; font-family: 'DejaVu Serif'">)</tspan>
+       <tspan x="51.456787" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="62.932846" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="76.506415" y="-0.40625" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">n</tspan>
+       <tspan x="69.05463" y="-0.40625" style="font-size: 9.5px; font-family: 'STIXGeneral'">×</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_82">
+     <g id="line2d_132">
+      <path d="M 316.997628 211.788 
+L 520.0128 211.788 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_133">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="211.788" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_51">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="214.827375" transform="rotate(-0 309.997628 214.827375)">0</text>
+     </g>
+    </g>
+    <g id="ytick_83">
+     <g id="line2d_134">
+      <path d="M 316.997628 182.828938 
+L 520.0128 182.828938 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_135">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="182.828938" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_52">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="185.868313" transform="rotate(-0 309.997628 185.868313)">500</text>
+     </g>
+    </g>
+    <g id="ytick_84">
+     <g id="line2d_136">
+      <path d="M 316.997628 153.869875 
+L 520.0128 153.869875 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_137">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="153.869875" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_53">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="156.90925" transform="rotate(-0 309.997628 156.90925)">1000</text>
+     </g>
+    </g>
+    <g id="ytick_85">
+     <g id="line2d_138">
+      <path d="M 316.997628 124.910813 
+L 520.0128 124.910813 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_139">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="124.910813" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_54">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="127.950188" transform="rotate(-0 309.997628 127.950188)">1500</text>
+     </g>
+    </g>
+    <g id="ytick_86">
+     <g id="line2d_140">
+      <path d="M 316.997628 95.95175 
+L 520.0128 95.95175 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_141">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="95.95175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_55">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="98.991125" transform="rotate(-0 309.997628 98.991125)">2000</text>
+     </g>
+    </g>
+    <g id="ytick_87">
+     <g id="line2d_142">
+      <path d="M 316.997628 66.992688 
+L 520.0128 66.992688 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.3; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_143">
+      <g>
+       <use xlink:href="#m0df696d80e" x="316.997628" y="66.992688" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_56">
+      <text style="font-size: 8px; font-family: 'DejaVu Serif'; text-anchor: end" x="309.997628" y="70.032063" transform="rotate(-0 309.997628 70.032063)">2500</text>
+     </g>
+    </g>
+    <g id="text_57">
+     <text style="font-size: 9.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="283.661924" y="133.2" transform="rotate(-90 283.661924 133.2)">Speedup of our method (×)</text>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_4">
+    <defs>
+     <path id="m92159408d8" d="M 320.622899 -32.743145 
+L 320.622899 -32.729731 
+L 332.707135 -32.76958 
+L 344.791371 -32.714719 
+L 356.875608 -32.723023 
+L 368.959844 -33.176591 
+L 381.044081 -33.432611 
+L 393.128317 -33.192192 
+L 405.212554 -33.892352 
+L 417.29679 -34.727923 
+L 429.381027 -36.060835 
+L 441.465263 -38.753156 
+L 453.5495 -43.720549 
+L 465.633736 -53.295793 
+L 477.717972 -73.593083 
+L 489.802209 -68.617506 
+L 501.886445 -98.912291 
+L 513.970682 -153.56473 
+L 513.970682 -154.45386 
+L 513.970682 -154.45386 
+L 501.886445 -99.516712 
+L 489.802209 -69.358122 
+L 477.717972 -75.07276 
+L 465.633736 -54.031103 
+L 453.5495 -43.947323 
+L 441.465263 -38.898321 
+L 429.381027 -36.124962 
+L 417.29679 -34.795447 
+L 405.212554 -33.939484 
+L 393.128317 -33.209378 
+L 381.044081 -33.549056 
+L 368.959844 -33.353093 
+L 356.875608 -32.763491 
+L 344.791371 -32.737799 
+L 332.707135 -32.794334 
+L 320.622899 -32.743145 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p843f76d652)">
+     <use xlink:href="#m92159408d8" x="0" y="244.4" style="fill: #1565b5; fill-opacity: 0.6"/>
+    </g>
+   </g>
+   <g id="line2d_144">
+    <path d="M 316.997628 211.730082 
+L 520.0128 211.730082 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke-dasharray: 0.85,1.4025; stroke-dashoffset: 0; stroke: #646d78; stroke-width: 0.85"/>
+   </g>
+   <g id="line2d_145">
+    <path d="M 387.086199 211.788 
+L 387.086199 54.612 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke-dasharray: 0.75,1.2375; stroke-dashoffset: 0; stroke: #a6adb5; stroke-width: 0.75"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 316.997628 211.788 
+L 316.997628 54.612 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 316.997628 211.788 
+L 520.0128 211.788 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_146">
+    <path d="M 320.622899 211.669539 
+L 332.707135 211.617137 
+L 344.791371 211.6734 
+L 356.875608 211.669256 
+L 368.959844 211.134554 
+L 381.044081 210.94762 
+L 393.128317 211.198835 
+L 405.212554 210.486204 
+L 417.29679 209.616684 
+L 429.381027 208.295557 
+L 441.465263 205.588668 
+L 453.5495 200.534839 
+L 465.633736 190.850433 
+L 477.717972 170.432087 
+L 489.802209 175.430122 
+L 501.886445 145.142613 
+L 513.970682 90.06075 
+" clip-path="url(#p843f76d652)" style="fill: none; stroke: #1565b5; stroke-width: 2.1; stroke-linecap: square"/>
+    <g clip-path="url(#p843f76d652)">
+     <use xlink:href="#md84dc64755" x="320.622899" y="211.669539" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="332.707135" y="211.617137" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="344.791371" y="211.6734" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="356.875608" y="211.669256" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="368.959844" y="211.134554" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="381.044081" y="210.94762" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="393.128317" y="211.198835" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="405.212554" y="210.486204" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="417.29679" y="209.616684" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="429.381027" y="208.295557" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="441.465263" y="205.588668" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="453.5495" y="200.534839" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="465.633736" y="190.850433" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="477.717972" y="170.432087" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="489.802209" y="175.430122" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="501.886445" y="145.142613" style="fill: #1565b5; stroke: #1565b5"/>
+     <use xlink:href="#md84dc64755" x="513.970682" y="90.06075" style="fill: #1565b5; stroke: #1565b5"/>
+    </g>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 10px; font-family: 'DejaVu Serif'; text-anchor: start" x="316.997628" y="45.612" transform="rotate(-0 316.997628 45.612)">(b) Speedup ↑</text>
+   </g>
+   <g id="text_59">
+    <g id="patch_8">
+     <path d="M 308.455906 204.344539 
+L 332.789891 204.344539 
+L 332.789891 195.735945 
+L 308.455906 195.735945 
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="320.622899" y="202.109774" transform="rotate(-0 320.622899 202.109774)">2.05×</text>
+   </g>
+   <g id="text_60">
+    <g id="patch_9">
+     <path d="M 366.491151 203.62262 
+L 395.59701 203.62262 
+L 395.59701 195.014026 
+L 366.491151 195.014026 
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="381.044081" y="201.387854" transform="rotate(-0 381.044081 201.387854)">14.51×</text>
+   </g>
+   <g id="text_61">
+    <g id="patch_10">
+     <path d="M 414.828097 200.970557 
+L 443.933956 200.970557 
+L 443.933956 192.361963 
+L 414.828097 192.361963 
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="429.381027" y="198.735791" transform="rotate(-0 429.381027 198.735791)">60.30×</text>
+   </g>
+   <g id="text_62">
+    <g id="patch_11">
+     <path d="M 460.779105 163.107087 
+L 494.65684 163.107087 
+L 494.65684 154.498493 
+L 460.779105 154.498493 
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Serif'; text-anchor: middle; fill: #1565b5" x="477.717972" y="160.872321" transform="rotate(-0 477.717972 160.872321)">714.04×</text>
+   </g>
+   <g id="text_63">
+    <g id="patch_12">
+     <path d="M 462.003651 80.78075 
+L 511.690682 80.78075 
+L 511.690682 70.630438 
+L 462.003651 70.630438 
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Serif'; text-anchor: end; fill: #1565b5" x="510.970682" y="78.189031" transform="rotate(-0 510.970682 78.189031)">2101.71×</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p999e238264">
+   <rect x="49.0176" y="54.612" width="203.015172" height="157.176"/>
+  </clipPath>
+  <clipPath id="p843f76d652">
+   <rect x="316.997628" y="54.612" width="203.015172" height="157.176"/>
+  </clipPath>
+ </defs>
+</svg>

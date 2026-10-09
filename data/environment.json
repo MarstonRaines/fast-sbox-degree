@@ -1,0 +1,21 @@
+{
+  "os": "Ubuntu 24.04.3 LTS; Linux 6.8.0",
+  "cpu": "2 x AMD EPYC 9754",
+  "compiler": "GCC 13.3.0",
+  "language": "C++20",
+  "threads": 1,
+  "cpu_binding": 0,
+  "numa_node": 0,
+  "flags": [
+    "-O3",
+    "-march=native",
+    "-fopenmp",
+    "-DCOAM_OUTPUT_PACKED_MINIMUM",
+    "-DCOAM_SPARSE_DELTA"
+  ],
+  "minimum_maximum_extra_flag": "-DCOAM_SMALL_MINIMUM_5",
+  "warmup_ms": 50,
+  "timing": "Monotonic elapsed time; input I/O, warmup and independent verification excluded.",
+  "memory": "/proc/self/status VmHWM after exec; MiB = 2^20 bytes.",
+  "shared_machine": true
+}

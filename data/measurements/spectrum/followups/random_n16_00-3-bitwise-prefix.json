@@ -1,0 +1,145 @@
+{
+  "kind": "prefix",
+  "input": "random_n16_00",
+  "n": 16,
+  "method": "bitwise",
+  "repetition": 3,
+  "id": "random_n16_00-3-bitwise-prefix",
+  "binary": "prefix-optimized",
+  "args": [
+    "bitwise",
+    "data/inputs/random_n16_00.lut",
+    "data/inputs/random_n16_00.swaps",
+    "512"
+  ],
+  "command": [
+    "numactl",
+    "--physcpubind=0",
+    "--membind=0",
+    "build/prefix-optimized",
+    "bitwise",
+    "data/inputs/random_n16_00.lut",
+    "data/inputs/random_n16_00.swaps",
+    "512"
+  ],
+  "started_utc": "2026-10-07T10:31:27.306543+00:00",
+  "process_seconds": 15.89314637798816,
+  "binary_sha256": "6c57f9c6acb4d2ef737ecb3feff58bbc0e5c41afb42643902800f245fb4e9c54",
+  "returncode": 0,
+  "input_sha256": {
+    "data/inputs/random_n16_00.lut": "dc0e951bf636ea30da22c7662c38d02b7810269cba43d3b80f1d4b398968415d",
+    "data/inputs/random_n16_00.swaps": "d13d2c5ffaf574728b88fceb8e7c2436dda4f4d058c0a4d23eccd9fc0620f49c"
+  },
+  "result": {
+    "method": "bitwise",
+    "n": 16,
+    "m": 16,
+    "context_ns": 669253,
+    "init_ns": 32059727,
+    "peak_rss_bytes": 5226496,
+    "context_allocated_bytes": 467552,
+    "state_allocated_bytes": 680632,
+    "checkpoints": [
+      {
+        "steps": 1,
+        "kernel_ns": 31010937,
+        "total_ns": 63739917,
+        "digest": 13410995441118166511,
+        "histogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          65534,
+          0
+        ]
+      },
+      {
+        "steps": 16,
+        "kernel_ns": 493741745,
+        "total_ns": 526470725,
+        "digest": 11657873656645989683,
+        "histogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          65534,
+          0
+        ]
+      },
+      {
+        "steps": 128,
+        "kernel_ns": 3949865375,
+        "total_ns": 3982594355,
+        "digest": 15474055943942048795,
+        "histogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          65535,
+          0
+        ]
+      },
+      {
+        "steps": 512,
+        "kernel_ns": 15801539134,
+        "total_ns": 15834268114,
+        "digest": 573525282925710021,
+        "histogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          65534,
+          0
+        ]
+      }
+    ]
+  }
+}

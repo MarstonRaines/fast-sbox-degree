@@ -1,0 +1,35 @@
+{
+  "input": "CLEFIA_S0",
+  "n": 8,
+  "metric": "min",
+  "method": "peigen",
+  "repetition": 3,
+  "steps": 491,
+  "variant": "optimized",
+  "command": [
+    "numactl",
+    "--physcpubind=0",
+    "--membind=0",
+    "build/minmax-optimized",
+    "peigen",
+    "min",
+    "data/inputs/CLEFIA_S0.lut",
+    "data/inputs/CLEFIA_S0.swaps",
+    "491"
+  ],
+  "started_utc": "2026-10-07T10:54:31.353381+00:00",
+  "process_seconds": 0.05764440353959799,
+  "binary_sha256": "9c5404360c3bc634e8cd4162bfed616c7dac1f42493416dfdef45a176dd7a726",
+  "input_sha256": "1a1a63d9110f11e31890be6603eacfda9358d88c11fd20ce2b3c8a76d41cd917",
+  "swaps_sha256": "e5a545a083f50e1b407efd05eb3ac55b8dbd2cb0684e53fb7d409c709e7434a5",
+  "returncode": 0,
+  "result": {
+    "context_ns": 14002,
+    "init_ns": 21179,
+    "kernel_ns": 2279980,
+    "steps": 491,
+    "final_value": 6,
+    "final_box_hash": 3159390917197768285,
+    "digest": 5862009821856553726
+  }
+}

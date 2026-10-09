@@ -1,0 +1,835 @@
+[
+  {
+    "input": "freyre2020-s8",
+    "method": "peigen",
+    "objective": "minimum-only",
+    "initial_min": 6,
+    "initial_sum": 1778,
+    "final_min": 6,
+    "final_sum": 1778,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 32640,
+    "nl_calls": 0,
+    "du_calls": 0,
+    "degree_rejects": 32640,
+    "nl_rejects": 0,
+    "du_rejects": 0,
+    "target_reached": false,
+    "termination": "no-strict-improvement",
+    "accepted_count": 0,
+    "accepted": [],
+    "median_total_ms": 104.060638,
+    "min_total_ms": 103.688951,
+    "max_total_ms": 105.434488,
+    "repetitions_total_ms": [
+      104.051116,
+      104.060638,
+      103.688951,
+      105.434488,
+      104.634753
+    ],
+    "median_kernel_ms": 103.429883,
+    "min_kernel_ms": 103.058156,
+    "max_kernel_ms": 104.800225,
+    "repetitions_kernel_ms": [
+      103.420912,
+      103.429883,
+      103.058156,
+      104.800225,
+      104.006984
+    ],
+    "median_context_ms": 0.022762,
+    "min_context_ms": 0.020747,
+    "max_context_ms": 0.024086,
+    "repetitions_context_ms": [
+      0.022712,
+      0.020747,
+      0.022762,
+      0.023183,
+      0.024086
+    ],
+    "median_degree_init_ms": 0.012709,
+    "min_degree_init_ms": 0.012128,
+    "max_degree_init_ms": 0.015968,
+    "repetitions_degree_init_ms": [
+      0.01299,
+      0.012128,
+      0.012709,
+      0.015968,
+      0.012619
+    ],
+    "median_constraints_init_ms": 0.595112,
+    "min_constraints_init_ms": 0.591064,
+    "max_constraints_init_ms": 0.59788,
+    "repetitions_constraints_init_ms": [
+      0.594502,
+      0.59788,
+      0.595324,
+      0.595112,
+      0.591064
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 102.597831,
+      "nl": 0.0,
+      "du": 0.0,
+      "rollback": 1.691171,
+      "other": 1.973546
+    },
+    "diagnostic_nl_du_share": 0.0
+  },
+  {
+    "input": "freyre2020-s8",
+    "method": "rank-shared",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1778,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 17555,
+    "nl_calls": 4501,
+    "du_calls": 3,
+    "degree_rejects": 13054,
+    "nl_rejects": 4498,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 3,
+    "accepted": [
+      {
+        "p": 0,
+        "q": 34,
+        "attempt": 34,
+        "minimum": 6,
+        "spectrum_sum": 1782,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      },
+      {
+        "p": 0,
+        "q": 60,
+        "attempt": 94,
+        "minimum": 6,
+        "spectrum_sum": 1784,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      },
+      {
+        "p": 81,
+        "q": 127,
+        "attempt": 17555,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 287.126356,
+    "min_total_ms": 284.324463,
+    "max_total_ms": 288.119377,
+    "repetitions_total_ms": [
+      287.659938,
+      286.838783,
+      287.126356,
+      288.119377,
+      284.324463
+    ],
+    "median_kernel_ms": 286.504672,
+    "min_kernel_ms": 283.710256,
+    "max_kernel_ms": 287.50954,
+    "repetitions_kernel_ms": [
+      287.044989,
+      286.225609,
+      286.504672,
+      287.50954,
+      283.710256
+    ],
+    "median_context_ms": 0.020116,
+    "min_context_ms": 0.018312,
+    "max_context_ms": 0.024687,
+    "repetitions_context_ms": [
+      0.024687,
+      0.018312,
+      0.020116,
+      0.019555,
+      0.022572
+    ],
+    "median_degree_init_ms": 0.001995,
+    "min_degree_init_ms": 0.001914,
+    "max_degree_init_ms": 0.002125,
+    "repetitions_degree_init_ms": [
+      0.002125,
+      0.002065,
+      0.001914,
+      0.001995,
+      0.001935
+    ],
+    "median_constraints_init_ms": 0.5897,
+    "min_constraints_init_ms": 0.588137,
+    "max_constraints_init_ms": 0.599654,
+    "repetitions_constraints_init_ms": [
+      0.588137,
+      0.592797,
+      0.599654,
+      0.588287,
+      0.5897
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 3.627456,
+      "nl": 141.687744,
+      "du": 0.018574,
+      "rollback": 142.917305,
+      "other": 1.22158
+    },
+    "diagnostic_nl_du_share": 0.4895326504739088,
+    "static_over_update_ratio": 1.0310072127269292,
+    "peigen_over_update_time_to_target_ratio": null
+  },
+  {
+    "input": "freyre2020-s8",
+    "method": "rank-static",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1778,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 17555,
+    "nl_calls": 4501,
+    "du_calls": 3,
+    "degree_rejects": 13054,
+    "nl_rejects": 4498,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 3,
+    "accepted": [
+      {
+        "p": 0,
+        "q": 34,
+        "attempt": 34,
+        "minimum": 6,
+        "spectrum_sum": 1782,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      },
+      {
+        "p": 0,
+        "q": 60,
+        "attempt": 94,
+        "minimum": 6,
+        "spectrum_sum": 1784,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      },
+      {
+        "p": 81,
+        "q": 127,
+        "attempt": 17555,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 296.029344,
+    "min_total_ms": 294.221333,
+    "max_total_ms": 299.454435,
+    "repetitions_total_ms": [
+      296.029344,
+      294.221333,
+      296.826954,
+      299.454435,
+      294.630658
+    ],
+    "median_kernel_ms": 295.418946,
+    "min_kernel_ms": 293.614574,
+    "max_kernel_ms": 298.83664,
+    "repetitions_kernel_ms": [
+      295.418946,
+      293.614574,
+      296.215974,
+      298.83664,
+      294.01582
+    ],
+    "median_context_ms": 0.02142,
+    "min_context_ms": 0.017451,
+    "max_context_ms": 0.024978,
+    "repetitions_context_ms": [
+      0.021369,
+      0.021609,
+      0.02142,
+      0.024978,
+      0.017451
+    ],
+    "median_degree_init_ms": 0.001965,
+    "min_degree_init_ms": 0.001864,
+    "max_degree_init_ms": 0.002104,
+    "repetitions_degree_init_ms": [
+      0.001874,
+      0.001965,
+      0.001864,
+      0.002104,
+      0.002044
+    ],
+    "median_constraints_init_ms": 0.587696,
+    "min_constraints_init_ms": 0.583185,
+    "max_constraints_init_ms": 0.595343,
+    "repetitions_constraints_init_ms": [
+      0.587155,
+      0.583185,
+      0.587696,
+      0.590713,
+      0.595343
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 15.807047,
+      "nl": 143.42397,
+      "du": 0.018973,
+      "rollback": 143.477112,
+      "other": 1.220649
+    },
+    "diagnostic_nl_du_share": 0.4719328980986604
+  },
+  {
+    "input": "kuznetsov2023-hill-2",
+    "method": "peigen",
+    "objective": "minimum-only",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 488,
+    "nl_calls": 121,
+    "du_calls": 1,
+    "degree_rejects": 367,
+    "nl_rejects": 120,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 234,
+        "attempt": 488,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 9.948549,
+    "min_total_ms": 9.874959,
+    "max_total_ms": 10.13514,
+    "repetitions_total_ms": [
+      9.968866,
+      9.874959,
+      9.895567,
+      9.948549,
+      10.13514
+    ],
+    "median_kernel_ms": 9.321162,
+    "min_kernel_ms": 9.256372,
+    "max_kernel_ms": 9.502351,
+    "repetitions_kernel_ms": [
+      9.338181,
+      9.256372,
+      9.265644,
+      9.321162,
+      9.502351
+    ],
+    "median_context_ms": 0.021249,
+    "min_context_ms": 0.019464,
+    "max_context_ms": 0.023674,
+    "repetitions_context_ms": [
+      0.023574,
+      0.019464,
+      0.023674,
+      0.021249,
+      0.020718
+    ],
+    "median_degree_init_ms": 0.012288,
+    "min_degree_init_ms": 0.010595,
+    "max_degree_init_ms": 0.016679,
+    "repetitions_degree_init_ms": [
+      0.012288,
+      0.010595,
+      0.016679,
+      0.011125,
+      0.016037
+    ],
+    "median_constraints_init_ms": 0.594823,
+    "min_constraints_init_ms": 0.588528,
+    "max_constraints_init_ms": 0.596034,
+    "repetitions_constraints_init_ms": [
+      0.594823,
+      0.588528,
+      0.58957,
+      0.595013,
+      0.596034
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 1.736801,
+      "nl": 3.836301,
+      "du": 0.004951,
+      "rollback": 3.881111,
+      "other": 0.033574
+    },
+    "diagnostic_nl_du_share": 0.4046516400220885
+  },
+  {
+    "input": "kuznetsov2023-hill-2",
+    "method": "rank-shared",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 488,
+    "nl_calls": 121,
+    "du_calls": 1,
+    "degree_rejects": 367,
+    "nl_rejects": 120,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 234,
+        "attempt": 488,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 8.315512,
+    "min_total_ms": 8.265617,
+    "max_total_ms": 8.465038,
+    "repetitions_total_ms": [
+      8.341973,
+      8.265617,
+      8.465038,
+      8.266239,
+      8.315512
+    ],
+    "median_kernel_ms": 7.701295,
+    "min_kernel_ms": 7.654127,
+    "max_kernel_ms": 7.852314,
+    "repetitions_kernel_ms": [
+      7.728588,
+      7.654127,
+      7.852314,
+      7.657765,
+      7.701295
+    ],
+    "median_context_ms": 0.022071,
+    "min_context_ms": 0.019044,
+    "max_context_ms": 0.023565,
+    "repetitions_context_ms": [
+      0.022071,
+      0.019044,
+      0.023565,
+      0.020117,
+      0.023003
+    ],
+    "median_degree_init_ms": 0.001864,
+    "min_degree_init_ms": 0.001774,
+    "max_degree_init_ms": 0.002084,
+    "repetitions_degree_init_ms": [
+      0.001784,
+      0.001774,
+      0.001954,
+      0.001864,
+      0.002084
+    ],
+    "median_constraints_init_ms": 0.58913,
+    "min_constraints_init_ms": 0.586493,
+    "max_constraints_init_ms": 0.590672,
+    "repetitions_constraints_init_ms": [
+      0.58953,
+      0.590672,
+      0.587205,
+      0.586493,
+      0.58913
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 0.157084,
+      "nl": 3.797332,
+      "du": 0.003688,
+      "rollback": 3.852045,
+      "other": 0.035429
+    },
+    "diagnostic_nl_du_share": 0.48447928246969185,
+    "static_over_update_ratio": 1.0215637954704413,
+    "peigen_over_update_time_to_target_ratio": 1.1963844198649463
+  },
+  {
+    "input": "kuznetsov2023-hill-2",
+    "method": "rank-static",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 488,
+    "nl_calls": 121,
+    "du_calls": 1,
+    "degree_rejects": 367,
+    "nl_rejects": 120,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 234,
+        "attempt": 488,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 8.494826,
+    "min_total_ms": 8.479922,
+    "max_total_ms": 8.728776,
+    "repetitions_total_ms": [
+      8.494826,
+      8.567884,
+      8.728776,
+      8.489674,
+      8.479922
+    ],
+    "median_kernel_ms": 7.887646,
+    "min_kernel_ms": 7.871328,
+    "max_kernel_ms": 8.116083,
+    "repetitions_kernel_ms": [
+      7.887646,
+      7.955581,
+      8.116083,
+      7.884517,
+      7.871328
+    ],
+    "median_context_ms": 0.02177,
+    "min_context_ms": 0.019876,
+    "max_context_ms": 0.024176,
+    "repetitions_context_ms": [
+      0.024176,
+      0.019876,
+      0.02177,
+      0.019916,
+      0.023594
+    ],
+    "median_degree_init_ms": 0.001924,
+    "min_degree_init_ms": 0.001744,
+    "max_degree_init_ms": 0.001985,
+    "repetitions_degree_init_ms": [
+      0.001924,
+      0.001844,
+      0.001744,
+      0.001955,
+      0.001985
+    ],
+    "median_constraints_init_ms": 0.583286,
+    "min_constraints_init_ms": 0.58108,
+    "max_constraints_init_ms": 0.590583,
+    "repetitions_constraints_init_ms": [
+      0.58108,
+      0.590583,
+      0.589179,
+      0.583286,
+      0.583015
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 0.470068,
+      "nl": 3.828652,
+      "du": 0.00446,
+      "rollback": 3.792026,
+      "other": 0.035911
+    },
+    "diagnostic_nl_du_share": 0.47141272226189834
+  },
+  {
+    "input": "kuznetsov2023-hill-3",
+    "method": "peigen",
+    "objective": "minimum-only",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 428,
+    "nl_calls": 110,
+    "du_calls": 1,
+    "degree_rejects": 318,
+    "nl_rejects": 109,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 174,
+        "attempt": 428,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 9.055159,
+    "min_total_ms": 8.971716,
+    "max_total_ms": 9.380248,
+    "repetitions_total_ms": [
+      8.981358,
+      9.380248,
+      8.971716,
+      9.055159,
+      9.061273
+    ],
+    "median_kernel_ms": 8.428203,
+    "min_kernel_ms": 8.359413,
+    "max_kernel_ms": 8.754495,
+    "repetitions_kernel_ms": [
+      8.363904,
+      8.754495,
+      8.359413,
+      8.428203,
+      8.441262
+    ],
+    "median_context_ms": 0.020978,
+    "min_context_ms": 0.019816,
+    "max_context_ms": 0.023745,
+    "repetitions_context_ms": [
+      0.020216,
+      0.020978,
+      0.019816,
+      0.023745,
+      0.022352
+    ],
+    "median_degree_init_ms": 0.012468,
+    "min_degree_init_ms": 0.010835,
+    "max_degree_init_ms": 0.015686,
+    "repetitions_degree_init_ms": [
+      0.01283,
+      0.012468,
+      0.010835,
+      0.012238,
+      0.015686
+    ],
+    "median_constraints_init_ms": 0.584408,
+    "min_constraints_init_ms": 0.581652,
+    "max_constraints_init_ms": 0.592307,
+    "repetitions_constraints_init_ms": [
+      0.584408,
+      0.592307,
+      0.581652,
+      0.590973,
+      0.581973
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 1.540621,
+      "nl": 3.518023,
+      "du": 0.004279,
+      "rollback": 3.496583,
+      "other": 0.029617
+    },
+    "diagnostic_nl_du_share": 0.41008866679403705
+  },
+  {
+    "input": "kuznetsov2023-hill-3",
+    "method": "rank-shared",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 428,
+    "nl_calls": 110,
+    "du_calls": 1,
+    "degree_rejects": 318,
+    "nl_rejects": 109,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 174,
+        "attempt": 428,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 7.694479,
+    "min_total_ms": 7.663718,
+    "max_total_ms": 7.78567,
+    "repetitions_total_ms": [
+      7.693858,
+      7.694479,
+      7.78567,
+      7.749366,
+      7.663718
+    ],
+    "median_kernel_ms": 7.089855,
+    "min_kernel_ms": 7.067684,
+    "max_kernel_ms": 7.180163,
+    "repetitions_kernel_ms": [
+      7.089855,
+      7.087349,
+      7.180163,
+      7.143038,
+      7.067684
+    ],
+    "median_context_ms": 0.019956,
+    "min_context_ms": 0.018712,
+    "max_context_ms": 0.024195,
+    "repetitions_context_ms": [
+      0.021119,
+      0.024195,
+      0.019956,
+      0.019955,
+      0.018712
+    ],
+    "median_degree_init_ms": 0.002114,
+    "min_degree_init_ms": 0.001845,
+    "max_degree_init_ms": 0.002175,
+    "repetitions_degree_init_ms": [
+      0.002175,
+      0.002095,
+      0.002114,
+      0.001845,
+      0.002116
+    ],
+    "median_constraints_init_ms": 0.58084,
+    "min_constraints_init_ms": 0.575206,
+    "max_constraints_init_ms": 0.584528,
+    "repetitions_constraints_init_ms": [
+      0.580709,
+      0.58084,
+      0.583437,
+      0.584528,
+      0.575206
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 0.151064,
+      "nl": 3.885481,
+      "du": 0.003478,
+      "rollback": 3.930896,
+      "other": 0.031151
+    },
+    "diagnostic_nl_du_share": 0.4859941240204097,
+    "static_over_update_ratio": 1.0147368002433952,
+    "peigen_over_update_time_to_target_ratio": 1.1768384838011774
+  },
+  {
+    "input": "kuznetsov2023-hill-3",
+    "method": "rank-static",
+    "objective": "minimum-then-spectrum-sum",
+    "initial_min": 6,
+    "initial_sum": 1784,
+    "final_min": 7,
+    "final_sum": 1785,
+    "final_nl": 104,
+    "final_du": 8,
+    "attempts": 428,
+    "nl_calls": 110,
+    "du_calls": 1,
+    "degree_rejects": 318,
+    "nl_rejects": 109,
+    "du_rejects": 0,
+    "target_reached": true,
+    "termination": "target-reached",
+    "accepted_count": 1,
+    "accepted": [
+      {
+        "p": 1,
+        "q": 174,
+        "attempt": 428,
+        "minimum": 7,
+        "spectrum_sum": 1785,
+        "nonlinearity": 104,
+        "differential_uniformity": 8
+      }
+    ],
+    "median_total_ms": 7.807871,
+    "min_total_ms": 7.791523,
+    "max_total_ms": 7.91132,
+    "repetitions_total_ms": [
+      7.791523,
+      7.818325,
+      7.807871,
+      7.792617,
+      7.91132
+    ],
+    "median_kernel_ms": 7.1959,
+    "min_kernel_ms": 7.177357,
+    "max_kernel_ms": 7.310383,
+    "repetitions_kernel_ms": [
+      7.177357,
+      7.207406,
+      7.1959,
+      7.183752,
+      7.310383
+    ],
+    "median_context_ms": 0.021068,
+    "min_context_ms": 0.017711,
+    "max_context_ms": 0.024066,
+    "repetitions_context_ms": [
+      0.019224,
+      0.022682,
+      0.021068,
+      0.024066,
+      0.017711
+    ],
+    "median_degree_init_ms": 0.002085,
+    "min_degree_init_ms": 0.001874,
+    "max_degree_init_ms": 0.002395,
+    "repetitions_degree_init_ms": [
+      0.001965,
+      0.002085,
+      0.002085,
+      0.001874,
+      0.002395
+    ],
+    "median_constraints_init_ms": 0.586152,
+    "min_constraints_init_ms": 0.580831,
+    "max_constraints_init_ms": 0.592977,
+    "repetitions_constraints_init_ms": [
+      0.592977,
+      0.586152,
+      0.588818,
+      0.582925,
+      0.580831
+    ],
+    "diagnostic_stage_ms": {
+      "degree": 0.403906,
+      "nl": 3.423275,
+      "du": 0.003919,
+      "rollback": 3.425468,
+      "other": 0.031353
+    },
+    "diagnostic_nl_du_share": 0.4702567440014786
+  }
+]

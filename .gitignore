@@ -1,0 +1,7 @@
+/build/
+/runs/
+/third_party/PEIGEN/
+/.venv/
+__pycache__/
+*.pyc
+.DS_Store

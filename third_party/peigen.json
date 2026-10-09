@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/peigen-sboxes/PEIGEN",
+  "commit": "6fe84ab59f60df3e5fe39ac3e00130e2010b0927",
+  "license": "GPL-3.0",
+  "header_sha256": {
+    "faster_impl_info.hpp": "053cd3588990a9bf41da9273a04b31781502ef8fc36e0051c570298c19dc1d0f",
+    "lighter_impl_info.hpp": "cadcf52647337640ac297412a7e85cd23f23a8dd76984befccf1ec311b096d78",
+    "lighter_string_bool_op.hpp": "a2916bb74f248400473d0cb2ec5b67010e00583409198153b4501a0a1a92655d",
+    "lighter_bool_op.hpp": "3af7f05cf765477f226087cde0c703765c67bf9ef831d5b336719b5174306e50",
+    "AffineMatrixColPEBox.hpp": "5b309044e3027f7f99f1cae33523771b17e8bdf0ed291917524c29d1d9bbc717",
+    "faster_mitm.hpp": "9992e7692d901d39d3553f3ac798ad3bc367b6ce55d656510040bef285dcea4a",
+    "faster.hpp": "895151e67eea64972777399b2a3b58413d0b5d0d66d6ba68f3373ec3dc510008",
+    "lighter_utils.hpp": "ad2d24e32e2474fa28963332fe9e2754397dac13837e11902d47a0f0ce1cf199",
+    "lighter_mitm.hpp": "ad9520c11bdfe4e8c808a52e60da757a457566011229569c4f992d5031e18bd5",
+    "lighter.hpp": "928ec1d341b1510ff229619771a10ca85035dc614ff9b894d9c91ab0620bb3f1",
+    "AffineMatrixRowPEBox.hpp": "d6669d7411dd5c29c66b3b15b3c552170e2f64997f0230a6f6680f98b45291d0",
+    "constants.hpp": "8e1bfdc43ce68a7d4dc4966b0a73e51489b17b52fa990548dc86307ce2e9511b",
+    "faster_utils.hpp": "3b8d80b7d6ab66bf812807a0b79769a9eeb886ff0fbe88084c477831ecfffe9a",
+    "HadamardMatrix.hpp": "2b5301b6d39d450e4ee9407c82f9d138f129ad26c75a13a65fc8143ebd5e61b0",
+    "faster_bool_op.hpp": "f252029229a6a1ceacd9f0c3a585a5ff24fb014d86c18367230d7543edb2414b",
+    "evaluator.hpp": "2353be584cc0ea2a5f35eaa0d5f1022debfd5f43bb94a33876e1036a1aca41de",
+    "OptimalSboxes.hpp": "6f2d1fd6aa12427bf4e6d202978c99b1edbe3d1dc56fce7dc182913baac09592",
+    "func.hpp": "9f2b9aae2f72c213b9c0ee21952f012cddb91f1ecb8498d08a11d14692b50b97",
+    "faster_func.hpp": "f0a8ac9a508dedf24a8266109dc66aa20e69e5620f4f078aaf3c48757f4c6c36",
+    "subspaces.hpp": "11d373cc0195f31002f4b2c89124a9855e18678e4bf71ae382fcba6190f76492",
+    "static_sort.h": "c0ae644ec08bcb6d74a947b08a26c8f347c8347a49ca63e5452aa5e41114a977"
+  }
+}

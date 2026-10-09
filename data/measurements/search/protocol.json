@@ -1,0 +1,570 @@
+{
+  "version": "fixed-nl-du",
+  "jobs": [
+    {
+      "kind": "verify",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "verify",
+      "id": "freyre2020-s8-peigen-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "verify",
+      "id": "freyre2020-s8-rank-static-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "verify",
+      "id": "freyre2020-s8-rank-shared-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-2-peigen-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-2-rank-static-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-2-rank-shared-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-3-peigen-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-3-rank-static-verify"
+    },
+    {
+      "kind": "verify",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "verify",
+      "id": "kuznetsov2023-hill-3-rank-shared-verify"
+    },
+    {
+      "kind": "warmup",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "id": "freyre2020-s8-peigen-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "id": "freyre2020-s8-rank-static-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "id": "freyre2020-s8-rank-shared-warmup"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "freyre2020-s8-peigen-0"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "freyre2020-s8-rank-static-0"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "freyre2020-s8-rank-shared-0"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "freyre2020-s8-rank-static-1"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "freyre2020-s8-rank-shared-1"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "freyre2020-s8-peigen-1"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "freyre2020-s8-rank-shared-2"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "freyre2020-s8-peigen-2"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "freyre2020-s8-rank-static-2"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "freyre2020-s8-peigen-3"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "freyre2020-s8-rank-static-3"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "freyre2020-s8-rank-shared-3"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "freyre2020-s8-rank-static-4"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "freyre2020-s8-rank-shared-4"
+    },
+    {
+      "kind": "search",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "freyre2020-s8-peigen-4"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "freyre2020-s8",
+      "method": "peigen",
+      "mode": "diagnostic",
+      "id": "freyre2020-s8-peigen-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "freyre2020-s8",
+      "method": "rank-static",
+      "mode": "diagnostic",
+      "id": "freyre2020-s8-rank-static-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "freyre2020-s8",
+      "method": "rank-shared",
+      "mode": "diagnostic",
+      "id": "freyre2020-s8-rank-shared-diagnostic"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-2-peigen-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-2-rank-static-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-2-rank-shared-warmup"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-2-peigen-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-2-rank-static-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-2-rank-shared-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-2-rank-static-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-2-rank-shared-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-2-peigen-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-2-rank-shared-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-2-peigen-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-2-rank-static-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-2-peigen-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-2-rank-static-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-2-rank-shared-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-2-rank-static-4"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-2-rank-shared-4"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-2-peigen-4"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-2",
+      "method": "peigen",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-2-peigen-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-static",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-2-rank-static-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-2",
+      "method": "rank-shared",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-2-rank-shared-diagnostic"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-3-peigen-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-3-rank-static-warmup"
+    },
+    {
+      "kind": "warmup",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "id": "kuznetsov2023-hill-3-rank-shared-warmup"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-3-peigen-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-3-rank-static-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 0,
+      "id": "kuznetsov2023-hill-3-rank-shared-0"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-3-rank-static-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-3-rank-shared-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 1,
+      "id": "kuznetsov2023-hill-3-peigen-1"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-3-rank-shared-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-3-peigen-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 2,
+      "id": "kuznetsov2023-hill-3-rank-static-2"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-3-peigen-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-3-rank-static-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 3,
+      "id": "kuznetsov2023-hill-3-rank-shared-3"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-3-rank-static-4"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-3-rank-shared-4"
+    },
+    {
+      "kind": "search",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "bench",
+      "repetition": 4,
+      "id": "kuznetsov2023-hill-3-peigen-4"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-3",
+      "method": "peigen",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-3-peigen-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-static",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-3-rank-static-diagnostic"
+    },
+    {
+      "kind": "diagnostic",
+      "input": "kuznetsov2023-hill-3",
+      "method": "rank-shared",
+      "mode": "diagnostic",
+      "id": "kuznetsov2023-hill-3-rank-shared-diagnostic"
+    }
+  ],
+  "binding": {
+    "cpu": 0,
+    "numa": 0,
+    "threads": 1
+  },
+  "objective": {
+    "peigen": "strict minimum degree only",
+    "rank-static": "lexicographic (minimum degree, spectrum sum)",
+    "rank-shared": "lexicographic (minimum degree, spectrum sum)"
+  },
+  "constraints": "Exact NL=104 and DU=8 in every accepted state; common Menyachikhin Algorithms 1 and 2; integer Walsh/DDT scaling.",
+  "order": "degree improvement, NL, DU; first strict admissible improvement; lexicographic p<q scan restarted on acceptance",
+  "stop": "minimum degree 7 or complete sweep without accepted improvement",
+  "timing": "Includes Context, degree and constraint initialisation, full search and rollback. Excludes 50ms CPU warmup, input I/O and independent verification. Five fresh processes, rotating method order, after one full warmup per input/method.",
+  "failed_target": "Record local-stop time and terminal degree; never treat it as time-to-7.",
+  "binary_sha256": "7239b1ed0bc0fee841d40232464c592bf95b1cf39af5b881bb1e2b9c6d498956"
+}

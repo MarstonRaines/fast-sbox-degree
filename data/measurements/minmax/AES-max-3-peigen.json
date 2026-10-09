@@ -1,0 +1,35 @@
+{
+  "input": "AES",
+  "n": 8,
+  "metric": "max",
+  "method": "peigen",
+  "repetition": 3,
+  "steps": 6912,
+  "variant": "optimized",
+  "command": [
+    "numactl",
+    "--physcpubind=0",
+    "--membind=0",
+    "build/minmax-optimized",
+    "peigen",
+    "max",
+    "data/inputs/AES.lut",
+    "data/inputs/AES.swaps",
+    "6912"
+  ],
+  "started_utc": "2026-10-07T10:54:29.675650+00:00",
+  "process_seconds": 0.06082513649016619,
+  "binary_sha256": "9c5404360c3bc634e8cd4162bfed616c7dac1f42493416dfdef45a176dd7a726",
+  "input_sha256": "480551d763e64ada4d5797ecd23a0f82b0368bebce84dea7f918f63a1ac3687f",
+  "swaps_sha256": "fd5d4bc2b67249ec2e9eedefb0ed8f3fe90042e2f4e413ed13418fd80af641c7",
+  "returncode": 0,
+  "result": {
+    "context_ns": 12800,
+    "init_ns": 15757,
+    "kernel_ns": 5511088,
+    "steps": 6912,
+    "final_value": 7,
+    "final_box_hash": 6818563556447043631,
+    "digest": 7171603547208946944
+  }
+}

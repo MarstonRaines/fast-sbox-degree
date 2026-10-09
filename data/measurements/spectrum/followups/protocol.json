@@ -1,0 +1,1495 @@
+{
+  "version": "prefix-costs-and-counts",
+  "jobs": [
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "peigen",
+      "repetition": 0,
+      "id": "random_n08_00-0-peigen-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "peigen",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-shared",
+      "repetition": 0,
+      "id": "random_n08_00-0-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-static",
+      "repetition": 0,
+      "id": "random_n08_00-0-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-shared",
+      "repetition": 1,
+      "id": "random_n08_00-1-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-static",
+      "repetition": 1,
+      "id": "random_n08_00-1-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "peigen",
+      "repetition": 1,
+      "id": "random_n08_00-1-peigen-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "peigen",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-static",
+      "repetition": 2,
+      "id": "random_n08_00-2-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "peigen",
+      "repetition": 2,
+      "id": "random_n08_00-2-peigen-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "peigen",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-shared",
+      "repetition": 2,
+      "id": "random_n08_00-2-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "peigen",
+      "repetition": 3,
+      "id": "random_n08_00-3-peigen-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "peigen",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-shared",
+      "repetition": 3,
+      "id": "random_n08_00-3-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-static",
+      "repetition": 3,
+      "id": "random_n08_00-3-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-shared",
+      "repetition": 4,
+      "id": "random_n08_00-4-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "rank-static",
+      "repetition": 4,
+      "id": "random_n08_00-4-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n08_00",
+      "n": 8,
+      "method": "peigen",
+      "repetition": 4,
+      "id": "random_n08_00-4-peigen-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "peigen",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "bitwise",
+      "repetition": 0,
+      "id": "random_n12_00-0-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-shared",
+      "repetition": 0,
+      "id": "random_n12_00-0-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-static",
+      "repetition": 0,
+      "id": "random_n12_00-0-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-shared",
+      "repetition": 1,
+      "id": "random_n12_00-1-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-static",
+      "repetition": 1,
+      "id": "random_n12_00-1-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "bitwise",
+      "repetition": 1,
+      "id": "random_n12_00-1-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-static",
+      "repetition": 2,
+      "id": "random_n12_00-2-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "bitwise",
+      "repetition": 2,
+      "id": "random_n12_00-2-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-shared",
+      "repetition": 2,
+      "id": "random_n12_00-2-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "bitwise",
+      "repetition": 3,
+      "id": "random_n12_00-3-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-shared",
+      "repetition": 3,
+      "id": "random_n12_00-3-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-static",
+      "repetition": 3,
+      "id": "random_n12_00-3-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-shared",
+      "repetition": 4,
+      "id": "random_n12_00-4-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "rank-static",
+      "repetition": 4,
+      "id": "random_n12_00-4-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n12_00",
+      "n": 12,
+      "method": "bitwise",
+      "repetition": 4,
+      "id": "random_n12_00-4-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 0,
+      "id": "random_n16_00-0-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 0,
+      "id": "random_n16_00-0-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 0,
+      "id": "random_n16_00-0-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 1,
+      "id": "random_n16_00-1-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 1,
+      "id": "random_n16_00-1-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 1,
+      "id": "random_n16_00-1-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 2,
+      "id": "random_n16_00-2-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 2,
+      "id": "random_n16_00-2-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 2,
+      "id": "random_n16_00-2-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 3,
+      "id": "random_n16_00-3-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 3,
+      "id": "random_n16_00-3-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 3,
+      "id": "random_n16_00-3-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 4,
+      "id": "random_n16_00-4-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 4,
+      "id": "random_n16_00-4-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n16_00",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 4,
+      "id": "random_n16_00-4-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 0,
+      "id": "MISTY1_FI_key0000-0-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 0,
+      "id": "MISTY1_FI_key0000-0-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 0,
+      "id": "MISTY1_FI_key0000-0-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 1,
+      "id": "MISTY1_FI_key0000-1-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 1,
+      "id": "MISTY1_FI_key0000-1-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 1,
+      "id": "MISTY1_FI_key0000-1-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 2,
+      "id": "MISTY1_FI_key0000-2-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 2,
+      "id": "MISTY1_FI_key0000-2-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 2,
+      "id": "MISTY1_FI_key0000-2-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 3,
+      "id": "MISTY1_FI_key0000-3-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 3,
+      "id": "MISTY1_FI_key0000-3-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 3,
+      "id": "MISTY1_FI_key0000-3-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-shared",
+      "repetition": 4,
+      "id": "MISTY1_FI_key0000-4-rank-shared-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "rank-static",
+      "repetition": 4,
+      "id": "MISTY1_FI_key0000-4-rank-static-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "rank-static",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "method": "bitwise",
+      "repetition": 4,
+      "id": "MISTY1_FI_key0000-4-bitwise-prefix",
+      "binary": "prefix-optimized",
+      "args": [
+        "bitwise",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "512"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "bitwise",
+      "repetition": 0,
+      "id": "random_n19_00-0-bitwise-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-shared",
+      "repetition": 0,
+      "id": "random_n19_00-0-rank-shared-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-static",
+      "repetition": 0,
+      "id": "random_n19_00-0-rank-static-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-shared",
+      "repetition": 1,
+      "id": "random_n19_00-1-rank-shared-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-static",
+      "repetition": 1,
+      "id": "random_n19_00-1-rank-static-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "bitwise",
+      "repetition": 1,
+      "id": "random_n19_00-1-bitwise-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-static",
+      "repetition": 2,
+      "id": "random_n19_00-2-rank-static-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "bitwise",
+      "repetition": 2,
+      "id": "random_n19_00-2-bitwise-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-shared",
+      "repetition": 2,
+      "id": "random_n19_00-2-rank-shared-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "bitwise",
+      "repetition": 3,
+      "id": "random_n19_00-3-bitwise-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-shared",
+      "repetition": 3,
+      "id": "random_n19_00-3-rank-shared-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-static",
+      "repetition": 3,
+      "id": "random_n19_00-3-rank-static-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-shared",
+      "repetition": 4,
+      "id": "random_n19_00-4-rank-shared-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "rank-static",
+      "repetition": 4,
+      "id": "random_n19_00-4-rank-static-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "rank-static",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "prefix",
+      "input": "random_n19_00",
+      "n": 19,
+      "method": "bitwise",
+      "repetition": 4,
+      "id": "random_n19_00-4-bitwise-prefix",
+      "binary": "prefix-extended",
+      "args": [
+        "bitwise",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n08_00",
+      "n": 8,
+      "steps": 0,
+      "id": "random_n08_00-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n08_00",
+      "n": 8,
+      "steps": 1,
+      "id": "random_n08_00-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n08_00",
+      "n": 8,
+      "steps": 16,
+      "id": "random_n08_00-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n08_00",
+      "n": 8,
+      "steps": 128,
+      "id": "random_n08_00-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n08_00.lut",
+        "data/inputs/random_n08_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n12_00",
+      "n": 12,
+      "steps": 0,
+      "id": "random_n12_00-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n12_00",
+      "n": 12,
+      "steps": 1,
+      "id": "random_n12_00-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n12_00",
+      "n": 12,
+      "steps": 16,
+      "id": "random_n12_00-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n12_00",
+      "n": 12,
+      "steps": 128,
+      "id": "random_n12_00-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n12_00.lut",
+        "data/inputs/random_n12_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n16_00",
+      "n": 16,
+      "steps": 0,
+      "id": "random_n16_00-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n16_00",
+      "n": 16,
+      "steps": 1,
+      "id": "random_n16_00-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n16_00",
+      "n": 16,
+      "steps": 16,
+      "id": "random_n16_00-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n16_00",
+      "n": 16,
+      "steps": 128,
+      "id": "random_n16_00-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n16_00.lut",
+        "data/inputs/random_n16_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n19_00",
+      "n": 19,
+      "steps": 0,
+      "id": "random_n19_00-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n19_00",
+      "n": 19,
+      "steps": 1,
+      "id": "random_n19_00-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n19_00",
+      "n": 19,
+      "steps": 16,
+      "id": "random_n19_00-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "random_n19_00",
+      "n": 19,
+      "steps": 128,
+      "id": "random_n19_00-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/random_n19_00.lut",
+        "data/inputs/random_n19_00.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_S9",
+      "n": 9,
+      "steps": 0,
+      "id": "MISTY1_S9-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_S9.lut",
+        "data/inputs/MISTY1_S9.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_S9",
+      "n": 9,
+      "steps": 1,
+      "id": "MISTY1_S9-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_S9.lut",
+        "data/inputs/MISTY1_S9.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_S9",
+      "n": 9,
+      "steps": 16,
+      "id": "MISTY1_S9-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_S9.lut",
+        "data/inputs/MISTY1_S9.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_S9",
+      "n": 9,
+      "steps": 128,
+      "id": "MISTY1_S9-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_S9.lut",
+        "data/inputs/MISTY1_S9.swaps",
+        "128"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "steps": 0,
+      "id": "MISTY1_FI_key0000-0-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "0"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "steps": 1,
+      "id": "MISTY1_FI_key0000-1-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "1"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "steps": 16,
+      "id": "MISTY1_FI_key0000-16-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "16"
+      ]
+    },
+    {
+      "kind": "counts",
+      "input": "MISTY1_FI_key0000",
+      "n": 16,
+      "steps": 128,
+      "id": "MISTY1_FI_key0000-128-counts",
+      "binary": "rank-counts",
+      "args": [
+        "bench",
+        "rank-shared",
+        "data/inputs/MISTY1_FI_key0000.lut",
+        "data/inputs/MISTY1_FI_key0000.swaps",
+        "128"
+      ]
+    }
+  ],
+  "threads": 1,
+  "cpu": 0,
+  "numa": 0,
+  "prefixes": "Five fresh processes per method/input; cumulative checkpoints at K=1,16,128,512 within each run. At n=19 the maximum is 128; all methods use identical saved-stream prefixes.",
+  "diagnostics": "Logical operation counts are separate from formal timings."
+}
